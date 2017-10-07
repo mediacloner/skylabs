@@ -1,5 +1,3 @@
-calc(10, 10.25, 28);
-
 
 function calc ()
 {
@@ -14,3 +12,6 @@ return sum (arguments);
         return acc
     }
 }
+
+calc(10, 10.25, 28);
+
