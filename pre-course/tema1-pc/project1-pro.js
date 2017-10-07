@@ -1,5 +1,3 @@
-
-
 function calc (){
     var nums = arguments
         console.log(nums)
@@ -11,42 +9,74 @@ function calc (){
             }
             return acc
         }
-        var sumatory = sum(nums)
-        console.log('The sum is => ' + sumatory)
+        var sumSumatory = sum(nums)
+        console.log('The sum is => ' + sumSumatory.toFixed(3))
 
         function subtract (){
-            var acc = 0;
+            var acc =0;
+			var firstLoop = 0;
             console.log(arguments)
             for (num in arguments[0]){
-            acc -= arguments[0][num]  
+			if (firstLoop === 0){
+			
+				acc = arguments [0][0];
+				firstLoop = 1;
+			
+				}
+			
+			else{
+			
+				acc -= arguments[0][num]
+				} 
             }
             return acc
         }
-        var sumatory = subtract (nums)
-        console.log('The subtract  is => ' + sumatory)
+        var subSumatory = subtract (nums)
+        console.log('The subtract  is => ' + subSumatory.toFixed(3))
 
         function multiply(){
-            var acc = 0;
+            var acc =0;
+			var firstLoop = 0;
             console.log(arguments)
             for (num in arguments[0]){
-            acc = arguments[0][num] * acc 
+			if (firstLoop === 0){
+			
+				acc = arguments [0][0];
+				firstLoop = 1;
+			
+				}
+			
+			else{
+			
+				acc *= arguments[0][num]
+				} 
             }
             return acc
         }
-        var sumatory = multiply(nums)
-        console.log('The multiply is => ' + sumatory)
+        var multSumatory = multiply(nums)
+        console.log('The multiply is => ' + multSumatory.toFixed(3))
 
         function divide(){
-            var acc = 0;
+          var acc =0;
+			var firstLoop = 0;
             console.log(arguments)
             for (num in arguments[0]){
-            acc =  acc / arguments[0][num]  
+			if (firstLoop === 0){
+			
+				acc = arguments [0][0];
+				firstLoop = 1;
+			
+				}
+			
+			else{
+			
+				acc /= arguments[0][num]
+				} 
             }
             return acc
         }
-        var sumatory = divide(nums)
-        console.log('The divide is => ' + sumatory)
+        var divSumatory = divide(nums)
+        console.log('The divide is => ' + divSumatory.toFixed(3))
     }
 
 calc(10, 10.25, 28);
-
