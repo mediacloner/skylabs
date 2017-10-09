@@ -22,8 +22,14 @@
 function calc (){
     var nums = arguments
         console.log(nums)
-       function sum(){
-            var acc = 0;
+        function sum(){
+                if (sumSumatory == null){
+                var acc = 0;
+                }
+                else{
+                var acc = sumSumatory;
+                }
+            
             console.log(arguments)
             for (num in arguments[0]){
             acc += arguments[0][num]  
@@ -34,11 +40,17 @@ function calc (){
         console.log('The sum is => ' + sumSumatory.toFixed(3))
 
         function subtract (){
-            var acc =0;
+                if (subSumatory == null){
+                var acc = 0;
+                }
+                else{
+                var acc = subSumatory;
+                }
+
 			var firstLoop = 0;
             console.log(arguments)
             for (num in arguments[0]){
-			if (firstLoop === 0){
+			if (firstLoop === 0 && subSumatory == null){
 			
 				acc = arguments [0][0];
 				firstLoop = 1;
@@ -56,11 +68,16 @@ function calc (){
         console.log('The subtract  is => ' + subSumatory.toFixed(3))
 
         function multiply(){
-            var acc =0;
+            if (multSumatory == null){
+                var acc = 0;
+                }
+                else{
+                var acc = multSumatory;
+                }
 			var firstLoop = 0;
             console.log(arguments)
             for (num in arguments[0]){
-			if (firstLoop === 0){
+			if (firstLoop === 0 && multSumatory == null){
 			
 				acc = arguments [0][0];
 				firstLoop = 1;
@@ -78,11 +95,16 @@ function calc (){
         console.log('The multiplication is => ' + multSumatory.toFixed(3))
 
         function divide(){
-          var acc =0;
+            if (divSumatory == null){
+                var acc = 0;
+                }
+                else{
+                var acc = divSumatory;
+                }
 			var firstLoop = 0;
             console.log(arguments)
             for (num in arguments[0]){
-			if (firstLoop === 0){
+			if (firstLoop === 0 && divSumatory == null){
 			
 				acc = arguments [0][0];
 				firstLoop = 1;
