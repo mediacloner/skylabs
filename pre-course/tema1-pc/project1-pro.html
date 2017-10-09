@@ -2,7 +2,16 @@
 <html>
 <body>
 
-<p>Pàgina HTML per poder debugar en Javascript</p>
+<p> HTML page for work with Javascript</p>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to demonstrate the prompt box.</p>
+
+
+
 
 
 
@@ -91,11 +100,21 @@ function calc (){
         console.log('The division is => ' + divSumatory.toFixed(3))
     }
 
+    function askMe() {
+    var confirmation = prompt("Do you need put more number? (y/n)");
+    if (confirmation != null) {
+            function askNumbers() {
+                var numbers = [];
+                var cont;
+                for (var i = 0; i <= 2; i++) {
+                var x = prompt("Please, writte the number:", "");
+                numbers[i] = x;
+                }
+            }
+        }
+    }
 calc(10, 10.25, 28);
-
-console.log("Do you need put more number? (y/n)");
-var userInput = readline("y");
-console.log("User input: " + userInput);
+askMe();
 
 
 </script>
