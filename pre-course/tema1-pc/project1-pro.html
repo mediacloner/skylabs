@@ -100,21 +100,26 @@ function calc (){
         console.log('The division is => ' + divSumatory.toFixed(3))
     }
 
-    function askMe() {
-    var confirmation = prompt("Do you need put more number? (y/n)");
-    if (confirmation != null) {
-            function askNumbers() {
+    function askNumbers() {
                 var numbers = [];
                 var cont;
                 for (var i = 0; i <= 2; i++) {
                 var x = prompt("Please, writte the number:", "");
-                numbers[i] = x;
+                numbers[i] = parseInt(x);
                 }
+                return numbers;
             }
+    function askMe() {
+       if (confirm("Do you need put more number? "))  {
+                arrayNumber = askNumbers();
+                return arrayNumber
+                }
+            
         }
-    }
+    
 calc(10, 10.25, 28);
-askMe();
+newNumbers = askMe();
+calc.apply(this,newNumbers);
 
 
 </script>
