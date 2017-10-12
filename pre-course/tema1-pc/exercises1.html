@@ -165,6 +165,61 @@ function slashName () {
 
 // b) Ahora solo selecciona tu apellido y muestra cada letra separada por "|"
 
+function tubeName () {
+    
+        var myName = ['Alex', 'Sanchez']
+
+        var result = '';
+
+        for (var i = 0 ; i < myName.length-1; i++)
+        {
+            for (var j = 0; j < myName [i].length; j++)
+
+            {
+               result = result + myName [i] [j] + '|'
+            }
+
+
+        }
+        
+
+        console.log(result);
+       
+        }
+    
+        tubeName();
+
+// c) Ahora muestra cada letra de tu nombre con su posición (necesitarás un bucle for)
+
+
+
+// Working space for debug.
+
+function positionLetters () {
+    
+        var myName = ['Alex', 'Sanchez']
+
+        var result = '';
+
+       
+            for (var i = 0; i < myName [0].length; i++)
+
+            {
+               result =result + (i+1) + 'º' + myName [0][i] + ' ';
+            }
+
+
+           
+
+        console.log(result.split(" ", myName [0].length).toString());
+       
+        }
+    
+        positionLetters();
+
+
+
+// d)Como en el ejercicio anterior, pero seleccionando tu apellido
 
 
 
