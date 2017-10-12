@@ -1,7 +1,7 @@
 
 // Working space for debug.
 
-function positionLetters () {
+function posLettersSurname () {
     
         var myName = ['Alex', 'Sanchez']
         var selecArray = 1;
@@ -36,5 +36,5 @@ function positionLetters () {
        
         }
     
-        positionLetters();
+        posLettersSurname();
 
