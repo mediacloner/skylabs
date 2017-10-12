@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> HTML page for work with Javascript</p>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Exercises 1</p>
+
+<script>
+//Puedes contar cuantas letras tiene tu nombre?
+
+
+function countLetters () {
+
+    var myName = 'Alex';
+    console.log(myName.length) // My Name has 4 letters 
+    
+
+};
+
+countLetters();
+
+
+//b) Añade tu apellido e indica en que posición se encuentra
+
+function myString () {
+    
+        var myName = 'Alex';
+        var mySurname = 'Sanchez';
+        var myNameSurname = myName + ' ' + mySurname;
+        console.log(myNameSurname);
+        console.log(myNameSurname.indexOf("Sanchez"));// My Name has 4 letters 
+       
+        }
+    
+        myString();
+
+//c) Ahora, con tu apellido y nombre en la misma variable, muestra solo el nombre.
+
+function myStringName () {
+    
+        var myName = 'Alex';
+        var mySurname = 'Sanchez';
+        var myNameSurname = myName + ' ' + mySurname;
+        console.log(myNameSurname);
+        console.log(myNameSurname.substring(0,4))
+       
+        }
+    
+        myStringName();
+
+
+ //d) Ahora, solo tu apellido.
+
+ function myStringSurname () {
+    
+        var myName = 'Alex';
+        var mySurname = 'Sanchez';
+        var myNameSurname = myName + ' ' + mySurname;
+        console.log(myNameSurname);
+        console.log(myNameSurname.substr(-7))
+       
+        }
+    
+        myStringSurname();
+
+// d1) Iguala el resultado a una variable nueva e imprímela por pantalla.
+
+function newString () {
+    
+        var myName = 'Alex';
+        var mySurname = 'Sanchez';
+        var myNameSurname = myName + ' ' + mySurname;
+        console.log(myNameSurname+ ', ' + mySurname);
+       
+        }
+    
+        newString();
+
+// e) Ahora, reemplaza tu nombre por "Mr/Ms" y vuelve a mostrar la variable con los cambios.
+
+function newStringMr () {
+    
+        var myName = 'Alex';
+        var mySurname = 'Sanchez';
+        var myNameSurname = myName + ' ' + mySurname;
+        var mrSurname = 'Mr. ' + myNameSurname.substr(-7)
+
+
+
+        console.log(mrSurname);
+       
+        }
+    
+        newStringMr();
+
+// f) Selecciona tu apellido y transfórmalo a MAYÚSCULAS.
+
+function capLetters () {
+    
+        var myNameSurname = 'Alex Sanchez';
+        var mrSurname = 'Mr. ' + myNameSurname.substr(-7).toUpperCase();
+
+        console.log(mrSurname);
+       
+        }
+    
+        capLetters();
+
+// g) Ahora declara una variable nueva e igualala a la anterior variable sumándole, además, un mensaje.
+
+function awFuntion () {
+    
+        var myNameSurname = 'Alex Sanchez';
+        var awString =myNameSurname.substr(0,4)+ ' is awesome'
+
+        console.log(awString);
+       
+        }
+    
+        awFuntion();
+
+// h) Ahora, puedes seleccionar la inicial de tu nombre y apellido y mostrarlas por pantalla?
+
+function myFirstLastnameLetters () {
+    
+        var myNameSurname = 'Alex Sanchez';
+        var myFirstChar =myNameSurname.substr(0,1)+ '. ' + myNameSurname.substr(5,1)+ '. '
+
+        console.log(myFirstChar);
+       
+        }
+    
+        myFirstLastnameLetters();
+
+// a) Declara tu nombre completo en una array y muéstralo por pantalla separando cada letra por "/"
+
+function slashName () {
+    
+        var myName = ['Alex', 'Sanchez']
+
+        var result = '';
+
+        for (var i = 0 ; i < myName.length; i++)
+        {
+            for (var j = 0; j < myName [i].length; j++)
+
+            {
+               result = result + myName [i] [j] + '/'
+            }
+
+
+        }
+        
+
+        console.log(result);
+       
+        }
+    
+        slashName();
+
+
+
+</script>
+
+</body>
+</html>
