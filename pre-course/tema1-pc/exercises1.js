@@ -1,18 +1,18 @@
 
-// Working space for debbug.
+// Working space for debug.
 
-function slashName () {
+function tubeName () {
     
         var myName = ['Alex', 'Sanchez']
 
         var result = '';
 
-        for (var i = 0 ; i < myName.length; i++)
+        for (var i = 0 ; i < myName.length-1; i++)
         {
             for (var j = 0; j < myName [i].length; j++)
 
             {
-               result = result + myName [i] [j] + '/'
+               result = result + myName [i] [j] + '|'
             }
 
 
@@ -23,5 +23,5 @@ function slashName () {
        
         }
     
-        slashName();
+        tubeName();
 
