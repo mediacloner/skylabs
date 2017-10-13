@@ -1,40 +1,23 @@
 
 // Working space for debug.
 
-function posLettersSurname () {
+function arrNumbersXinv() 
+{
     
-        var myName = ['Alex', 'Sanchez']
-        var selecArray = 1;
-        var position = sumArray();
-        var result = '';
+        var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+        var multiplier = 3;
+        
+        var multByTwo = numbers.map(function(x) {
+            return x * multiplier;
+         })
+
+        
        
+       console.log (multByTwo.sort(function(a, b){return b-a}));
 
-        function sumArray(){
-
-            var sum = 0;
-
-            for (var i = 0; i<selecArray; i++)
-            {
-                
-                sum = sum + myName[0].length;
-
-            }
-            return sum
-        }
-       
-            for (var i = 0; i < myName [selecArray].length; i++)
-
-            {
-               position++; 
-               result =result + position + 'º' + myName [selecArray][i] + ' ';
-            }
-
-
-           
-
-        console.log(result.split(" ", myName [selecArray].length).toString());
        
         }
     
-        posLettersSurname();
+        arrNumbersXinv();
 

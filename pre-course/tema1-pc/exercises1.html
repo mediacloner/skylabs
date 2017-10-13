@@ -259,6 +259,361 @@ function posLettersSurname () {
     
         posLettersSurname();
 
+// e) Puedes indicarme las iniciales de tu nombre y apellido? Como en el ejercicio h de la sección de strings
+
+function initial () {
+    
+        var myName = ['Alex', 'Sanchez']
+
+        var result = '';
+       
+
+       
+            for (var i = 0; i < myName.length; i++)
+
+            {
+               result =result + myName[i][0] + '. ';
+            }
+
+
+           
+
+        console.log(result);
+       
+        }
+    
+        initial();
+
+// f) Ahora, reformula la array, introduciendo tu nombre en primera posición, tu apellido en segunda,
+//    y además añade en otra posicion tu edad. Muestra por pantalla solo tu nombre y tu edad en un solo mensaje.
+
+
+// Working space for debug.
+
+function nameYears () {
+    
+        var myName = ['Alex', 'Sanchez', 41]
+
+        var result = '';
+       
+
+       
+            for (var i = 0; i < myName.length; i++)
+
+            { 
+               if (myName[1] === myName[i])
+               {
+                   //don't do anything.
+               }
+
+               else
+               {
+                result =result + myName[i] + ', ';  
+               
+               }
+               
+            }
+
+
+           
+
+        console.log(result);
+       
+        }
+    
+        nameYears();
+
+ // g) Prepara una función para añadir tu City a la array, muestra un mensaje mostrando el contenido de toda la array,
+ //    así aseguraremos los cambios.
+
+
+function newCity () {
+    
+        var myName = ['Alex', 'Sanchez', 41]
+
+        var result = '';
+       
+        insertCity ('Vilanova i la Geltrú')
+
+       
+            for (var i = 0; i < myName.length; i++)
+
+            { 
+              
+                result =result + myName[i] + ', ';  
+               
+              
+               
+            }
+
+        function insertCity(city)
+        {
+        
+            myName.push(city);
+
+        }
+
+        console.log(result);
+       
+        }
+    
+        newCity();
+
+//       h) Crea ahora, una funcion para eliminar la variable City y asegura los cambios.
+
+function delCity () {
+    
+        var myName = ['Alex', 'Sanchez', 41]
+
+        
+       
+        myCityAdd ('Vilanova i la Geltrú');
+
+        myCityDelete();
+
+        function strResult()
+        {
+
+            var result = '';
+
+            for (var i = 0; i < myName.length; i++)
+            
+                        { 
+                          
+                            result =result + myName[i] + ', ';  
+                           
+                        }
+            
+            return result;
+            
+        }
+
+        function myCityAdd(city)
+        {
+        
+            myName.push(city);
+            console.log( ' City added to array! => ' +  strResult())
+
+        }
+
+        function myCityDelete(city)
+        {
+        
+            myName.pop();
+            console.log( ' City deleted! => ' +  strResult())
+
+        }
+
+
+       
+        }
+    
+        delCity();
+
+
+// j) Ahora, elimina el nombre y asegura los cambios
+
+
+function delName () {
+    
+        var myName = ['Alex', 'Sanchez', 41]
+
+        
+       
+        myCityAdd ('Vilanova i la Geltrú');
+
+        myCityDelete();
+
+        myNameDelete();
+
+        function strResult()
+        {
+
+            var result = '';
+
+            for (var i = 0; i < myName.length; i++)
+            
+                        { 
+                          
+                            result =result + myName[i] + ', ';  
+                           
+                        }
+            
+            return result;
+            
+        }
+
+        function myCityAdd(city)
+        {
+        
+            myName.push(city);
+            console.log( ' City added to array! => ' +  strResult())
+
+        }
+
+        function myCityDelete(city)
+        {
+        
+            myName.pop();
+            console.log( ' City deleted! => ' +  strResult())
+
+        }
+        function myNameDelete()
+        {
+        
+            myName.shift();
+            console.log( ' Name deleted! => ' +  strResult())
+
+        }
+
+       
+        }
+    
+        delName();
+
+//  k) Quiero volver a introducir mi nombre pero si lo introduzco utilizando push() estará en la última posición, 
+//     como podria hacer para introducirlo en la primera posición? 
+
+
+
+
+function addName () {
+    
+        var myName = ['Alex', 'Sanchez', 41]
+
+        
+       
+        myCityAdd ('Vilanova i la Geltrú');
+
+        myCityDelete();
+
+        myNameDelete();
+
+        myNameAdd('Alex');
+
+        function strResult()
+        {
+
+            var result = '';
+
+            for (var i = 0; i < myName.length; i++)
+            
+                        { 
+                          
+                            result =result + myName[i] + ', ';  
+                           
+                        }
+            
+            return result;
+            
+        }
+
+        function myCityAdd(city)
+        {
+        
+            myName.push(city);
+            console.log( ' City added to array! => ' +  strResult())
+
+        }
+
+        function myCityDelete(city)
+        {
+        
+            myName.pop();
+            console.log( ' City deleted! => ' +  strResult())
+
+        }
+        function myNameDelete()
+        {
+        
+            myName.shift();
+            console.log( ' Name deleted! => ' +  strResult())
+
+        }
+        function myNameAdd(name)
+        {
+        
+            myName.splice(0,0, name);
+            console.log( ' Name add! => ' +  strResult())
+
+        }
+
+
+       
+        }
+    
+        addName();
+
+
+// l) Ahora, declara una array con los números del 0 a 10 y muestra cada número multiplicado por dos.
+
+
+function arrNumbersX2() 
+{
+    
+        var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+        
+        var multByTwo = numbers.map(function(x) {
+            return x * 2;
+         })
+
+        
+       
+       console.log (multByTwo);
+
+       
+        }
+    
+        arrNumbersX2();
+
+// l1) Reformula la función para que puedas especificar por cual número debería multiplicar cada elemento de la array.
+
+
+function arrNumbersX() 
+{
+    
+        var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+        var multiplier = 3;
+        
+        var multByTwo = numbers.map(function(x) {
+            return x * multiplier;
+         })
+
+        
+       
+       console.log (multByTwo);
+
+       
+        }
+    
+        arrNumbersX();
+
+
+// m) Podrías mostrarlos en el orden inverso? 
+
+function arrNumbersXinv() 
+{
+    
+        var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+
+        var multiplier = 3;
+        
+        var multByTwo = numbers.map(function(x) {
+            return x * multiplier;
+         })
+
+        
+       
+       console.log (multByTwo.sort(function(a, b){return b-a}));
+
+       
+        }
+    
+        arrNumbersXinv();
+
+// n) Puedes indicarme que letras se repiten de tu nombre y cuantas veces?
+
 
 
 
