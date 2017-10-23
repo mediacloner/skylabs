@@ -1,23 +1,64 @@
 
-// Working space for debug.
+// n) Puedes indicarme que letras se repiten de tu nombre y cuantas veces?
 
-function arrNumbersXinv() 
+
+
+function letterRepeat(name) 
 {
-    
-        var numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+        strCleanName = cleanName(name);
+        countLetters (strCleanName);
 
-        var multiplier = 3;
+        function cleanName(strName)
+        {
+                lwcName = strName.toLowerCase();
+                clnName = lwcName.replace(/ /g,''); //remove spaces
+                return clnName;
+        }  
+  
+        function countLetters (strLetters)
         
-        var multByTwo = numbers.map(function(x) {
-            return x * multiplier;
-         })
+        {
+                var letters=[];
+                var iteratLetters = [];
+                chargeArrLetters();
+                printRepeatLetters();
 
+
+                function printRepeatLetters ()
+                {
+                        for (var i = 0; i < letters.length-1; i++) 
+                        {
+                                
+                        }
+                }
+                
+
+                function chargeArrLetters()
+                {
+                        for (var i = 0; i < strLetters.length; i++) 
+                        {
+                                if ( letters.indexOf(strLetters[i]) < 0) //insert new letter
+                                {
+                                        letters.push(strLetters[i]);
+                                        iteratLetters.push(1);
+                                }
+
+                                else
+                                {
+                                        var position;
+                                        position = letters.indexOf(strLetters[i]);
+                                        iteratLetters[position]+= 1;
+                                }
+                        }
+
+                }
         
-       
-       console.log (multByTwo.sort(function(a, b){return b-a}));
-
-       
         }
+
+      
+
+       
+}
     
-        arrNumbersXinv();
+letterRepeat('Alex Sanchez');
 
