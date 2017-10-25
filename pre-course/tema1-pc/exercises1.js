@@ -1,9 +1,9 @@
 
-// n) Puedes indicarme que letras se repiten de tu nombre y cuantas veces?
+// n1) Ahora muestra por consola que letras NO se repiten y muestra tu nombre sin esas letras
 
 
 
-function letterRepeat(name) 
+function showMeLetterNoRepeat(name) 
 {
         strCleanName = cleanName(name);
         countLetters (strCleanName);
@@ -26,10 +26,18 @@ function letterRepeat(name)
 
                 function printRepeatLetters ()
                 {
+                        strResult = '';
                         for (var i = 0; i < letters.length-1; i++) 
                         {
-                            console.log( 'The character ' + letters[i] + ' is repeate ' + iteratLetters[i]+ ' time(s)')    
+                                if (iteratLetters[i]<2)
+                                {
+                                        
+                                        strResult += letters[i];   
+                    
+                                }
                         }
+
+                        console.log(strResult);
                 }
                 
 
@@ -60,5 +68,5 @@ function letterRepeat(name)
        
 }
     
-letterRepeat('Alex Sanchez');
+showMeLetterNoRepeat('Alex Sanchez');
 
