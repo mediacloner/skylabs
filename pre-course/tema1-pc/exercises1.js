@@ -1,5 +1,5 @@
-// a) Que hora es? Declara la hora como número y devuelvela como String.
-function getTime ()
+// b) Nono, que hora exactamente? Dime la hora sin minutos
+function getHour ()
 {
         var nowDate = new Date();
         var nowHour = nowDate.getHours();
@@ -10,12 +10,12 @@ function getTime ()
         //var strPadHour = nowHour.padStart(2, "0");
         //var strPadMinute = nowMinute.padStart(2, "0");
 
-        console.log( 'Hello! It is just ' + nowHour + ':' + nowMinute);
+        console.log( 'Hello! It is around ' + nowHour  );
 
         
         
 }
 
-getTime();
+getHour();
 
 
