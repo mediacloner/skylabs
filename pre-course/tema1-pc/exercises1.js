@@ -7,10 +7,10 @@ function getTime ()
 
         // Padding 00 like 2:3 = 02:03
 
-        var strPadHour = '1'.padStart(2, "0");
-        var strPadMinute = '2'.padStart(2, "0");
+        //var strPadHour = nowHour.padStart(2, "0");
+        //var strPadMinute = nowMinute.padStart(2, "0");
 
-        console.log( 'Hello! It is just ' + strPadHour + ':' + strPadMinute);
+        console.log( 'Hello! It is just ' + nowHour + ':' + nowMinute);
 
         
         
