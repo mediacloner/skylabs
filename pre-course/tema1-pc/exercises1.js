@@ -28,7 +28,7 @@ function letterRepeat(name)
                 {
                         for (var i = 0; i < letters.length-1; i++) 
                         {
-                                
+                            console.log( 'The character ' + letters[i] + ' is repeate ' + iteratLetters[i]+ ' time(s)')    
                         }
                 }
                 
