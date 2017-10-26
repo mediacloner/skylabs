@@ -1,17 +1,18 @@
-//d3) Por ultimo, la división
-function getCalc (num1, num2)
+//d4) Ahora, intenta multiplicar un número por una string, que devuelve?
+function getCalc (num1, str)
 {
-        var resultSum = num1 + num2;
-        var resultSub = num1 - num2;
-        var resultMult = num1 * num2;
-        var resultDiv = num1 / num2;
-        console.log( 'Result =>' + resultSum +', '+ resultSub +', '+ resultMult +', '+ resultDiv );
+        var resultMult = num1 * str;
+
+        console.log( 'Result =>' + resultMult );
 
 
         
         
 }
 
-getCalc(2, 4);
+getCalc(2, 'Hola');
+
+
+// Result =>NaN
 
 
