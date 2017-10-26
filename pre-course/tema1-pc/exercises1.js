@@ -1,14 +1,15 @@
-// d) Hagamos una calculadora. Primero, la suma.
-function getSum (num1, num2)
+//d1) Añade la resta...
+function getSum_Sub (num1, num2)
 {
-        result = num1 + num2;
-
-        console.log( 'Result =>' + result  );
+        resultSum = num1 + num2;
+        resultSub = num1 - num2;
+        console.log( 'Result =>' + resultSum  );
+        console.log( 'Result =>' + resultSub  );
 
         
         
 }
 
-getSum(2, 4);
+getSum_Sub(2, 4);
 
 
