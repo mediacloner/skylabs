@@ -1,27 +1,14 @@
-// c) Ahora, declara tu hora y muéstrala redondeada.
-function getOnlyHour ()
+// d) Hagamos una calculadora. Primero, la suma.
+function getSum (num1, num2)
 {
-        var nowDate = new Date();
-        var nowHour = nowDate.getHours();
-        var nowMinute = nowDate.getMinutes();
-        if (nowMinute > 30 )
-        {
-                roundHour = nowHour + 1
-        }
-        else
-        {
-                var roundHour = nowHour;
-        }
-       
+        result = num1 + num2;
 
-  
-
-        console.log( 'Hello! It is around ' + roundHour  );
+        console.log( 'Result =>' + result  );
 
         
         
 }
 
-getOnlyHour();
+getSum(2, 4);
 
 
