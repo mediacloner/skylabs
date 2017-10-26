@@ -1,16 +1,17 @@
-//d1) Añade la resta...
-function getSum_Sub_mult (num1, num2)
+//d3) Por ultimo, la división
+function getCalc (num1, num2)
 {
         var resultSum = num1 + num2;
         var resultSub = num1 - num2;
         var resultMult = num1 * num2;
-        console.log( 'Result =>' + resultSum +', '+ resultSub +', '+ resultMult );
+        var resultDiv = num1 / num2;
+        console.log( 'Result =>' + resultSum +', '+ resultSub +', '+ resultMult +', '+ resultDiv );
 
 
         
         
 }
 
-getSum_Sub_mult(2, 4);
+getCalc(2, 4);
 
 
