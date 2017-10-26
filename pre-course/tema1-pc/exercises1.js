@@ -1,21 +1,27 @@
-// b) Nono, que hora exactamente? Dime la hora sin minutos
-function getHour ()
+// c) Ahora, declara tu hora y muéstrala redondeada.
+function getOnlyHour ()
 {
         var nowDate = new Date();
         var nowHour = nowDate.getHours();
         var nowMinute = nowDate.getMinutes();
+        if (nowMinute > 30 )
+        {
+                roundHour = nowHour + 1
+        }
+        else
+        {
+                var roundHour = nowHour;
+        }
+       
 
-        // Padding 00 like 2:3 = 02:03
+  
 
-        //var strPadHour = nowHour.padStart(2, "0");
-        //var strPadMinute = nowMinute.padStart(2, "0");
-
-        console.log( 'Hello! It is around ' + nowHour  );
+        console.log( 'Hello! It is around ' + roundHour  );
 
         
         
 }
 
-getHour();
+getOnlyHour();
 
 
