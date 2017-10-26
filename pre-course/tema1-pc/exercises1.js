@@ -1,7 +1,12 @@
-//d4) Ahora, intenta multiplicar un número por una string, que devuelve?
+//e) Podemos controlar este error con un condicional if?
 function getCalc (num1, str)
 {
         var resultMult = num1 * str;
+
+        if (isNaN(resultMult))
+        {
+                resultMult = 'You can\'t do this operation!';
+        }
 
         console.log( 'Result =>' + resultMult );
 
