@@ -1,36 +1,41 @@
-// f) Lista el numero de propiedades que contiene el objeto.
+// g) Cambia la propiedad name por fullName.
+// g1) Asegura los cambios.
 
 
-function countPropObj()
+
+
+function changeKeyObj()
 {
 
     var avenger = 
     { 
         name : "Tony", 
         class : "VII", 
-        id : 1 
+        id : 1 ,
+        city : 'New York City'
     };
-
-  
-
-    avenger.city = 'New York City'
-    var countProp = 0;
-    countPropObj();
-
     
-        function countPropObj()
-        {
-    
-            for( key in avenger) {
-                countProp += 1
-              }
+    showMeObj();
 
-              console.log ('There are ' + countProp + ' info fields')
-          
-        }
+    changeKey();
 
-   
+    showMeObj();
+    function changeKey()
+    {
+        var variable = avenger.name;
+        delete avenger.name;
+        avenger.fullName = variable;
+    }
+
+    function showMeObj()
+    {
+
+        for( key in avenger) {
+            // keys
+            console.log(avenger[key]) ;  //key = name of property
+          }
+      
+    }
+
 }
-
-
-countPropObj()
+changeKeyObj()
