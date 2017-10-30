@@ -17,7 +17,6 @@ function changePropObj()
 
     showMeObj();
 
-
     function showMeObj()
     {
 
@@ -26,11 +25,7 @@ function changePropObj()
             console.log(avenger[key]) ;  //key = name of property
           }
       
-
     }
-
-
-
 
 }
 
