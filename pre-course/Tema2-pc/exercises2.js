@@ -1,6 +1,4 @@
-// g) Cambia la propiedad name por fullName.
-// g1) Asegura los cambios.
-
+// h) Lista todas las propiedades del objeto a través de un console.log()
 
 
 
@@ -15,8 +13,7 @@ function changeKeyObj()
         city : 'New York City'
     };
     
-    showMeObj();
-
+    
     changeKey();
 
     showMeObj();
@@ -30,10 +27,8 @@ function changeKeyObj()
     function showMeObj()
     {
 
-        for( key in avenger) {
-            // keys
-            console.log(avenger[key]) ;  //key = name of property
-          }
+      console.log ('Hello man! I\'m ' + avenger.fullName + ' and I live in ' + avenger.city + '. I\'m not a looser because my class is ' 
+                    + avenger.class)
       
     }
 
