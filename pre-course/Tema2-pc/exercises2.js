@@ -1,7 +1,7 @@
-// d) Ahora, elimina la propiedad ID y asegura los cambios.
+// e) Añade una nueva propiedad, por ejemplo city y dale un valor.
 
 
-function delPropObj()
+function addPropObj()
 {
 
     var avenger = 
@@ -13,7 +13,7 @@ function delPropObj()
 
     showMeObj();
 
-    delete avenger.id
+    avenger.city = 'New York City'
 
     showMeObj();
 
@@ -30,4 +30,4 @@ function delPropObj()
 }
 
 
-delPropObj()
+addPropObj()
