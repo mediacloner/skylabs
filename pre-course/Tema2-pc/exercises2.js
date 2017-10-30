@@ -1,7 +1,7 @@
-// e) Añade una nueva propiedad, por ejemplo city y dale un valor.
+// f) Lista el numero de propiedades que contiene el objeto.
 
 
-function chkPropObj()
+function countPropObj()
 {
 
     var avenger = 
@@ -14,11 +14,23 @@ function chkPropObj()
   
 
     avenger.city = 'New York City'
+    var countProp = 0;
+    countPropObj();
 
-    console.log (avenger.city)
+    
+        function countPropObj()
+        {
+    
+            for( key in avenger) {
+                countProp += 1
+              }
+
+              console.log ('There are ' + countProp + ' info fields')
+          
+        }
 
    
 }
 
 
-chkPropObj()
+countPropObj()
