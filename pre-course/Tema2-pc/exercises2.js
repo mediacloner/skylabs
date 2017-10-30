@@ -1,7 +1,7 @@
-// c) Cambia el valor de la propiedad class por "XI" y asegurate de
-// que los cambios se han efectuado.
+// d) Ahora, elimina la propiedad ID y asegura los cambios.
 
-function changePropObj()
+
+function delPropObj()
 {
 
     var avenger = 
@@ -13,7 +13,7 @@ function changePropObj()
 
     showMeObj();
 
-    avenger.class = 'XI'
+    delete avenger.id
 
     showMeObj();
 
@@ -30,4 +30,4 @@ function changePropObj()
 }
 
 
-changePropObj()
+delPropObj()
