@@ -1,7 +1,7 @@
 // e) Añade una nueva propiedad, por ejemplo city y dale un valor.
 
 
-function addPropObj()
+function chkPropObj()
 {
 
     var avenger = 
@@ -11,23 +11,14 @@ function addPropObj()
         id : 1 
     };
 
-    showMeObj();
+  
 
     avenger.city = 'New York City'
 
-    showMeObj();
+    console.log (avenger.city)
 
-    function showMeObj()
-    {
-
-        for( key in avenger) {
-            // keys
-            console.log(avenger[key]) ;  //key = name of property
-          }
-      
-    }
-
+   
 }
 
 
-addPropObj()
+chkPropObj()
