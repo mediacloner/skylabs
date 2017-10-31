@@ -1,14 +1,19 @@
-// k) Crea una propiedad del objeto que liste automáticamente los valores de la instancia. 
+// l) Ahora, crea una función que solo liste los nombres de los objetos instanciados
 
 
 
 
-function newFunConstructor()
+function listFullName()
 {
     
     var tonyStark = new avenger ("Tony Stark", "XI", "NYC", "Ingeneer", "MIT", 10);
     var hulk = new avenger ("Robert Bruce Banner", "X", "NYC", "Scientist", "Columbia University", 10);
-    hulk.description();  // Remember ()
+    list();
+    function list() {
+        console.log (tonyStark.fullName + ' ; ' + hulk.fullName)
+    }
+
+
     function avenger (fullName, classRoom, city, job, studies,markAv){
         this.fullName = fullName;
         this.classRoom = classRoom;
@@ -32,6 +37,6 @@ function newFunConstructor()
 
     
 }
-newFunConstructor()
+listFullName();
 
 
