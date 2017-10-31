@@ -1,40 +1,28 @@
-// h1) Añade más propiedades al objeto, como... markAverage, country, job, studies...
-// h2) Asegura los cambios volviendo a listar los valores del objeto
+// i) Crea un constructor de objetos llamado "Avenger", al cual le pasarás ciertos parametros, 
+// creando una instancia del objeto con las propiedades 
+// de nuestro objeto creado. (Échale un ojo a la referencia de abajo.)
 
 
 
-function changeKeyObj()
+function createConstructor()
 {
-
-    var avenger = 
-    { 
-        fullName : "Tony", 
-        class : "VII", 
-        id : 1 ,
-        city : 'New York City'
-    };
     
-    
-    addProperty();
+    var tonyStark = new avenger ("Tony Stark", "XI", "NYC", "Ingeneer", "MIT", 10)
+    console.log(tonyStark)
 
-    showMeObj();
-    function addProperty()
-    {
-      avenger.job = 'Rich';
-      avenger.studies = 'Full Stark Developer';
-      avenger.mark = 'A';
-      avenger.country = 'EE.UU.'
+  
+    function avenger (fullName, classRoom, city, job, studies,markAv){
+        this.fullName = fullName;
+        this.classRoom = classRoom;
+        this.city = city;
+        this.job= job;
+        this.studies= studies;
+        this.markAv = markAv;
     }
 
-    function showMeObj()
-    {
 
-        for( key in avenger) {
-            // keys
-            console.log(key +' : '+avenger[key]) ;  //key = name of property
-          }
-       
-    }
-
+    
 }
-changeKeyObj()
+createConstructor()
+
+
