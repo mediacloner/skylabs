@@ -1,16 +1,13 @@
-// i) Crea un constructor de objetos llamado "Avenger", al cual le pasarás ciertos parametros, 
-// creando una instancia del objeto con las propiedades 
-// de nuestro objeto creado. (Échale un ojo a la referencia de abajo.)
+// j) Crea otro objeto y imprime sus propiedades por pantalla.
 
 
 
-function createConstructor()
+function newObjConstructor()
 {
     
     var tonyStark = new avenger ("Tony Stark", "XI", "NYC", "Ingeneer", "MIT", 10)
-    console.log(tonyStark)
-
-  
+    var hulk = new avenger ("Robert Bruce Banner", "X", "NYC", "Scientist", "Columbia University", 10)
+    console.log( hulk )  
     function avenger (fullName, classRoom, city, job, studies,markAv){
         this.fullName = fullName;
         this.classRoom = classRoom;
@@ -23,6 +20,6 @@ function createConstructor()
 
     
 }
-createConstructor()
+newObjConstructor()
 
 
