@@ -5,14 +5,13 @@
 
 function listFullName()
 {
-    
-    var tonyStark = new avenger ("Tony Stark", "XI", "NYC", "Ingeneer", "MIT", 10);
-    var hulk = new avenger ("Robert Bruce Banner", "X", "NYC", "Scientist", "Columbia University", 10);
-    list();
-    function list() {
-        console.log (tonyStark.fullName + ' ; ' + hulk.fullName)
-    }
-
+    var arrAvengers = [];
+    arrAvengers.push(new avenger ("Tony Stark", "XI", "NYC", "Ingeneer", "MIT", 10));
+    arrAvengers.push(new avenger ("Robert Bruce Banner", "X", "NYC", "Scientist", "Columbia University", 10));
+    arrAvengers.push(new avenger (   ));
+    arrAvengers.push(new avenger (   ));
+    arrAvengers.push(new avenger (   ));
+    arrAvengers.push(new avenger (   ));
 
     function avenger (fullName, classRoom, city, job, studies,markAv){
         this.fullName = fullName;
