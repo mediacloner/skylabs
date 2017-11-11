@@ -1,43 +1,33 @@
 
-// m) Crea varios objetos con las mismas propiedades, como por ejemplo la ciudad, crea una función 
-// para que solo liste los nombres de los Avengers que sean de la misma ciudad y cuantos hay.
+
+//n) Para acabar, créate a ti mismo y crea una función que recoja todas las markAv y
+// muestre la media.
 
 
 
-
-function listFullName() {
+function avgMarkAv() {
     var arrAvengers = [];
     arrAvengers.push(new avenger ('Ironman','Tony Stark', 'XI', 'NYC', 'Ingeneer', 'MIT', 10));
-    arrAvengers.push(new avenger ('Hulk','Robert Bruc Banner', 'XI', 'NYC', 'Scientist', 'Columbia University'));
-    arrAvengers.push(new avenger('Thor', 'Thor Odinson', 'XI', 'Asgard' , 'Superhero', 'unknown'  ));
-    arrAvengers.push(new avenger('Scarlet Witch','Wanda Maximoff', 'X', 'Mount Wundagore', 'Witch', 'unknown'  ));
+    arrAvengers.push(new avenger ('Hulk','Robert Bruc Banner', 'XI', 'NYC', 'Scientist', 'Columbia University',8));
+    arrAvengers.push(new avenger('Thor', 'Thor Odinson', 'XI', 'Asgard' , 'Superhero', 'unknown', 4  ));
+    arrAvengers.push(new avenger('Scarlet Witch','Wanda Maximoff', 'X', 'Mount Wundagore', 'Witch', 'unknown',9  ));
+    arrAvengers.push(new avenger('Buglex', 'Alex Sanchez', 'V', 'Vilanova', 'Dev', 'Life University', 3));
 
-    console.log('Total avengers of NYC is: ' + findAv('NYC', 'city'))
+    console.log('Average Mark Avengers is: ' + avgMarkAv())
 
-    function findAv(searchDef, keyVar) {
 
-       var avFiltered= [];
+    function avgMarkAv() {
+        var sumMarkAvgrs = 0;
+        var iterationsAvgrs = 0;
 
-       avFiltered = arrAvengers.filter(function (arrAvengers) { 
-           return arrAvengers[keyVar] == searchDef;
-       });
-
-       var countResult = 0;
-       avFiltered.forEach(function (element) {
-
-           console.log(element.nickname);
-           countResult ++;
-           return countResult;
-       });
+        arrAvengers.forEach(function (element) {
+            sumMarkAvgrs = sumMarkAvgrs + element.markAv;
+            iterationsAvgrs ++;
+        }); 
+        
+        return avgMark = sumMarkAvgrs / iterationsAvgrs;
     }
-
-
-
-
-
-
-
-
+    
 
     function avenger (nickname, fullName, classRoom, city, job, studies,markAv){
                     this.nickname = nickname;
@@ -64,6 +54,6 @@ function listFullName() {
 
 
 }
-listFullName();
+avgMarkAv();
 
 
