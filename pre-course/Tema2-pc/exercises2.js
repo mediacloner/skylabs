@@ -1,8 +1,6 @@
 
 
-// ñ) Ahora, crea una funcion que recoja los avengers en parejas (será necesario que tengan un id,
-// por comodidad al aparejarlos), es decir, de dos en dos, compare sus markAv y que muestre 
-// el mayor de ambos.
+// ñ1) Intenta crear las parejas de forma aleatoria.
 
 
 function pairMaxMarkAv() {
@@ -17,17 +15,15 @@ function pairMaxMarkAv() {
     pairMaxArray() 
 
     function pairMaxArray() {
-        for (i = 0; i <= arrAvengers.length; i= i+2){
-            var maxValue = 0;
-            if (arrAvengers[i].markAv > arrAvengers[i+1].markAv ){
-                maxValue = arrAvengers[i].markAv;
-            }
-            else{
-                maxValue = arrAvengers[i+1].markAv;
-            }
-            console.log(arrAvengers[i].nickname + ' - ' + arrAvengers[i=i+1].nickname + 
-                ' the maximum value of AvMark is ' + maxValue);
+        for (i = 0; i <= 10 ; i++){
+        var r1 = getRandom();
+        var r2 = getRandom();
+            console.log(arrAvengers[r1].nickname + ' - ' + arrAvengers[r2].nickname );
            
+        }
+
+        function getRandom() {
+            return Math.floor(Math.random() * 5)
         }
     };
     
