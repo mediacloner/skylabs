@@ -23,20 +23,72 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
 
 <script>
 
-    // This is a example of array of objects... each position of array contains one object...
-    var flights = [
-        { id: 00, to: "New York", from: "Barcelona", cost: 700, scale: false },
-        { id: 01, to: "Los Angeles", from: "Madrid", cost: 1100, scale: true },
-        { id: 02, to: "Paris", from: "Barcelona", cost: 210, scale: false },
-        { id: 03, to: "Roma", from: "Barcelona", cost: 150, scale: false },
-        { id: 04, to: "London", from: "Madrid", cost: 200, scale: false },
-        { id: 05, to: "Madrid", from: "Barcelona", cost: 90, scale: false },
-        { id: 06, to: "Tokyo", from: "Madrid", cost: 1500, scale: true },
-        { id: 07, to: "Shangai", from: "Barcelona", cost: 800, scale: true },
-        { id: 08, to: "Sydney", from: "Barcelona", cost: 150, scale: true },
-        { id: 09, to: "Tel-Aviv", from: "Madrid", cost: 150, scale: false }
-    ]
-    console.log(flights[0].to) //output: New York
+    function coreSkyLabAir() {
+
+
+        // This is a example of array of objects... each position of array contains one object...
+        var flights = [
+            { id: 00, to: "New York", from: "Barcelona", cost: 700, scale: false },
+            { id: 01, to: "Los Angeles", from: "Madrid", cost: 1100, scale: true },
+            { id: 02, to: "Paris", from: "Barcelona", cost: 210, scale: false },
+            { id: 03, to: "Roma", from: "Barcelona", cost: 150, scale: false },
+            { id: 04, to: "London", from: "Madrid", cost: 200, scale: false },
+            { id: 05, to: "Madrid", from: "Barcelona", cost: 90, scale: false },
+            { id: 06, to: "Tokyo", from: "Madrid", cost: 1500, scale: true },
+            { id: 07, to: "Shangai", from: "Barcelona", cost: 800, scale: true },
+            { id: 08, to: "Sydney", from: "Barcelona", cost: 150, scale: true },
+            { id: 09, to: "Tel-Aviv", from: "Madrid", cost: 150, scale: false }
+        ];
+
+        var userName;
+        askUsername();
+        showMeAllFlights();
+        console.log ('The average cost of these flights is: ' + avgCost() )
+
+        function askUsername(){
+            userName = prompt("Please, writte your user name:", "");
+            alert('Wellcome ' + userName + '!')            
+
+        }
+
+        function showMeAllFlights() {
+            var scaleExist = '';
+           
+
+            for (i=0; i<flights.length; i++){
+                 if (flights[i].scale === true) {
+                    scaleExist = 'realiza escala.'
+                }
+                else {
+                    scaleExist = 'no realiza ninguna escala.'
+                }
+                console.log ('El vuelo con origen: '+ flights[i].from +', y destino: '+ flights[i].to +' tiene un coste de ' + flights[i].cost +'€ y ' + scaleExist);
+            }
+            
+        }
+
+        function avgCost() {
+
+           
+            var sumCost = 0;
+            var iterations = 0;
+            flights.forEach(function (element) {
+                 sumCost = sumCost + element.cost;
+                 iterations++;
+             });
+            return average = sumCost / iterations;
+              
+        }
+
+
+
+
+
+
+    }
+
+
+    coreSkyLabAir();
 
 </script>
 
