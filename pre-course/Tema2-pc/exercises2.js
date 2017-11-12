@@ -14,16 +14,25 @@ function pairMaxMarkAv() {
     arrAvengers.push(new avenger('5','Buglex', 'Alex Sanchez', 'V', 'Vilanova', 'Dev', 'Life University', 3));
 
 
-
+    pairMaxArray() 
 
     function pairMaxArray() {
         for (i = 0; i <= arrAvengers.length; i= i+2){
-            console.log(arrAvengers.nickname + ' - ' + arrAvengers.nickname )
+            var maxValue = 0;
+            if (arrAvengers[i].markAv > arrAvengers[i+1].markAv ){
+                maxValue = arrAvengers[i].markAv;
+            }
+            else{
+                maxValue = arrAvengers[i+1].markAv;
+            }
+            console.log(arrAvengers[i].nickname + ' - ' + arrAvengers[i=i+1].nickname + 
+                ' the maximum value of AvMark is ' + maxValue);
+           
         }
     };
     
 
-    function avenger (nickname, fullName, classRoom, city, job, studies,markAv){
+    function avenger (id, nickname, fullName, classRoom, city, job, studies,markAv){
         this.id = id;
         this.nickname = nickname;
         this.fullName = fullName;
@@ -49,6 +58,6 @@ function pairMaxMarkAv() {
 
 
 }
-avgMarkAv();
+pairMaxMarkAv();
 
 
