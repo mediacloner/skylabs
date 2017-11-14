@@ -81,7 +81,32 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
 
         function adminExec() {
 
-            function newFlights() {         
+
+            confirm("You want to acces to admin mode?");
+            var i = prompt("Type any number [Between 0 and 3]. 0) All Flights 1)Add Flights 2)Delete 3)Exit");
+            i = parseInt(i); // this makes it an integer
+            switch (i) {
+
+                default:
+                    i = prompt("Type any number [Between 1 and 3]. 1)Add Flights 2)Delete 3)Exit");
+                    break;
+                case 0:
+                    showMeAllFlights();;
+                    break;
+                case 1:
+                    newFlights();
+                    break;
+                case 2:
+                    deleteFlights(flights);
+                    break;
+
+                case 3:
+                    console.log('Number 1');
+                    break;
+            }
+
+
+            function newFlights(arrayObj) {         
 
                 if (confirm('Do you want create new flights?')) {
                     var countIterations = 0;
@@ -90,7 +115,7 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
                     while (countIterations < 15 && loopIterations === 1) {
                         var newItem;
 
-                        newItem.Id = idEmpty();
+                        newItem.Id = idEmpty(arrayObj);
                         newItem.To = prompt("Please, write destination city:", "");
                         newItem.From = prompt("Please, write the origin of the flight.:", "");
                         newItem.Cost = prompt("Please, write cost of the flight:", "");
@@ -101,7 +126,7 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
                         }
 
                         if (confirm('Are you sure?')) {
-                            flights.push(newItem);
+                            arrayObj.push(newItem);
                             countIterations ++;
                             prompt('Done!');
 
@@ -125,16 +150,49 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
                         alert('The maximum number of insertions in flights has been exceeded.')
                     }
                     
-                    function idEmpty() {
+                    function idEmpty(myArray) {
+                        var slotFree = 'empty';
+                        for (var i = myArray.length; i >= 0; i--) {
+                            if (myArray[i].id == i) {
+                               // Don't do nothing
+                            }
+                            else{
+                            slotFree = i;
+                            }
+                        }
+                        
+                        if (slotFree === 'empty'){
+                            slotFree = myArray.length;
+                        }
 
-                        // pendiente de realizar
-
+                        return slotFree;
+              
                     }
 
                 }
             }
+        
+        }
 
+        function deleteFlights(arrayObj) { 
+
+           var idInput = prompt("Write the ID Number to delete flight");
+
+           if (idInput == arrayObj[idInput].id) {
+
+                array.splice(idInput, 1); 
+                alert('Delete item!'); 
+            
+           }
+
+            else {
+
+                alert('Delete item!');
            
+            }
+        
+        
+        
         }
 
         function userExec() {
