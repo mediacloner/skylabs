@@ -41,17 +41,107 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
         ];
 
         var userName;
+        var rolAdmin = 0;
         askUsername();
         showMeAllFlights();
         console.log ('The average cost of these flights is: ' + avgCost() );
         console.log('Remember, there are ' + countScale() + ' flights with scale');
         showMeLastFlights();
+        askRol();
+        switchRol(rolAdmin);
+        
+
 
         function askUsername(){
             userName = prompt("Please, writte your user name:", "");
-            alert('Wellcome ' + userName + '!') ;           
+            alert('Wellcome ' + userName + '!')            
 
         }
+
+         function askRol() {
+            if (confirm('Are you administrator of this website?')) {
+                 rolAdmin = 1;
+             } else {
+                 rolAdmin = 0;
+             }
+
+        }
+
+        function switchRol (rol){
+            if (rol === 1){
+                adminExec();
+            }
+            else{
+
+                userExec();
+            }
+        
+        
+        }
+
+        function adminExec() {
+
+            function newFlights() {         
+
+                if (confirm('Do you want create new flights?')) {
+                    var countIterations = 0;
+                    var loopIterations = 1;
+
+                    while (countIterations < 15 && loopIterations === 1) {
+                        var newItem;
+
+                        newItem.Id = idEmpty();
+                        newItem.To = prompt("Please, write destination city:", "");
+                        newItem.From = prompt("Please, write the origin of the flight.:", "");
+                        newItem.Cost = prompt("Please, write cost of the flight:", "");
+                        if (confirm('Is there any scale on the flight?')) {
+                            newItem.Scale = true;
+                        } else {
+                            newItem.Scale = false;
+                        }
+
+                        if (confirm('Are you sure?')) {
+                            flights.push(newItem);
+                            countIterations ++;
+                            prompt('Done!');
+
+                        } 
+
+                        else {
+                            prompt('Undo!');
+                        }
+
+                        if (confirm('Do you want insert another one?')) {
+                            loopIterations = 1;
+                        }
+
+                        else {
+                            loopIterations = 0;
+                        }
+                    
+                    }
+
+                    if (countIterations => 15){
+                        alert('The maximum number of insertions in flights has been exceeded.')
+                    }
+                    
+                    function idEmpty() {
+
+                        // pendiente de realizar
+
+                    }
+
+                }
+            }
+
+           
+        }
+
+        function userExec() {
+            
+        }
+            
+        
 
         function showMeAllFlights() {
             var scaleExist = '';
