@@ -87,11 +87,11 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
             i = parseInt(i); // this makes it an integer
             switch (i) {
 
-                default:
+                case 99:
                     i = prompt("Type any number [Between 1 and 3]. 1)Add Flights 2)Delete 3)Exit");
                     break;
                 case 0:
-                    showMeAllFlights();;
+                    showMeAllFlights();
                     break;
                 case 1:
                     newFlights();
