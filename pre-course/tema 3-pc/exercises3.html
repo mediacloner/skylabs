@@ -12,6 +12,115 @@
 
 <script>
 
+    //a) Primero, creamos una función que nos cree un saludo, pasa tu nombre como parámetro y devuélvelo por la consola.
+    function hi() {
+        
+    
+    
+    hello('Alex');
+
+    function hello(myName) {
+        console.log('hello ' + myName + '!')//output: 'hello myName'
+    }
+    } 
+
+    hi();
+
+    //b) Intenta retornar los valores en lugar de usar console.log
+    function hiConsole() {
+        console.log(hello('Alex'));
+
+        function hello(myName) {
+            return ('hello ' + myName + '!')
+        }
+
+    }
+        hiConsole();
+
+    //c) Ahora, añade tu edad y concaténala al return
+function age() {
+    
+
+    console.log(hello('Alex', 41));
+
+    function hello(myName, myAge) {
+        return ('hello ' + myName + '! ' + 'You are ' + myAge + '.')
+    }
+    }
+    age();
+    //d) Iguala tu función a una variable y ejecútala
+function varAgeName() {
+    
+
+    var myfuntion = hello('Alex', 41);
+
+    console.log(myfuntion);
+
+    function hello(myName, myAge) {
+        return ('hello ' + myName + '! ' + 'You are ' + myAge + '.')
+    }
+}
+    varAgeName();
+
+
+    //e) Ahora declara otra funcion que devuelva tu edad y asigna su resultado a otra variable,
+    //intenta imprimir sus dos resultados concatenados Now, try to declare other function 
+    //and assign it result to other variable called myAge, and try to print the result of 
+    //both functions in one line.
+
+    function bothAgeName() {
+        
+    
+
+    var myfuntion = myName() + ' ' + myAge();
+
+    console.log(myfuntion);
+
+    function myName() {
+        return 'Alex';
+    }
+
+    function myAge() {
+        return 41;
+    }
+
+}
+
+bothAgeName();
+
+    //e1) Intenta sumarle al resultado de tu segunda funcion, 
+        //un numero random del 0-10 y conviertelo todo a un solo string.
+
+        function randomAge() {
+            
+        
+
+        var myfuntion = myName() + ' ' + (myAge() + myRandomNumber()).toString()
+
+        console.log(myfuntion);
+
+        function myName() {
+            return 'Alex';
+        }
+
+        function myAge() {
+            return 41;
+        }
+
+        function myRandomNumber() {
+
+            return Math.floor((Math.random() * 10) + 1);
+        }
+    }
+
+    randomAge();
+
+
+
+
+
+
+  
 </script>
 
 </body>
