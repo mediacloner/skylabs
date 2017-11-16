@@ -1,27 +1,26 @@
 
 
-//g) Intenta englobar todas las funciones en una sola funcion padre, el return de dicha función 
-// padre deberá ser la llamada a las funciones hijas
-
-function fatherFun (){
+//h) Haz otra función hija que solo devuelva un número random, ese número random será 
+//el argumento que se pasará como parámetro a la función age()
+function randomAge (){
 
     console.log(ageYear());
 
 
     function ageYear (){
         var name = 'Alex';
-        var age = 41;
+ 
         function myName(pname) {
             return pname;
         }
 
-        function myAge(page) {
-            return page;
+        function myAge() {
+            return Math.floor((Math.random() * 1000) + 1);
         }
 
 
 
-        return  myName(name) + ' ' + (myAge(age));
+        return  myName(name) + ' ' + (myAge());
     } 
 
 
@@ -33,4 +32,4 @@ function fatherFun (){
   
 }
 
-fatherFun();
+randomAge();
