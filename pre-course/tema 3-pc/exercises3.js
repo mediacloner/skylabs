@@ -1,27 +1,36 @@
 
 
-//f) Ahora, todas las variables deberían ser pasadas como parámetro a las funciones.
+//g) Intenta englobar todas las funciones en una sola funcion padre, el return de dicha función 
+// padre deberá ser la llamada a las funciones hijas
 
-function varPar (){
-    var name = 'Alex';
-    var age = 41;
+function fatherFun (){
 
-    var myfuntion = myName(name)+' ' + (myAge(age));
-    console.log (myfuntion);
+    console.log(ageYear());
 
 
-    function myName(pname) {
-        return pname;
-    }
+    function ageYear (){
+        var name = 'Alex';
+        var age = 41;
+        function myName(pname) {
+            return pname;
+        }
 
-    function myAge(page) {
-        return page;
-    }
+        function myAge(page) {
+            return page;
+        }
 
-    function myRandomNumber() {
 
-        return Math.floor((Math.random() * 10) + 1);
-    }
+
+        return  myName(name) + ' ' + (myAge(age));
+    } 
+
+
+  
+
+
+
+
+  
 }
 
-varPar();
+fatherFun();
