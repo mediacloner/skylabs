@@ -1,23 +1,27 @@
 
 
-//e1) Intenta sumarle al resultado de tu segunda funcion, 
-//un numero random del 0-10 y conviertelo todo a un solo string.
+//f) Ahora, todas las variables deberían ser pasadas como parámetro a las funciones.
 
-var myfuntion = myName()+' ' + (myAge() + myRandomNumber()).toString()
+function varPar (){
+    var name = 'Alex';
+    var age = 41;
 
-console.log (myfuntion);
+    var myfuntion = myName(name)+' ' + (myAge(age));
+    console.log (myfuntion);
 
-function myName() {
-    return 'Alex';
+
+    function myName(pname) {
+        return pname;
+    }
+
+    function myAge(page) {
+        return page;
+    }
+
+    function myRandomNumber() {
+
+        return Math.floor((Math.random() * 10) + 1);
+    }
 }
 
-function myAge() {
-    return 41;
-}
-
-function myRandomNumber() {
-
-    return Math.floor((Math.random() * 10) + 1);
-}
-
-//output: IronMan 45
+varPar();
