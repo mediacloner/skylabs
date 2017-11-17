@@ -1,13 +1,16 @@
 
 
-//k) Ahora, modifica el return de la función padre para que devuelva sus datos en un mensaje amigable
+//Modifica la primera función y la función padre para, si el parámetro introducido no es tu nombre, 
+//no siga con la segunda llamada
 function newMessageName (){
 
     console.log(ageYear());
 
 
     function ageYear (){
-        var name = 'Alex';
+        var name 
+        //= 'Alex';
+         = 'Pepe';
  
         function myName(pname) {
             return  pname + ' aka Alx';
@@ -28,16 +31,14 @@ function newMessageName (){
              
         }
 
-
-
-        return 'The first function returns: \''+ myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';
+        if (name == 'Alex'){
+            return 'The first function returns: \'' + myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';  
+        }
+        else {
+            return 'The first function returns: \'' + myName(name) 
+        }
+               
     } 
-
-
-  
-
-
-
 
   
 }
