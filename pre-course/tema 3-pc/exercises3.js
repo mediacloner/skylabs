@@ -1,7 +1,6 @@
 
 
-//h) Haz otra función hija que solo devuelva un número random, ese número random será 
-//el argumento que se pasará como parámetro a la función age()
+//i) Ahora, limita el random de 0 a 50, Muestra un mensaje si el output age es < 20 y otro si es de 21 - 50
 function randomAge (){
 
     console.log(ageYear());
@@ -15,7 +14,17 @@ function randomAge (){
         }
 
         function myAge() {
-            return Math.floor((Math.random() * 1000) + 1);
+            var age = Math.floor((Math.random() * 50) + 1);
+
+            if (age < 20){
+                return 'You are young'
+            }
+
+            else {
+
+                return 'You are too old'
+            }
+             
         }
 
 
@@ -32,4 +41,4 @@ function randomAge (){
   
 }
 
-randomAge();
+messageAge();
