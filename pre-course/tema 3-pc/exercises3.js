@@ -1,7 +1,7 @@
 
 
-//j) Al return de la función name(), concaténale otro mensaje
-function messageName (){
+//k) Ahora, modifica el return de la función padre para que devuelva sus datos en un mensaje amigable
+function newMessageName (){
 
     console.log(ageYear());
 
@@ -10,7 +10,7 @@ function messageName (){
         var name = 'Alex';
  
         function myName(pname) {
-            return  pname + ' aka Alx, ';
+            return  pname + ' aka Alx';
 
         }
 
@@ -30,7 +30,7 @@ function messageName (){
 
 
 
-        return  myName(name) + ' ' + (myAge());
+        return 'The first function returns: \''+ myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';
     } 
 
 
@@ -42,4 +42,4 @@ function messageName (){
   
 }
 
-messageName();
+newMessageName();
