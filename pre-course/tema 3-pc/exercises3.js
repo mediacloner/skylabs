@@ -1,7 +1,7 @@
 
 
-//i) Ahora, limita el random de 0 a 50, Muestra un mensaje si el output age es < 20 y otro si es de 21 - 50
-function randomAge (){
+//j) Al return de la función name(), concaténale otro mensaje
+function messageName (){
 
     console.log(ageYear());
 
@@ -10,7 +10,8 @@ function randomAge (){
         var name = 'Alex';
  
         function myName(pname) {
-            return pname;
+            return  pname + ' aka Alx, ';
+
         }
 
         function myAge() {
@@ -41,4 +42,4 @@ function randomAge (){
   
 }
 
-messageAge();
+messageName();
