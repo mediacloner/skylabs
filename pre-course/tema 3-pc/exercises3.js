@@ -4,14 +4,14 @@
 function newFun() {
 
     var result = [];
-    result[starWars] = 1;
+
     ini();
 
     function ini() {
 
         console.log(ageYear());
-        
-        console.log(result[myAge]);
+        result['starWars'] = 'hello from the dark side...';
+        console.log(result);
     }
 
 
@@ -19,22 +19,22 @@ function newFun() {
         myName('Alex');
         myAge();
 
-        return 'The first function returns: \'' + result[myName] + '\' The second function returns: \'' + result[myAge] + '\'';
+        return 'The first function returns: \'' + result['myName'] + '\' The second function returns: \'' + result['myAge'] + '\'';
     }
     function myName(pname) {
-        result[myName] = pname + ' aka Alx';
+        result['myName'] = pname + ' aka Alx';
     }
 
     function myAge() {
         var age = random();
         console.log(age)
         if (age < 20) {
-            result[myAge] = 'You are young'
+            result['myAge'] = 'You are young'
         }
 
         else {
 
-            result[myAge] = 'You are too old'
+            result['myAge'] = 'You are too old'
         }
 
     }
