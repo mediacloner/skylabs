@@ -1,28 +1,30 @@
 
-//n) Refactorizemos nuestro código dejando todas las funciones 
-//separadas del padre, éste último se encargará de llamarlas todas y mostrar sus resultados.
+//ñ) Intenta hacer push de todos los resultados de las funciones a 
+//una array declarada en el padre, muestra los resultados de esta array como siempre.
 function refactor (){
-
+    var result = [];
     console.log(ageYear());
-    function ageYear() {
-        var name = 'Alex';
 
-        return 'The first function returns: \'' + myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';
+    function ageYear() {
+        myName('Alex');
+        myAge();
+
+        return 'The first function returns: \'' + result[myName] + '\' The second function returns: \'' + result[myAge] + '\'';
     }
     function myName(pname) {
-        return pname + ' aka Alx';
+        result[myName] = pname + ' aka Alx';
     }
 
     function myAge() {
         var age = random();
         console.log(age)
         if (age < 20) {
-            return 'You are young'
+            result[myAge] = 'You are young'
         }
 
         else {
 
-            return 'You are too old'
+            result[myAge] = 'You are too old'
         }
 
     }
