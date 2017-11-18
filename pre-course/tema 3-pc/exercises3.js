@@ -1,16 +1,15 @@
 
 
-//Modifica la primera función y la función padre para, si el parámetro introducido no es tu nombre, 
-//no siga con la segunda llamada
-function newMessageName (){
+//m) Vamos a complicarlo un poco... 
+//El número random debería generarse en otra función separada del padre. Retorna a la funcion padre y concaténalo en el return padre.
+function mainRandom (){
 
     console.log(ageYear());
 
 
     function ageYear (){
-        var name 
-        //= 'Alex';
-         = 'Pepe';
+        var name = 'Alex';
+     
  
         function myName(pname) {
             return  pname + ' aka Alx';
@@ -18,8 +17,8 @@ function newMessageName (){
         }
 
         function myAge() {
-            var age = Math.floor((Math.random() * 50) + 1);
-
+            var age = random();
+            console.log(age)
             if (age < 20){
                 return 'You are young'
             }
@@ -31,16 +30,17 @@ function newMessageName (){
              
         }
 
-        if (name == 'Alex'){
+ 
             return 'The first function returns: \'' + myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';  
-        }
-        else {
-            return 'The first function returns: \'' + myName(name) 
-        }
+       
+        
                
     } 
 
+    function random() {
+        return  Math.floor((Math.random() * 50) + 1);
+    }
   
 }
 
-newMessageName();
+mainRandom();
