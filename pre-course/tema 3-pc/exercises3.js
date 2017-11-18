@@ -1,9 +1,19 @@
 
-//ñ) Intenta hacer push de todos los resultados de las funciones a 
-//una array declarada en el padre, muestra los resultados de esta array como siempre.
-function refactor (){
+//o) Crea una funcion que llame a nuestra funcion father(), ésta, a parte de llamarla, deberá hacer otro push "hello from the dark side..." 
+//a la array que crea father(). Muestra toda la array completa.
+function newFun() {
+
     var result = [];
-    console.log(ageYear());
+    result[starWars] = 1;
+    ini();
+
+    function ini() {
+
+        console.log(ageYear());
+        
+        console.log(result[myAge]);
+    }
+
 
     function ageYear() {
         myName('Alex');
@@ -36,4 +46,4 @@ function refactor (){
   
 }
 
-refactor();
+newFun();
