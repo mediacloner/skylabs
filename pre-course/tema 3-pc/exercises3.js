@@ -1,49 +1,30 @@
 
-//o) Crea una funcion que llame a nuestra funcion father(), ésta, a parte de llamarla, deberá hacer otro push "hello from the dark side..." 
-//a la array que crea father(). Muestra toda la array completa.
-function newFun() {
+//p) 🔞 👊🏼 Llama a ésta nueva función dos veces, muestra sus resultados por pantalla y compara sus randomNums, mostrando un mensaje 
+//indicando cual es mayor. El nombre pasado por parámetro también deberá ser random entre una array de nombres, con lo cual, también deberás
+// refactorizar las funciones hijas.
+function twoTimes() {
 
-    var result = [];
+    gandFather();
+    gandFather();
 
-    ini();
-
-    function ini() {
-
-        console.log(ageYear());
-        result['starWars'] = 'hello from the dark side...';
-        console.log(result);
-    }
-
-
-    function ageYear() {
-        myName('Alex');
-        myAge();
-
-        return 'The first function returns: \'' + result['myName'] + '\' The second function returns: \'' + result['myAge'] + '\'';
-    }
-    function myName(pname) {
-        result['myName'] = pname + ' aka Alx';
-    }
-
-    function myAge() {
-        var age = random();
-        console.log(age)
-        if (age < 20) {
-            result['myAge'] = 'You are young'
+    function gandFather() {
+        var names = ['hulk', 'ironMan', 'Thor', 'Scarlet Witch']
+        var selectedName = { name: names[random(4)], number: random(50)};
+        var selectedName2 = { name: names[random(4)], number: random(50)};
+        if (selectedName.number > selectedName2.number){
+            console.log (selectedName.name + ' es mayor que ' + selectedName2.name + ' porque tiene una valor de ' + selectedName.number + ' respecto a  ' + selectedName2.number + '.' );
         }
 
-        else {
-
-            result['myAge'] = 'You are too old'
+        else{
+            console.log(selectedName2.name + ' es mayor que ' + selectedName.name + ' porque tiene una valor de ' + selectedName2.number + ' respecto a ' + selectedName.number + '.');
         }
-
+            
+        
     }
-    function random() {
-        return Math.floor((Math.random() * 50) + 1);
+ 
+    function random(maxNum) {
+        return Math.floor(Math.random() * maxNum);
     }
-
-
-  
 }
 
-newFun();
+twoTimes();
