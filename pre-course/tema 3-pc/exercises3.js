@@ -1,30 +1,25 @@
+//    BINGO GAME! 🎲🎰 Realiza un programa que simule un Bingo.
+//    Cuando se ejecute, pedirá el nombre del jugador y deberá guardarse.
+//    Durante el primer turno se mostrará un cartón con 15 números (excluyendo el 0 siempre), para pasar al siguiente turno el
+//    usuario deberá confirmar mediante confirm() visualizándose otro número, si coincide con alguno de los existentes en el cartón,
+//    cambiará por una "X" o un 0.
+//    El cartón se mostrará, al final de cada turno, con los cambios efectuados, indicándole al usuario
+//    qué número se ha encontrado.
+//    El programa deberá preguntar al usuario al inicio de cada turno si desea continuar, en caso
+//    de que se continúe, seguirá el mismo patrón que hasta el momento. Por supuesto, cuando todos los números de una misma linea
+//    estén en "X", mostrará un mensaje "LINEA!", pero la ejecución seguirá, el juego solo acabará cuando todos los números estén
+//    a "X".
+//    Cuando el juego concluya, deberá decirle al usuario en cuantos turnos se ha completado el cartón. Por último, deberá
+//    preguntar si desea volver a jugar.
+//
 
-//p) 🔞 👊🏼 Llama a ésta nueva función dos veces, muestra sus resultados por pantalla y compara sus randomNums, mostrando un mensaje 
-//indicando cual es mayor. El nombre pasado por parámetro también deberá ser random entre una array de nombres, con lo cual, también deberás
-// refactorizar las funciones hijas.
-function twoTimes() {
 
-    gandFather();
-    gandFather();
+function bingoGame() {
 
-    function gandFather() {
-        var names = ['hulk', 'ironMan', 'Thor', 'Scarlet Witch']
-        var selectedName = { name: names[random(4)], number: random(50)};
-        var selectedName2 = { name: names[random(4)], number: random(50)};
-        if (selectedName.number > selectedName2.number){
-            console.log (selectedName.name + ' es mayor que ' + selectedName2.name + ' porque tiene una valor de ' + selectedName.number + ' respecto a  ' + selectedName2.number + '.' );
-        }
 
-        else{
-            console.log(selectedName2.name + ' es mayor que ' + selectedName.name + ' porque tiene una valor de ' + selectedName2.number + ' respecto a ' + selectedName.number + '.');
-        }
-            
-        
-    }
- 
-    function random(maxNum) {
-        return Math.floor(Math.random() * maxNum);
-    }
+
 }
 
-twoTimes();
+
+BingoGame();
+
