@@ -20,7 +20,7 @@ function bingoGame() {
     var player1 = 'Default Player';
     var carton = {
         numeros: {
-            linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]    
+            linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
         },
         casillaOK: {
             linea0: [5],
@@ -35,12 +35,12 @@ function bingoGame() {
 
     askPlayer();
     cartonGenerator();
- 
+
 
 
     function askPlayer() {
         player1 = prompt("Please, writte your user name:", "");
-        alert('Wellcome ' + player1 + '!');   
+        alert('Wellcome ' + player1 + '!');
     }
 
     function random() {
@@ -51,16 +51,30 @@ function bingoGame() {
 
         for (var i = 0; i < 3; i++) {
             for (var j = 0; j < 5; j++) {
-                carton.numeros.linea[i][j] = random();
+
+                numRandom = random();
+                carton.numeros.linea[i][j] = numRandom;
+                tableCreator(numRandom, i);
+
             }
         }
+    }
+    function tableCreator(cell, num) {
+        var x = document.createElement("TABLE");
+        x.setAttribute("id", "myTable");
+        document.body.appendChild(x);
+
+        var y = document.createElement("TR");
+        y.setAttribute("id", num);
+        document.getElementById("myTable").appendChild(y);
+
+        var z = document.createElement("TD");
+        var t = document.createTextNode(cell);
+        z.appendChild(t);
+        document.getElementById(num).appendChild(z);
     }
 
 }
 
 
-
-
-
 bingoGame();
-
