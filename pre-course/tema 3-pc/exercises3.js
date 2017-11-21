@@ -23,9 +23,7 @@ function bingoGame() {
             linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
         },
         casillaOK: {
-            linea0: [5],
-            linea1: [5],
-            linea2: [5]
+            linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
         },
         lineaOk: 0,
         chkLineaOk: 0,
@@ -35,6 +33,10 @@ function bingoGame() {
 
     askPlayer();
     cartonGenerator();
+    findNum(15);
+
+
+
 
 
 
@@ -47,18 +49,52 @@ function bingoGame() {
         return Math.floor((Math.random() * 75) + 1);
     }
 
+    function findNum(num) {
+
+
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 5; j++) {
+
+                if (carton.numeros.linea[i][j] == num) {
+                    arr = [i, j]
+                    console.log('position: ' + arr)
+                    return arr
+
+
+                }
+
+
+            }
+        }
+        arr = [9, 9] // false
+        console.log('position: ' + arr)
+        return arr
+
+
+    }
+
+
+
     function cartonGenerator() {
 
         for (var i = 0; i < 3; i++) {
             for (var j = 0; j < 5; j++) {
 
                 numRandom = random();
-                carton.numeros.linea[i][j] = numRandom;
-                tableCreator(numRandom, i);
+                padNumRandom = pad(numRandom, 2)
+                carton.numeros.linea[i][j] = padNumRandom; //array
+                tableCreator(padNumRandom, i);             //UI
 
             }
         }
     }
+    // Lead  00 (8 = 08)
+    function pad(n, width, z) {
+        z = z || '0';
+        n = n + '';
+        return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+    }
+
     function tableCreator(cell, num) {
         var x = document.createElement("TABLE");
         x.setAttribute("id", "myTable");
