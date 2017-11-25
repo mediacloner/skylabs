@@ -19,7 +19,7 @@ function bingoGame() {
 
     var player1 = 'Default Player';
     var carton = {
-        numeros: {
+    numeros: {
             linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
         },
         casillaOK: {
