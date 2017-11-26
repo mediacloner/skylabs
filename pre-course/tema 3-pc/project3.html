@@ -49,27 +49,28 @@ left; padding: 8px; }
 
     function bingoGame() {
 
+        var limitBalls = 19;
+
         var player1 = 'Default Player';
         var ball = 99;
-        var bagBalls = [];
+        var bagBalls = [];  //arrays don't repeat number
+        var cartonBalls = [];
         var carton = {
             numeros: {
                 linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
             },
-        //    casillaOK: {
-        //        linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
-        //    },
+            casillaOK: {
+                linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+            },
             lineaOk: 0,
-            chkLineaOk: 0,
-            bingo: 0,
         }
 
 
-        askPlayer('wellcome');
+        UIPlayer('wellcome');
+        ballsGenerator(); 
         cartonGenerator();
         cartonGeneratorUI();
-        bagBallsGenerator (); 
-        askPlayer('start');
+        UIPlayer('start');
         playGame();
 
         function playGame () {
@@ -81,21 +82,41 @@ left; padding: 8px; }
             var maxBalls = bagBalls.length;
             var posArray =  Math.floor(Math.random() * maxBalls) ;
             ball = bagBalls[posArray];
-            askPlayer('turn');
+            UIPlayer('turn');
             bagBalls.splice(posArray,1);
             var posArrayCarton = findNum(ball);
-            if (posArrayCarton == true) {
-                carton.numeros.linea[posArrayCarton] = 'XX';
+            if (posArrayCarton != 'NULL') {    // Numero OK
+                x = posArrayCarton.substr(0, 1);
+                y = posArrayCarton.substr(1, 1);
+                carton.numeros.linea[x][y] = 'XX';
+                carton.casillaOK.linea[x][y] = 1;
                 tableDestructor();
                 cartonGeneratorUI();
             }
 
             else{
-                askPlayer('noMatch');
+                UIPlayer('noMatch');
             }
 
+            if (carton.lineaOk == 0 )
+            {
+                if (findLine() == true){
+                    UIPlayer('line');
+                    carton.lineaOk = 1;
+                }
+            }
             
-            askAnotherOne = askPlayer('anotherOne');
+            if (carton.lineaOk == 1) {
+                if (findBingo() == true) {
+                    UIPlayer('bingo');
+                    askAnotherOne = false;
+                }
+            }
+            
+            if (askAnotherOne== true){ //Jump Bingo Situation
+                askAnotherOne = UIPlayer('anotherOne');
+            }
+            
 
             }
 
@@ -106,16 +127,17 @@ left; padding: 8px; }
         }
 
 
-        function bagBallsGenerator(){
-          for (var i = 1; i <=75; i++){
+        function ballsGenerator(){
+          for (var i = 1; i <=limitBalls; i++){
               bagBalls.push(i);
+              cartonBalls.push(i);
           }
         
         
         }; 
 
 
-        function askPlayer(what) {
+        function UIPlayer(what) {
             if (what == 'wellcome') {
                 player1 = prompt("Please, writte your user name:", "");
                 alert('Wellcome ' + player1 + '!');
@@ -130,7 +152,14 @@ left; padding: 8px; }
 
             }
               if (what == 'anotherOne') {
-                return prompt("Do you want another one?");
+
+                var r = confirm("Do you want another one?");
+                  if (r == true) {
+                    return true
+                  } else {
+                    return false
+                  }
+                return 
 
             }
 
@@ -139,13 +168,18 @@ left; padding: 8px; }
 
             }
 
+             if (what == 'line') {
+                alert('Line!!!');
+
+            }
+            if (what == 'bingo') {
+                alert('Bingo!  You Win!!!');
+
+            }
+
         }   
 
-        function random() {
-            var numRandom = Math.floor((Math.random() * 75) + 1);
-            padNumRandom = pad(numRandom,  2);
-            return padNumRandom;
-        }
+
 
         function findNum(num) {
 
@@ -154,17 +188,62 @@ left; padding: 8px; }
                 for (var j = 0; j < 5; j++) {
 
                     if (carton.numeros.linea[i][j] == num) {
-                        arr = [i, j]
-                        console.log('position: ' + arr);
-                        return arr
+                        str = i +''+ j
+                        console.log('position: ' + str);
+                        return str
                     }
 
 
                 }
             }
-            arr = false // false
+            arr = 'NULL' // false
             console.log('position: ' + arr);
             return arr
+
+
+        }
+
+        function findLine() {
+
+
+            for (var i = 0; i < 3; i++) {
+                counter = 0;
+                for (var j = 0; j < 5; j++) {
+
+                    if (carton.casillaOK.linea[i][j] == 1) {
+                        counter++;
+                    }
+
+                    if (counter == 5){
+                        return true;
+                    }
+
+
+                }
+            }
+            return false // false
+
+
+
+        }
+
+        function findBingo() {
+
+            counter = 0;
+            for (var i = 0; i < 3; i++) {
+                for (var j = 0; j < 5; j++) {
+                    
+                    if (carton.casillaOK.linea[i][j] == 1) {
+                        counter++;
+                    }
+
+                }
+            }
+            if ( counter == 15){
+                return true
+            }
+            return false // false
+           
 
 
         }
@@ -176,8 +255,11 @@ left; padding: 8px; }
             for (var i = 0; i < 3; i++) {
                 for (var j = 0; j < 5; j++) {
 
-                    var numRandom = random();
-                    carton.numeros.linea[i][j] = numRandom; //array
+                    var maxBalls = cartonBalls.length;
+                    var posArray = Math.floor(Math.random() * maxBalls);
+                    ball = cartonBalls[posArray];
+                    carton.numeros.linea[i][j] = ball;
+                    cartonBalls.splice(posArray, 1);
                 }
             }
         }
@@ -188,7 +270,8 @@ left; padding: 8px; }
             for (var i = 0; i < 3; i++) {
                 for (var j = 0; j < 5; j++) {
                     var numCart = carton.numeros.linea[i][j];
-                    tableCreator(numCart, i);             //UI
+                    padNumCart = pad(numCart, 2);
+                    tableCreator(padNumCart, i);             //UI
 
                 }
             }
@@ -217,9 +300,9 @@ left; padding: 8px; }
         }
 
         function tableDestructor(){
-            var new_tbody = document.createElement('tbody');
-            populate_with_new_rows(new_tbody);
-            old_tbody.parentNode.replaceChild(new_tbody, old_tbody);
+            var tables = document.getElementsByTagName("TABLE");
+            for (var i = tables.length - 1; i >= 0; i -= 1)
+                if (tables[i]) tables[i].parentNode.removeChild(tables[i]);
 
         }
     }
