@@ -11,9 +11,6 @@
 <p>Exercises 4</p>
 
 <script>
-    // a) Escribe una funcion en la que, declarando una array con los numeros del 1 al 9, muestres por pantalla 
-    // los numeros unidos por parejas(1 - 2, 2 - 3, 3 - 4...), además, cada elemento de la pareja deberá estar multiplicada por 2.
-
     function showNums() {
         var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
         var countIter = 0;
@@ -22,8 +19,8 @@
             var doubles = nums.map(function (x) {
                 return x * 2;
             });
-            arrSelector.push(doubles[i]);
-            arrSelector.push(doubles[i + 1]);
+            arrSelector = doubles[i].push();
+            arrSelector = doubles[i+1].push();
             countIter++
 
 
@@ -33,10 +30,6 @@
     }
 
     showNums();
-
-
-
-
   
 </script>
 
