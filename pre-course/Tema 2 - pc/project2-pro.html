@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p> HTML page for work with Javascript</p>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Skylab Airlines! (Los datos de los vuelos están al final del enunciado, podéis usarlos en vuestro código) Programa una
+inferfaz de usuario para una aerolinea (por terminal...). Esta aerolinea dispondrá de 10 vuelos para el dia de hoy, para
+empezar, estos vuelos estarán declarados de manera global, cuando se llame a la función: Se preguntará por el nombre de usuario
+y dará la bienvenida. El usuario visualizará todos los vuelos disponibles de una forma amigable: El vuelo con origen: Barcelona,
+y destino: Madrid tiene un coste de XXXX€ y no realiza ninguna escala. A continuación, el usuario verá el coste medio de
+los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo que los ultimos 5 vuelos (los últimos 5 ID's) son los
+ últimos del día, muestra al usuario sus destinos.</p>
+
+
+
+
+
+
+<script>
+
+    function coreSkyLabAir() {
+
+
+        // This is a example of array of objects... each position of array contains one object...
+        var flights = [
+            { id: 00, to: "New York", from: "Barcelona", cost: 700, scale: false },
+            { id: 01, to: "Los Angeles", from: "Madrid", cost: 1100, scale: true },
+            { id: 02, to: "Paris", from: "Barcelona", cost: 210, scale: false },
+            { id: 03, to: "Roma", from: "Barcelona", cost: 150, scale: false },
+            { id: 04, to: "London", from: "Madrid", cost: 200, scale: false },
+            { id: 05, to: "Madrid", from: "Barcelona", cost: 90, scale: false },
+            { id: 06, to: "Tokyo", from: "Madrid", cost: 1500, scale: true },
+            { id: 07, to: "Shangai", from: "Barcelona", cost: 800, scale: true },
+            { id: 08, to: "Sydney", from: "Barcelona", cost: 150, scale: true },
+            { id: 09, to: "Tel-Aviv", from: "Madrid", cost: 150, scale: false }
+        ];
+
+        var userName;
+        var rolAdmin = 0;
+        askUsername();
+        showMeAllFlights();
+        console.log ('The average cost of these flights is: ' + avgCost() );
+        console.log('Remember, there are ' + countScale() + ' flights with scale');
+        showMeLastFlights();
+        askRol();
+        switchRol(rolAdmin);
+        
+
+
+        function askUsername(){
+            userName = prompt("Please, writte your user name:", "");
+            alert('Wellcome ' + userName + '!')            
+
+        }
+
+         function askRol() {
+            if (confirm('Are you administrator of this website?')) {
+                 rolAdmin = 1;
+             } else {
+                 rolAdmin = 0;
+             }
+
+        }
+
+        function switchRol (rol){
+            if (rol === 1){
+                adminExec();
+            }
+            else{
+
+                userExec();
+            }
+        
+        
+        }
+
+        function adminExec() {
+
+
+            confirm("You want to acces to admin mode?");
+            var i = prompt("Type any number [Between 0 and 3]. 0) All Flights 1)Add Flights 2)Delete 3)Exit");
+            i = parseInt(i); // this makes it an integer
+            switch (i) {
+
+                case 99:
+                    i = prompt("Type any number [Between 1 and 3]. 1)Add Flights 2)Delete 3)Exit");
+                    break;
+                case 0:
+                    showMeAllFlights();
+                    break;
+                case 1:
+                    newFlights();
+                    break;
+                case 2:
+                    deleteFlights(flights);
+                    break;
+
+                case 3:
+                    console.log('Number 1');
+                    break;
+            }
+
+
+            function newFlights(arrayObj) {         
+
+                if (confirm('Do you want create new flights?')) {
+                    var countIterations = 0;
+                    var loopIterations = 1;
+
+                    while (countIterations < 15 && loopIterations === 1) {
+                        var newItem;
+
+                        newItem.Id = idEmpty(arrayObj);
+                        newItem.To = prompt("Please, write destination city:", "");
+                        newItem.From = prompt("Please, write the origin of the flight.:", "");
+                        newItem.Cost = prompt("Please, write cost of the flight:", "");
+                        if (confirm('Is there any scale on the flight?')) {
+                            newItem.Scale = true;
+                        } else {
+                            newItem.Scale = false;
+                        }
+
+                        if (confirm('Are you sure?')) {
+                            arrayObj.push(newItem);
+                            countIterations ++;
+                            prompt('Done!');
+
+                        } 
+
+                        else {
+                            prompt('Undo!');
+                        }
+
+                        if (confirm('Do you want insert another one?')) {
+                            loopIterations = 1;
+                        }
+
+                        else {
+                            loopIterations = 0;
+                        }
+                    
+                    }
+
+                    if (countIterations => 15){
+                        alert('The maximum number of insertions in flights has been exceeded.')
+                    }
+                    
+                    function idEmpty(myArray) {
+                        var slotFree = 'empty';
+                        for (var i = myArray.length; i >= 0; i--) {
+                            if (myArray[i].id == i) {
+                               // Don't do nothing
+                            }
+                            else{
+                            slotFree = i;
+                            }
+                        }
+                        
+                        if (slotFree === 'empty'){
+                            slotFree = myArray.length;
+                        }
+
+                        return slotFree;
+              
+                    }
+
+                }
+            }
+        
+        }
+
+        function deleteFlights(arrayObj) { 
+
+           var idInput = prompt("Write the ID Number to delete flight");
+
+           if (idInput == arrayObj[idInput].id) {
+
+                array.splice(idInput, 1); 
+                alert('Delete item!'); 
+            
+           }
+
+            else {
+
+                alert('Delete item!');
+           
+            }
+        
+        
+        
+        }
+
+        function userExec() {
+            
+        }
+            
+        
+
+        function showMeAllFlights() {
+            var scaleExist = '';
+           
+
+            for (i=0; i<flights.length; i++){
+                 if (flights[i].scale === true) {
+                    scaleExist = 'realiza escala.'
+                }
+                else {
+                    scaleExist = 'no realiza ninguna escala.'
+                }
+                console.log ('El vuelo con origen: '+ flights[i].from +', y destino: '+ flights[i].to +' tiene un coste de ' + flights[i].cost +'€ y ' + scaleExist);
+            }
+            
+        }
+
+        function avgCost() {
+
+           
+            var sumCost = 0;
+            var iterations = 0;
+            flights.forEach(function (element) {
+                 sumCost = sumCost + element.cost;
+                 iterations++;
+             });
+            return average = sumCost / iterations;
+              
+        }
+
+        function countScale() {
+            var count = 0;
+            for (i = 0; i < flights.length; i++) {
+                if (flights[i].scale === true) {
+                    count = count + 1;
+                }
+            } 
+            return count;
+        }
+
+        function showMeLastFlights() {
+            var count = 0;
+            console.log ('The last flights are: ')
+            for (i = 5; i < flights.length; i++) {
+                console.log (flights[i].to)
+            }
+            return count;
+        }
+
+
+
+
+
+
+    }
+
+
+    coreSkyLabAir();
+
+</script>
+
+</body>
+</html>
