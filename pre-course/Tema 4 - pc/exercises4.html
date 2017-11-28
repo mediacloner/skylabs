@@ -107,6 +107,52 @@
 
 
 
+    // a3) La función debería ser capaz de recibir el numero de parejas que queremos devolver del total.
+
+    function argntsMultLimit() {
+        var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        var countIter = 0;
+
+        var l = nums.length;
+
+        showNums(nums, 3, 4);
+
+        function showNums() {
+            var arrArg = arguments[0];
+            var len = arrArg.length;
+            var mult = arguments[1]
+            var loopLimit = arguments[2] - 1
+
+            console.log('El número multiplicador es: ' + mult)
+            console.log('El número de bucles es: ' + (loopLimit + 1))
+
+
+            for (var i = 0; i < arrArg.length - 1; i++) {
+
+
+                var arrSelector = [];
+
+                var doubles = arrArg.map(function (x) {
+                    return x * mult;
+                });
+
+                arrSelector.push(doubles[i]);
+                arrSelector.push(doubles[i + 1]);
+                countIter++
+
+                console.log(countIter + 'ª pareja ' + arrSelector.join('-'))
+
+                if (loopLimit == i) {
+
+                    i = arrArg.length;
+                }
+
+            }
+
+        }
+    }
+
+    argntsMultLimit();
 
     
 
