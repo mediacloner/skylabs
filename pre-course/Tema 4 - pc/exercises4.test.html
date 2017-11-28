@@ -12,35 +12,35 @@
 
 <script>
 
-//    b2) Puedes añadir además, la posición de cada resultado ?
-//    b3) Ahora, inserta los resultados en una array y muestralos todos juntos de una manera amigable.
-//    b4) Ahora, el usuario debería ser capaz de especificar la posición de la serie hasta donde queremos llegar.
+//    b5) Ahora, muestra los resultados en forma piramidal:
  
-function fibo() {
+function fiboPiramid() {
     var arrFibo = [];
-    var itera = 15;
     var pastNum = 0;
     var num = 1 ;
     var result = 0;
 
     arrFibo.push(pastNum);
+    console.log(arrFibo[0]);
     arrFibo.push(num);
+    console.log(arrFibo[0]+ ' ' + arrFibo[1]);
     
-    for (i=0 ; i < itera ; i++){
+    for (var i=0 ; i < 5 ; i++){
         result = num + pastNum;
         arrFibo.push(result);       
         pastNum = num;
         num = result;
+        console.log ( arrFibo.join(' '));
     }
-    var count = 0;
-    arrFibo.forEach(function (element) {
-        count++;
-        console.log('Position ' + count + ': ' + element);
+
+    for (var j=0 ; j < 6 ; j++) {
+        arrFibo.pop();
+        console.log ( arrFibo.join(' '));
     
-    });
+    }
 }
 
-    fibo();
+    fiboPiramid();
 
 
 
