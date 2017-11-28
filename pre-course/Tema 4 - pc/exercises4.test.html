@@ -12,7 +12,9 @@
 
 <script>
 
-//b) Volvemos a la numeros... Podrias hacer una funcion que mostrara por pantalla la serie Fibonacci?
+//    b2) Puedes añadir además, la posición de cada resultado ?
+//    b3) Ahora, inserta los resultados en una array y muestralos todos juntos de una manera amigable.
+//    b4) Ahora, el usuario debería ser capaz de especificar la posición de la serie hasta donde queremos llegar.
  
 function fibo() {
     var arrFibo = [];
@@ -30,9 +32,10 @@ function fibo() {
         pastNum = num;
         num = result;
     }
-
+    var count = 0;
     arrFibo.forEach(function (element) {
-        console.log(element);
+        count++;
+        console.log('Position ' + count + ': ' + element);
     
     });
 }
