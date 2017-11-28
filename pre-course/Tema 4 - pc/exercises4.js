@@ -1,5 +1,4 @@
-// a) Escribe una funcion en la que, declarando una array con los numeros del 1 al 9, muestres por pantalla 
-// los numeros unidos por parejas(1 - 2, 2 - 3, 3 - 4...), además, cada elemento de la pareja deberá estar multiplicada por 2.
+// a1) La funcion debería aceptar la array a tratar como argumento.
 
 function showNums() {
     var nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -10,7 +9,7 @@ function showNums() {
             return x * 2;
         });
         arrSelector.push(doubles[i]);
-        arrSelector.push(doubles[i+1]);
+        arrSelector.push(doubles[i + 1]);
         countIter++
 
 
@@ -20,6 +19,5 @@ function showNums() {
 }
 
 showNums();
-
 
 
