@@ -154,6 +154,34 @@
 
     argntsMultLimit();
 
+
+    //b) Volvemos a la numeros... Podrias hacer una funcion que mostrara por pantalla la serie Fibonacci?
+
+        function fibo() {
+            var arrFibo = [];
+            var itera = 15;
+            var pastNum = 0;
+            var num = 1;
+            var result = 0;
+
+            arrFibo.push(pastNum);
+            arrFibo.push(num);
+
+            for (i = 0; i < itera; i++) {
+                result = num + pastNum;
+                arrFibo.push(result);
+                pastNum = num;
+                num = result;
+            }
+
+            arrFibo.forEach(function (element) {
+                console.log(element);
+
+            });
+        }
+
+        fibo();
+
     
 
 
