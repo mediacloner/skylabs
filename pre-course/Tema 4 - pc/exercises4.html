@@ -239,6 +239,50 @@
 
             codeScript('1237');
 
+            //c2) Ahora, el usuario debería poder introducir como parámetro dos códigos a la vez y devolver los dos códigos encriptados 
+                //(Los dos códigos se deberían encriptar en la misma función)
+
+                function codeScript(code1, code2) {
+
+                    var arrResult1 = codeGen(code1);
+                    var arrResult2 = codeGen(code2);
+
+                    console.log(arrResult1);
+                    console.log(arrResult2);
+
+                    function codeGen(code) {
+
+                        var arr = [];
+                        var newArr = [];
+                        for (var i = 0; i < code.length; i++) {
+                            arr[i] = code[i];
+                        }
+
+
+                        var count = 0
+                        for (var i = 0; i < arr.length; i++) {
+                            if (count == 0) {
+                                newArr[(arr.length - 1)] = arr[i];
+                            }
+                            else {
+                                newArr[(i - 1)] = arr[i];
+                            }
+
+                            count++;
+                        }
+                        return newArr
+                        console.log(newArr);
+                    }
+
+
+                }
+
+
+                codeScript('1237', '1234');
+
+            
+
+
 
     
 
