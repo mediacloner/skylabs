@@ -12,17 +12,32 @@
 
 <script>
 
-//c2) Ahora, el usuario debería poder introducir como parámetro dos códigos a la vez y devolver los dos códigos encriptados 
-//(Los dos códigos se deberían encriptar en la misma función)
+//c3) Ahora, vamos a añadir un nivel más de seguridad. Despues de cambiar la posición de los dígitos, multiplicaremos
+//    a cada miembro por un numero cuya multiplicación no sea superior a 10. 
+//    (Si es superior a 10, conseguiremos una multplicación de dos digitos y el código ya no sería de 4 valores)
 
 function codeScript(code1, code2) {
     
     var arrResult1 = codeGen (code1);
     var arrResult2 = codeGen (code2);
+    var Result1 = convertToString(arrResult1) * 2;
+    var Result2 = convertToString(arrResult2) * 2;
+    
 
-    console.log (arrResult1);
-    console.log (arrResult2);
+    console.log (Result1);
+    console.log (Result2);
 
+    function  convertToString(arr) {
+        var str = '';
+        arr.forEach(function (x) {
+            str = str + x;
+            
+            
+        });
+
+        return str;
+    }
+    
     function codeGen(code) {
         
         var arr = [];
