@@ -208,6 +208,37 @@
         }
         fiboEnhaced();
 
+        // c) Simple Scripting program. Crea un programa que transforme un número de 4 dígitos
+            // en otro diferente con las posiciones de los dígitos cambiadas, creandio un nuevo código
+
+            function codeScript(code) {
+                var arr = [];
+                var newArr = [];
+                var l = code.length;
+                for (var i = 0; i < code.length; i++) {
+                    arr[i] = code[i]
+                }
+                var count = 0
+                for (var i = 0; i < arr.length; i++) {
+                    if (count == 0) {
+                        newArr[(arr.length - 1)] = arr[i];
+                    }
+                    else {
+                        newArr[(i - 1)] = arr[i];
+                    }
+
+                    count++;
+                }
+
+                console.log(newArr);
+
+
+
+            }
+
+
+            codeScript('1237');
+
 
     
 

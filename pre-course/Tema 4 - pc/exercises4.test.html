@@ -12,35 +12,35 @@
 
 <script>
 
-//    b5) Ahora, muestra los resultados en forma piramidal:
- 
-function fiboPiramid() {
-    var arrFibo = [];
-    var pastNum = 0;
-    var num = 1 ;
-    var result = 0;
+// c) Simple Scripting program. Crea un programa que transforme un número de 4 dígitos
+// en otro diferente con las posiciones de los dígitos cambiadas, creandio un nuevo código
 
-    arrFibo.push(pastNum);
-    console.log(arrFibo[0]);
-    arrFibo.push(num);
-    console.log(arrFibo[0]+ ' ' + arrFibo[1]);
-    
-    for (var i=0 ; i < 5 ; i++){
-        result = num + pastNum;
-        arrFibo.push(result);       
-        pastNum = num;
-        num = result;
-        console.log ( arrFibo.join(' '));
-    }
+function codeScript(code) { 
+    var arr = [];
+    var newArr = [];
+    var l = code.length;
+    for (var i = 0; i < code.length; i++) { 
+        arr[i] =  code[i]   } 
+    var count = 0
+    for (var i = 0; i < arr.length; i++) {
+        if (count == 0) {
+            newArr [(arr.length-1)] = arr [i];
+        }
+        else {
+            newArr [(i-1)] = arr [i];
+        }
 
-    for (var j=0 ; j < 6 ; j++) {
-        arrFibo.pop();
-        console.log ( arrFibo.join(' '));
+        count++;
+        }
+
+        console.log (newArr);
+
+  
     
-    }
 }
 
-    fiboPiramid();
+    
+codeScript('1237');
 
 
 
