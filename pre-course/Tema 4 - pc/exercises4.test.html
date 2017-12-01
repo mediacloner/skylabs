@@ -14,6 +14,58 @@
 
 //c5) Añade las dos funciones a la misma función padre, de forma que encripte y desencripte 
 //a la vez cuando termine de ejecutarse.
+function exerCfull() {
+    
+
+    var code1 = alphabToNum("HI  ")
+    var code2 = alphabToNum("HELL")
+    coder(code1, code2);
+
+   
+    function alphabToNum(word)  {
+            
+        var numResult = '';
+        
+        for (i=0; i < word.length; i++){
+            numResult =numResult + findNum(word[i])
+        }
+        
+        console.log(numResult.toString());
+        return numResult.toString();
+       
+
+                          
+        
+        function findNum(letter) {
+        var dictionary = {
+                0: ['A', 'K', 'T'],
+                1: ['B', 'L', 'U'],
+                2: ['C', 'M', 'V'],
+                3: ['D', 'N', 'W'],
+                4: ['E', 'Ñ', 'X'],
+                5: ['F', 'O', 'Y'],
+                6: ['G', 'P', 'Z'],
+                7: ['H', 'Q', '.'],
+                8: ['I', 'R', ','],
+                9: ['J', 'S', ' '],
+            }
+        for (var i = 0; i <= 9; i++) {
+            for (var j = 0; j <= 3; j++) {
+                if (dictionary[i][j] == letter) {
+                    str = i + '' + j
+                    console.log('position: ' + str);
+                    return i
+                }
+            }
+        }
+        arr = 'NULL' // false
+        console.log('position: ' + arr);
+        return arr
+        }
+
+
+    }
+    //"HI__" = "dictionary[7][0]+dictionary[8][0]+dictionary[9][2]+dictionary[9][2]..."
 
 function coder(cod1, cod2) {
     
@@ -23,6 +75,8 @@ var Result1;
 var Result2;
 
 decrypter(Result1, Result2); // ('4742', '4682')
+
+    
 
     function codeScript(code1, code2) {
 
@@ -131,7 +185,9 @@ decrypter(Result1, Result2); // ('4742', '4682')
 
 }
 
-coder('1237', '1234');
+}
+
+exerCfull();
 
 
 
