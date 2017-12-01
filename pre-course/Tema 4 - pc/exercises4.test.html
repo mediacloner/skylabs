@@ -20,8 +20,8 @@ function codeScript(code1, code2) {
     
     var arrResult1 = codeGen (code1);
     var arrResult2 = codeGen (code2);
-    var Result1 = convertToString(arrResult1) * 2;
-    var Result2 = convertToString(arrResult2) * 2;
+    var Result1 = convertToString(arrResult1)// * 2;
+    var Result2 = convertToString(arrResult2)// * 2;
     
 
     console.log (Result1);
@@ -67,6 +67,59 @@ function codeScript(code1, code2) {
 
     
 codeScript('1237', '1234');
+
+
+    function decrypter(code1, code2) {
+
+        var arrResult1 = codeDec((code1 / 2));
+        var arrResult2 = codeDec((code2 / 2));
+        var Result1 = convertToString(arrResult1);
+        var Result2 = convertToString(arrResult2);
+
+
+        console.log(Result1);
+        console.log(Result2);
+
+        function convertToString(arr) {
+            var str = '';
+            arr.forEach(function (x) {
+                str = str + x;
+
+
+            });
+
+            return str;
+        }
+
+        function codeDec(cod) {
+            var code = cod.toString();
+            var arr = [];
+            var newArr = [];
+            for (var i = 0; i < code.length; i++) {
+                arr[i] = code[i];
+            }
+
+
+            var count = 0
+            for (var i = 0; i < arr.length; i++) {
+                if (count == 0) {
+                    newArr[(i)] = arr[arr.length - 1];
+                }
+                else {
+                    newArr[(i)] = arr[i - 1];
+                }
+
+                count++;
+            }
+            return newArr
+            console.log(newArr);
+        }
+
+
+    }
+
+
+    decrypter('4742', '4682');
 
 
 
