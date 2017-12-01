@@ -756,6 +756,33 @@
             console.log(result);
         }
         cryptoRome('SKYLAB');
+        
+    // d2) Programa el desencriptador, pasa como parámetro SLKAYB y que devuelva SKYLAB. 
+
+
+        function decryptoRome(word) {
+            var result = '';
+            var firstResult = '';
+            var secondResult = '';
+
+            for (i = 0; i < word.length; i++) {
+                if (i % 2 == 0) {
+                    firstResult = firstResult + word[i];
+                }
+
+                else {
+
+                    secondResult = secondResult + word[i];
+                }
+
+            }
+            result = firstResult + secondResult;
+
+            console.log(result);
+        }
+
+
+        decryptoRome('SLKAYB');
 
 
 
