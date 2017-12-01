@@ -12,75 +12,25 @@
 
 <script>
 
-//c3) Ahora, vamos a añadir un nivel más de seguridad. Despues de cambiar la posición de los dígitos, multiplicaremos
-//    a cada miembro por un numero cuya multiplicación no sea superior a 10. 
-//    (Si es superior a 10, conseguiremos una multplicación de dos digitos y el código ya no sería de 4 valores)
+//c5) Añade las dos funciones a la misma función padre, de forma que encripte y desencripte 
+//a la vez cuando termine de ejecutarse.
 
-function codeScript(code1, code2) {
-    
-    var arrResult1 = codeGen (code1);
-    var arrResult2 = codeGen (code2);
-    var Result1 = convertToString(arrResult1)// * 2;
-    var Result2 = convertToString(arrResult2)// * 2;
+function coder() {
     
 
-    console.log (Result1);
-    console.log (Result2);
 
-    function  convertToString(arr) {
-        var str = '';
-        arr.forEach(function (x) {
-            str = str + x;
-            
-            
-        });
+    function codeScript(code1, code2) {
 
-        return str;
-    }
-    
-    function codeGen(code) {
-        
-        var arr = [];
-        var newArr = [];
-        for (var i = 0; i < code.length; i++) { 
-                arr[i] =  code[i];
-            } 
+        var arrResult1 = codeGen (code1);
+        var arrResult2 = codeGen (code2);
+        var Result1 = convertToString(arrResult1)// * 2;
+        var Result2 = convertToString(arrResult2)// * 2;
 
 
-        var count = 0
-        for (var i = 0; i < arr.length; i++) {
-            if (count == 0) {
-                newArr [(arr.length-1)] = arr [i];
-            }
-            else {
-                newArr [(i-1)] = arr [i];
-            }
+        console.log (Result1);
+        console.log (Result2);
 
-            count++;
-            }
-        return newArr
-        console.log (newArr);
-    }
-  
-    
-}
-
-    
-codeScript('1237', '1234');
-
-
-    function decrypter(code1, code2) {
-
-        var arrResult1 = codeDec((code1 / 2));
-        var arrResult2 = codeDec((code2 / 2));
-        var Result1 = convertToString(arrResult1);
-        var Result2 = convertToString(arrResult2);
-
-
-        console.log(Result1);
-        console.log(Result2);
-
-        function convertToString(arr) {
+        function  convertToString(arr) {
             var str = '';
             arr.forEach(function (x) {
                 str = str + x;
@@ -91,29 +41,82 @@ codeScript('1237', '1234');
             return str;
         }
 
-        function codeDec(cod) {
-            var code = cod.toString();
+        function codeGen(code) {
+
             var arr = [];
             var newArr = [];
-            for (var i = 0; i < code.length; i++) {
-                arr[i] = code[i];
-            }
+            for (var i = 0; i < code.length; i++) { 
+                    arr[i] =  code[i];
+                } 
 
 
             var count = 0
             for (var i = 0; i < arr.length; i++) {
                 if (count == 0) {
-                    newArr[(i)] = arr[arr.length - 1];
+                    newArr [(arr.length-1)] = arr [i];
                 }
                 else {
-                    newArr[(i)] = arr[i - 1];
+                    newArr [(i-1)] = arr [i];
                 }
 
                 count++;
-            }
+                }
             return newArr
-            console.log(newArr);
+            console.log (newArr);
         }
+    
+
+    }
+
+
+    codeScript('1237', '1234');
+
+
+        function decrypter(code1, code2) {
+
+            var arrResult1 = codeDec((code1 / 2));
+            var arrResult2 = codeDec((code2 / 2));
+            var Result1 = convertToString(arrResult1);
+            var Result2 = convertToString(arrResult2);
+
+
+            console.log(Result1);
+            console.log(Result2);
+
+            function convertToString(arr) {
+                var str = '';
+                arr.forEach(function (x) {
+                    str = str + x;
+
+
+                });
+
+                return str;
+            }
+
+            function codeDec(cod) {
+                var code = cod.toString();
+                var arr = [];
+                var newArr = [];
+                for (var i = 0; i < code.length; i++) {
+                    arr[i] = code[i];
+                }
+
+
+                var count = 0
+                for (var i = 0; i < arr.length; i++) {
+                    if (count == 0) {
+                        newArr[(i)] = arr[arr.length - 1];
+                    }
+                    else {
+                        newArr[(i)] = arr[i - 1];
+                    }
+
+                    count++;
+                }
+                return newArr
+                console.log(newArr);
+            }
 
 
     }
@@ -121,7 +124,9 @@ codeScript('1237', '1234');
 
     decrypter('4742', '4682');
 
+}
 
+coder();
 
 
 
