@@ -784,6 +784,43 @@
 
         decryptoRome('SLKAYB');
 
+    // d3) Agrupa la función Encrypt y decrypt en una unica función, de forma que introduzcas como parámetro SKYLAB y 
+    // devuelva SKYLAB(con todas las transformaciones internas hechas y mostrando, entre medias, la transformación)
+        function crytoDecRome(input) {
+            var crytoValue = cryptoRome(input);
+            var deCrytoValue = decryptoRome(crytoValue);
+            console.log(deCrytoValue);
+            function cryptoRome(word) {
+                var result = '';
+                for (i = 0; i < (word.length / 2); i++) {
+                    result = result + word[i];
+                    result = result + word[(word.length / 2) + i];
+                }
+                console.log(result);
+                return result
+            }
+            function decryptoRome(word) {
+                var result = '';
+                var firstResult = '';
+                var secondResult = '';
+                for (i = 0; i < word.length; i++) {
+                    if (i % 2 == 0) {
+                        firstResult = firstResult + word[i];
+                    }
+                    else {
+                        secondResult = secondResult + word[i];
+                    }
+                }
+                result = firstResult + secondResult;
+                console.log(result);
+                return result
+            }
+
+                }
+
+            crytoDecRome('SKYLAB')
+            
+
 
 
 
