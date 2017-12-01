@@ -342,8 +342,8 @@
 
         var arrResult1 = codeGen(code1);
         var arrResult2 = codeGen(code2);
-        var Result1 = convertToString(arrResult1)// * 2;
-        var Result2 = convertToString(arrResult2)// * 2;
+        var Result1 = convertToString(arrResult1) * 2;
+        var Result2 = convertToString(arrResult2) * 2;
 
 
         console.log(Result1);
@@ -447,16 +447,21 @@
     //c5) Añade las dos funciones a la misma función padre, de forma que encripte y desencripte 
     //a la vez cuando termine de ejecutarse.
 
-        function coder() {
+      function coder(cod1, cod2) {
 
+            codeScript(cod1, cod2);
 
+            var Result1;
+            var Result2;
+
+            decrypter(Result1, Result2); // ('4742', '4682')
 
             function codeScript(code1, code2) {
 
                 var arrResult1 = codeGen(code1);
                 var arrResult2 = codeGen(code2);
-                var Result1 = convertToString(arrResult1)// * 2;
-                var Result2 = convertToString(arrResult2)// * 2;
+                Result1 = convertToString(arrResult1) * 2;;
+                Result2 = convertToString(arrResult2) * 2;;
 
 
                 console.log(Result1);
@@ -501,7 +506,7 @@
             }
 
 
-            codeScript('1237', '1234');
+
 
 
             function decrypter(code1, code2) {
@@ -554,14 +559,11 @@
             }
 
 
-            decrypter('4742', '4682');
+
 
         }
 
-        coder();
-    
-
-
+        coder('1237', '1234');
 
 
 
