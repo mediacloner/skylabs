@@ -12,13 +12,15 @@
 
 <script>
 
-    // e) Crea un programa al que le introduces un número como parámetro del 0 al 100 
-    // y devuelve el número transformado a alfabeto normal, es decir:
+    // e2) Ahora, el output debería ser capaz de, aparte de devolver el número traducido, 
+    // devolver también los números por los que está formado: output twenty-three, twenty + three / 20 + 3
 
     function sayItWithWords(numInput) {
 
         var num = numInput.toString();
         var result = '';
+        var resultPlus = '';
+        var resultNum = '';
 
         var units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
         var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
@@ -32,6 +34,7 @@
             if (i == num.length-1){
                 
                 result = result + units[value];
+                resultPlus = result;
 
             }
 
@@ -40,10 +43,12 @@
                 if (value == 1) {
 
                     result = teens[num[num.length-1]]
+                    resultPlus = result;
                 }
 
                 else{
                     
+                resultPlus = tens[value] + ' + ' + result;
                 result = tens[value]+ '-' + result ;
 
                 }
@@ -51,11 +56,12 @@
             }
         } 
 
-        console.log(result)
+        console.log(result + ', ' + resultPlus + ' / ' + numInput );
+
         
     }
 
-    sayItWithWords(15)
+    sayItWithWords(23)
 </script>
 
 </body>

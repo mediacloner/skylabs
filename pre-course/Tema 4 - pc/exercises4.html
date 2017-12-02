@@ -851,6 +851,38 @@
     console.log(result)
 }
 sayItWithWords(15)
+
+// e2) Ahora, el output debería ser capaz de, aparte de devolver el número traducido, 
+// devolver también los números por los que está formado: output twenty-three, twenty + three / 20 + 3
+
+function sayItWithWords(numInput) {
+    var num = numInput.toString();
+    var result = '';
+    var resultPlus = '';
+    var resultNum = '';
+    var units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    for (i = num.length - 1; i >= 0; i--) {
+        var value = num[i];
+        if (i == num.length - 1) {
+            result = result + units[value];
+            resultPlus = result;
+        }
+        if (i == num.length - 2) {
+            if (value == 1) {
+                result = teens[num[num.length - 1]]
+                resultPlus = result;
+            }
+            else {
+                resultPlus = tens[value] + ' + ' + result;
+                result = tens[value] + '-' + result;
+            }
+        }
+    }
+    console.log(result + ', ' + resultPlus + ' / ' + numInput);
+}
+sayItWithWords(23)
             
 
 
