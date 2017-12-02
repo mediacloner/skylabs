@@ -883,7 +883,49 @@ function sayItWithWords(numInput) {
     console.log(result + ', ' + resultPlus + ' / ' + numInput);
 }
 sayItWithWords(23)
-            
+//e3) Cambia tu programa para que acepte cualquier número entre 0 y 1000.
+function sayItWithWords(numInput) {
+    var num = numInput.toString();
+    var result = '';
+    var resultPlus = '';
+    var resultNum = '';
+    var units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    for (i = num.length - 1; i >= 0; i--) {
+        var value = num[i];
+        if (i == num.length - 1) {
+            resultPlus = result + units[value];
+            result = result + units[value];
+            resultNum = value;
+        }
+        if (i == num.length - 2) {
+            if (value == 1) {
+                result = teens[num[num.length - 1]]
+                resultPlus = result;
+                resultNum = '10 + ' + resultNum;
+            }
+            else {
+                resultPlus = tens[value] + ' + ' + result;
+                result = tens[value] + '-' + result;
+                resultNum = value + '0 + ' + resultNum;
+            }
+        }
+        if (i == num.length - 3) {
+            resultPlus = units[value] + ' hundred' + ' + ' + resultPlus;
+            result = units[value] + ' hundred ' + result;
+            resultNum = value + '00 + ' + resultNum;
+        }
+        if (i == num.length - 4) {
+            resultPlus = units[value] + ' thousand + ' + resultPlus;
+            result = units[value] + ' thousand ' + result;
+            resultNum = value + '000 + ' + resultNum;
+        }
+    }
+    console.log(result + ', ' + resultPlus + ' / ' + resultNum);
+}
+sayItWithWords(1223)
+    
 
 
 
