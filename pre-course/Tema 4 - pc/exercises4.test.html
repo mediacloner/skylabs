@@ -12,54 +12,50 @@
 
 <script>
 
-    // d3) Agrupa la función Encrypt y decrypt en una unica función, de forma que introduzcas como parámetro SKYLAB y 
-    // devuelva SKYLAB(con todas las transformaciones internas hechas y mostrando, entre medias, la transformación)
+    // e) Crea un programa al que le introduces un número como parámetro del 0 al 100 
+    // y devuelve el número transformado a alfabeto normal, es decir:
 
-    function crytoDecRome(input) {
-        
-    var crytoValue = cryptoRome(input);
-    var deCrytoValue = decryptoRome(crytoValue);
+    function sayItWithWords(numInput) {
 
-    console.log(deCrytoValue);
-
-    function cryptoRome(word) {
-            var result = '';
-            for (i = 0; i < (word.length / 2); i++) {
-                result = result + word[i];
-                result = result + word[(word.length / 2) + i];
-            }
-            console.log(result);
-            return result
-    }
-
-
-    function decryptoRome(word) {
+        var num = numInput.toString();
         var result = '';
-        var firstResult = '';
-        var secondResult = '';
 
-        for (i=0; i < word.length; i++){
-            if (i%2 == 0){
-                firstResult = firstResult + word[i];
-            }
+        var units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+        var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+        var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+      
+        for (i = num.length-1; i >=  0; i--){
+
+            var value = num [i];
             
-            else {
-              
-                secondResult = secondResult + word[i];
+
+            if (i == num.length-1){
+                
+                result = result + units[value];
+
             }
 
-        }
-        result = firstResult + secondResult;
+            if (i == num.length-2){
 
-        console.log(result);
+                if (value == 1) {
 
-        return result
+                    result = teens[num[num.length-1]]
+                }
+
+                else{
+                    
+                result = tens[value]+ '-' + result ;
+
+                }
+                
+            }
+        } 
+
+        console.log(result)
+        
     }
 
-}
-
-    crytoDecRome('SKYLABCODERS')
-  
+    sayItWithWords(15)
 </script>
 
 </body>

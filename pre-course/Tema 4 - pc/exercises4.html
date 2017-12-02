@@ -821,6 +821,36 @@
                 }
 
             crytoDecRome('SKYLAB')
+
+
+    // e) Crea un programa al que le introduces un número como parámetro del 0 al 100 
+    // y devuelve el número transformado a alfabeto normal, es decir:
+
+    function sayItWithWords(numInput) {
+        
+    var num = numInput.toString();
+    var result = '';
+    var units = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    var tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
+    var teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+    
+    for (i = num.length - 1; i >= 0; i--) {
+        var value = num[i];
+        if (i == num.length - 1) {
+            result = result + units[value];
+        }
+        if (i == num.length - 2) {
+            if (value == 1) {
+                result = teens[num[num.length - 1]]
+                }
+            else {
+                result = tens[value] + '-' + result;
+            }
+        }
+    }
+    console.log(result)
+}
+sayItWithWords(15)
             
 
 
