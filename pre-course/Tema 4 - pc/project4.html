@@ -23,8 +23,130 @@ de usuarios con el nombre y ordenados por cantidad de letras acertadas.</p>
 
 
 <script>
-  
 
+function pasapalabra{
+    var valueSw = 'p1'
+    var player1 ='';
+    var player2 ='';
+    var scorePlayer1 = 0;
+    var scorePlayer2 = 0;
+    var faultPlayer1 = 0;
+    var faultPlayer2 = 0;
+    var positionPlayer1 = 0;
+    var positionPlayer2 = 0;
+    var lettersPlayer1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var lettersPlayer2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var setOfQuestions = {
+            letter: 
+                 ['A', 'B', 'C', 'D' ,'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+            ,
+            question:  ['With the letter "A", American electronic commerce and cloud computing company based in Seattle',
+                        'With the letter "B", is one of the world\'s most popular and widely viewed sports',
+                        'With the letter "C", the world\'s most populous country',
+                        'With the letter "D", is the most widely abundant terrestrial carnivore',
+                        'With the letter "E", is an American rapper, songwriter, record producer, and actor.',
+                        'With the letter "F", website was launched on February 4, 2004, by Mark Zuckerberg',
+                        'With the letter "G", American multinational technology company that specializes in online advertising technologies, search, cloud computing, software, and hardware.',
+                        'With the letter "H", is the novels chronicle the life of a young wizard',
+                        'With the letter "I", mobile operating system created and developed by Apple Inc',
+                        'With the letter "J", interpreted programming language. It is used to make webpages ',
+                        'With the letter "K", Katheryn Elizabeth Hudson is an American singer and songwriter, known professionally as ...',
+                        'With the letter "L", City has a diverse range of people and cultures, and more than 300 languages are spoken in the region',
+                        'With the letter "M", It is the fifth-largest natural satellite in the Solar System',
+                        'With the letter "N", Japanese multinational founded on 1889, it originally produced handmade playing cards. ',
+                        'With the letter "O", is an art form in which singers and musicians perform a dramatic work ',
+                        'With the letter "P", originally defined as the ratio of a circle\'s circumference to its diameter',
+                        'With the letter "Q", is a sovereign country located in Western Asia, on the northeastern coast of the Arabian Peninsula. ',
+                        'With the letter "R", is the belief in the superiority of one race over another',
+                        'With the letter "S",  is widely considered to be one of the greatest and most influential TV sitcoms ever made.the show features a handful of Jerry\'s friends and acquaintances, particularly best friend George Costanza.',
+                        'With the letter "T", is the city will host the 2020 Summer Olympics. ',
+                        'With the letter "U", is in its strictest definition any apparent object in the sky that is not identifiable as a known object or phenomenon.',
+                        'With the letter "V", (singular) is an electronic game that involves interaction with a user interface to generate visual feedback on a video device such as a TV screen or computer monitor.',
+                        'With the letter "W", is the largest and most popular general reference work on the Internet',
+                        'With the letter "X", is a video gaming brand created and owned by Microsoft',
+                        'With the letter "Y", is an American video-sharing website headquartered in San Bruno, California.',
+                        'With the letter "Z", is a chemical element with symbol Zn and atomic number 30.']
+            ,
+            answer: ['amazon', 'basket', 'china', 'dog', 'eminem', 'facebook', 'google', 'harry potter', 'ios', 'javascript', 'katy perry', 'london', 'moon', 'nintendo', 'opera', 'pi', 'qatar', 'racism', 'seinfeld', 'tokio', 'ufo', 'video game', 'wikipedia', 'xbox', 'youtube', 'zinc']
+        }
+    }
+
+
+    UIPlayer(wellcome1);
+    UIPlayer(wellcome2);
+
+    switch (valueSw) {
+        case p1:
+            UIPlayer('turn1');
+            
+
+
+
+            break;
+        case p2:
+            UIPlayer('turn2');
+
+
+            break;
+    
+    function askQuestions(player, pos) {
+        var result = '';
+        result = prompt( player + ' >>>> ' + setOfQuestions.askQuestions[pos], "");
+        if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0){
+            UIPlayer('correct');
+            if (player == 'player1'){
+            lettersPlayer1.splice(pos, 1);
+            scorePlayer1 ++;
+            return true
+            }
+            else {
+            lettersPlayer2.splice(pos, 1);   
+            scorePlayer2 ++;
+            return true
+            }
+        }
+        else {
+            UIPlayer('wrong');
+            if (player == 'player1') {
+                lettersPlayer1.splice(pos, 1);
+                faultPlayer1++;
+                return false;
+            }
+            else {
+                lettersPlayer2.splice(pos, 1);
+                faultPlayer2++
+                return false;
+            }
+        }
+
+        
+    }
+    
+    function UIPlayer(what) {
+        if (what == 'wellcome1') {
+            player1 = prompt("Please Player 1, writte your user name:", "");
+            alert('Wellcome ' + player1 + '!');
+        }
+        if (what == 'wellcome2') {
+            player2 = prompt("Please Player 2, writte your user name:", "");
+            alert('Wellcome ' + player2 + '!');
+        }
+        if (what == 'turn1') {
+            alert('Is your turn ' + player1 + '!');
+        }
+
+        if (what == 'turn2') {
+            alert('Is your turn ' + player2 + '!');
+        }
+        if (what == 'correct') {
+            alert('Answer Correct!');
+        }
+
+         if (what == 'false') {
+            alert('Ups! You are wrong');
+        }
+    }
+}                  
 </script>
 
 </body>
