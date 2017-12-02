@@ -12,7 +12,8 @@
 
 <script>
 
-    //f) Recibiendo el siguiente texto por parámetro a tu función... :
+    //f1) Añade una funcionalidad que cuente cuantos cambios/coincidencias ha encontrado de cada palabra, 
+    //    y te los muestre de una forma amigable para el usuario
 
     // "." => ","
     //  "," => "" 
@@ -38,6 +39,13 @@
         res = res.split('Labor ').join('Cucumber ');
         res = res.split('Consequatur ').join('Garlic ');
         res = res.split('Ipsum ').join('Onion ');
+        console.log('Match of pattern \',\' :' + strInput.match(/,/gi).length);
+        console.log('Match of pattern \'.\' :' + strInput.match(/\./gi).length);
+        console.log('Match of pattern \'dolor\' :' + strInput.match(/dolor /gi).length);
+        console.log('Match of pattern \'lorem\' :' + strInput.match(/lorem /gi).length);
+        console.log('Match of pattern \'ipsum\' :' + strInput.match(/ipsum /gi).length);
+
+
 
         console.log(strInput);
 
