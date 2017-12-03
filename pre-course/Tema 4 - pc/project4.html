@@ -33,9 +33,12 @@ function pasapalabra(){
     var faultPlayer2 = 0;
     var lastPosPlayer1 = 'A';
     var lastPosPlayer2 = 'A';
-    var lettersPlayer1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    var lettersPlayer2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    var setOfQuestions = {
+   // var lettersPlayer1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var lettersPlayer1 = ['A', 'B'];
+    //var lettersPlayer2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    var lettersPlayer2 = ['A', 'B'];
+    
+    /*var setOfQuestions = {
             letter: 
                  ['A', 'B', 'C', 'D' ,'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
             ,
@@ -70,57 +73,76 @@ function pasapalabra(){
         }
     
 
+*/
+    
+ var setOfQuestions = {
+            letter: 
+                 ['A', 'B' ]
+            ,
+            question:  ['With the letter "A", American electronic commerce and cloud computing company based in Seattle',
+                        'With the letter "B", is one of the world\'s most popular and widely viewed sports']
+            ,
+            answer: ['amazon', 'basket']
+        }
+    
 
+
+    
+    
     var valueSw = 'p1';
+
     UIPlayer('wellcome1');
     UIPlayer('wellcome2');
+    while (lettersPlayer1.length >0 && lettersPlayer2.length > 0  ){ // while no emty letters some player
+        switch (valueSw) {
+            case 'p1':
+                UIPlayer('turn1');
+                var pos = -1;
+                var count = 0;
+                var fback = true;
+                while (fback == true && count < 1001 && lettersPlayer1.length > 0 ){
+                    fback = askQuestionsp1(lastPosPlayer1);
+                    if (count == 1000) {
+                        console.error('Error loop Player1')
+                    }
 
-    switch (valueSw) {
-        case 'p1':
-            UIPlayer('turn1');
-            var pos = -1;
-            pos = lettersPlayer1.indexOf(lastPosPlayer1);
-            var count = 0;
-            var fback = true;
-            while (fback == true && count < 1001){
-                fback = askQuestionsp1(pos);
-                if (count == 1000) {
-                    console.error('Error loop Player1')
                 }
 
-            }
+                valueSw = 'p2'
+                break;
+            case 'p2':
+                UIPlayer('turn2');
+                var pos = -1;
+                var count = 0;
+                var fback = true;
+                while (fback == true && count < 1001 && lettersPlayer2.length > 0 ) {
+                    var fback = askQuestionsp2(lastPosPlayer2);
+                    if (count == 1000) {
+                        console.error('Error loop Player2')
+                    }
 
-            valueSw = 'p2'
-            break;
-        case 'p2':
-            UIPlayer('turn2');
-            var pos = -1;
-            pos = lettersPlayer2.indexOf(lastPosPlayer2);
-            var count = 0;
-            while (fback == true && count < 1001) {
-                var fback = askQuestionsp2(pos);
-                if (count == 1000) {
-                    console.error('Error loop Player2')
                 }
-
-            }
-            valueSw = 'p1'
-            break;
+                valueSw = 'p1'
+                break;
+        }
     }
 
-    function findPos(letter) {
+alert('                                    Final Score\n' + '================================================ \n' + 
+       ' Right Answers: ' + scorePlayer1 + '  Wrong Answers: ' + faultPlayer1 + ' Player 1 : ' + player1  +'\n' +
+       ' Right Answers: ' + scorePlayer2 + '  Wrong Answers: ' + faultPlayer2 + ' Player 2 : ' + player2 + '\n' );
 
-        var a = fruits.indexOf("Banana");
-        
-    }
     
-    function askQuestionsp1(pos) {
+    function askQuestionsp1(letter) {
         var result = '';
-        result = prompt( 'Player1 >>>> ' + setOfQuestions.question[pos], "");
+        var posQuestion = setOfQuestions.letter.indexOf(letter);
+        var pos = lettersPlayer1.indexOf(letter);
+
+        result = prompt( player1 + ' >>>> ' + setOfQuestions.question[posQuestion], "");
+ 
         if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0){ // Answer it's true
             UIPlayer('correct');
 
-            if (pos == lettersPlayer1.length) {                        // Jump X  -->  A
+            if (pos == lettersPlayer1.length) {                        // Jump X  -->  A   Wrong   1 == 2  pasapalabra AB B
                 lastPosPlayer1 = lettersPlayer1[0];
             }
             else {
@@ -136,7 +158,7 @@ function pasapalabra(){
             if (result.toLowerCase() == 'pasapalabra'){                 // Change the player.
                 UIPlayer('pasapalabra');
                 if (pos == lettersPlayer1.length) {
-                    lastPosPlayer1 = lettersPlayer1[0];
+                    lastPosPlayer1 = lettersPlayer1[0];                 // Jump to the next one without slice
                     return false
                 }
                 else {
@@ -152,7 +174,7 @@ function pasapalabra(){
                     lastPosPlayer1 = lettersPlayer1[0];
                 }
                 else {
-                    lastPosPlayer1 = lettersPlayer1[(pos + 1)];
+                    lastPosPlayer1 = lettersPlayer1[pos + 1];
                 }
                 lettersPlayer1.splice(pos, 1);
                 faultPlayer1++;
@@ -162,55 +184,58 @@ function pasapalabra(){
         }
         
     }
+    function askQuestionsp2(letter) {
+        var result = '';
+        var posQuestion = setOfQuestions.letter.indexOf(letter);
+        var pos = lettersPlayer2.indexOf(letter);
 
-    function askQuestionsp2(pos) {
-            var result = '';
-            result = prompt('Player2 >>>> ' + setOfQuestions.question[pos], "");
-            if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0) { // Answer it's true
-                UIPlayer('correct');
+        result = prompt(player2 + ' >>>> ' + setOfQuestions.question[posQuestion], "");
 
-                if (pos == lettersPlayer2.length) {                        // Jump X  -->  A
+        if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0) { // Answer it's true
+            UIPlayer('correct');
+
+            if (pos == lettersPlayer2.length) {                        // Jump X  -->  A
+                lastPosPlayer2 = lettersPlayer2[0];
+            }
+            else {
+                lastPosPlayer2 = lettersPlayer2[(pos + 1)];            // A --> B
+            }
+
+            lettersPlayer2.splice(pos, 1);                             // A, , C
+            scorePlayer2++;
+            return true
+        }
+
+        else {
+            if (result.toLowerCase() == 'pasapalabra') {                 // Change the player.
+                UIPlayer('pasapalabra');
+                if (pos == lettersPlayer2.length) {
+                    lastPosPlayer2 = lettersPlayer2[0];                 // Jump to the next one without slice
+                    return false
+                }
+                else {
+                    lastPosPlayer2 = lettersPlayer2[(pos + 1)];
+                    return false
+                }
+
+            }
+
+            else {                                                      // Wrong answer.
+                UIPlayer('false');
+                if (pos == lettersPlayer1.length) {
                     lastPosPlayer2 = lettersPlayer2[0];
                 }
                 else {
-                    lastPosPlayer2 = lettersPlayer2[(pos + 1)];            // A --> B
+                    lastPosPlayer2 = lettersPlayer2[pos + 1];
                 }
+                lettersPlayer2.splice(pos, 1);
+                faultPlayer2++;
+                return false;
 
-                lettersPlayer2.splice(pos, 1);                             // A, , C
-                scorePlayer2++;
-                return true
             }
+        }
 
-            else {
-                if (result.toLowerCase() == 'pasapalabra') {                 // Change the player.
-                    UIPlayer('pasapalabra');
-                    if (pos == lettersPlayer2.length) {
-                        lastPosPlayer2 = lettersPlayer2[0];
-                        return false
-                    }
-                    else {
-                        lastPosPlayer2 = lettersPlayer2[(pos + 1)];
-                        return false
-                    }
-
-                }
-
-                else {                                                      // Wrong answer.
-                    UIPlayer('false');
-                    if (pos == lettersPlayer2.length) {
-                        lastPosPlayer2 = lettersPlayer2[0];
-                    }
-                    else {
-                        lastPosPlayer2 = lettersPlayer2[(pos + 1)];
-                    }
-                    lettersPlayer2.splice(pos, 1);
-                    faultPlayer2++;
-                    return false;
-
-                }
-            }
     }
-
         
     
     function UIPlayer(what) {
