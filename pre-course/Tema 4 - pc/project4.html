@@ -33,12 +33,12 @@ function pasapalabra(){
     var faultPlayer2 = 0;
     var lastPosPlayer1 = 'A';
     var lastPosPlayer2 = 'A';
-   // var lettersPlayer1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    var lettersPlayer1 = ['A', 'B'];
-    //var lettersPlayer2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    var lettersPlayer2 = ['A', 'B'];
+    var lettersPlayer1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+    var lettersPlayer2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
     
-    /*var setOfQuestions = {
+    var setOfQuestions = {
             letter: 
                  ['A', 'B', 'C', 'D' ,'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
             ,
@@ -72,23 +72,6 @@ function pasapalabra(){
             answer: ['amazon', 'basket', 'china', 'dog', 'eminem', 'facebook', 'google', 'harry potter', 'ios', 'javascript', 'katy perry', 'london', 'moon', 'nintendo', 'opera', 'pi', 'qatar', 'racism', 'seinfeld', 'tokio', 'ufo', 'video game', 'wikipedia', 'xbox', 'youtube', 'zinc']
         }
     
-
-*/
-    
- var setOfQuestions = {
-            letter: 
-                 ['A', 'B' ]
-            ,
-            question:  ['With the letter "A", American electronic commerce and cloud computing company based in Seattle',
-                        'With the letter "B", is one of the world\'s most popular and widely viewed sports']
-            ,
-            answer: ['amazon', 'basket']
-        }
-    
-
-
-    
-    
     var valueSw = 'p1';
 
     UIPlayer('wellcome1');
@@ -100,9 +83,9 @@ function pasapalabra(){
                 var pos = -1;
                 var count = 0;
                 var fback = true;
-                while (fback == true && count < 1001 && lettersPlayer1.length > 0 ){
+                while (fback == true && count < 1001 && lettersPlayer1.length > 0 ){  // end when don't have letters
                     fback = askQuestionsp1(lastPosPlayer1);
-                    if (count == 1000) {
+                    if (count == 1000) {                                // protection
                         console.error('Error loop Player1')
                     }
 
@@ -142,7 +125,7 @@ alert('                                    Final Score\n' + '===================
         if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0){ // Answer it's true
             UIPlayer('correct');
 
-            if (pos == lettersPlayer1.length) {                        // Jump X  -->  A   Wrong   1 == 2  pasapalabra AB B
+            if (pos + 1 == lettersPlayer1.length) {                        // Jump X  -->  A   
                 lastPosPlayer1 = lettersPlayer1[0];
             }
             else {
@@ -194,7 +177,7 @@ alert('                                    Final Score\n' + '===================
         if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0) { // Answer it's true
             UIPlayer('correct');
 
-            if (pos == lettersPlayer2.length) {                        // Jump X  -->  A
+            if (pos + 1 == lettersPlayer2.length) {                        // Jump X  -->  A
                 lastPosPlayer2 = lettersPlayer2[0];
             }
             else {
@@ -238,7 +221,7 @@ alert('                                    Final Score\n' + '===================
     }
         
     
-    function UIPlayer(what) {
+    function UIPlayer(what) {                                                       
         if (what == 'wellcome1') {
             player1 = prompt("Please Player 1, writte your user name:", "");
             alert('Wellcome ' + player1 + '!');
