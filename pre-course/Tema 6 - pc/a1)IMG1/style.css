@@ -1,0 +1,146 @@
+
+.button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+#bot0 {
+    color: #000000;
+    background-color: #EAEAEA;
+    border: 1.5px solid #acaaaa;
+
+} 
+#bot1 {
+
+    background-color: #5C9DED;
+    border:  1.5px  solid #406ea7;
+
+} 
+
+#bot2 {
+
+    background-color: #42CB6E;
+    border: 1.5px solid #329451;
+
+} 
+#bot3 {
+
+    background-color: #4EC2E7;
+    border: 1.5px solid #35849c;
+
+} 
+#bot4 {
+
+    background-color: #FCCE54;
+    border: 1.5px solid #c29d3f;
+
+} 
+#bot5 {
+
+    background-color: #ED5564;
+    border: 1.5px solid #b3414c;
+
+} 
+
+.button1{
+    background-color: #ffffff; 
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+
+#bot10 {
+    color: #acaaaa;
+    border: 1.5px solid #acaaaa;
+
+} 
+#bot11 {
+
+    color: #5C9DED;
+    border: 1.5px solid #5C9DED;
+
+} 
+
+#bot12 {
+
+    color: #42CB6E;
+    border: 1.5px solid #42CB6E;
+
+} 
+#bot13 {
+
+    color: #4EC2E7;
+    border: 1.5px solid #4EC2E7;
+
+} 
+#bot14 {
+
+    color: #FCCE54;
+    border: 1.5px solid #FCCE54;
+
+} 
+#bot15 {
+
+    color: #ED5564;
+    border: 1.5px solid #ED5564;
+
+} 
+
+.button2{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 30px;
+}
+
+.button3{
+    background-color: #ffffff; 
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 30px;
+}
+.button4{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 30px;
+}
+.button5{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    border-radius: 15px;
+}
