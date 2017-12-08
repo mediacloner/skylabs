@@ -1,5 +1,7 @@
 body{
-    background-color: #10578D
+    background-color: #10578D;
+    margin: 0;
+    
 }
 
 .top h1{
@@ -35,14 +37,19 @@ button {
     border: 1.5px solid  #bbbb89;
 }
 
-.main{
-    width: 910px;
-    height: 500px;
-    background-color: rgb(252, 250, 250);
-    margin: auto;
+.headBanner{
+    width: 520px;
+    height: 150px;
+    background-color: black;
+    margin: left;
     display: table;
-    border-radius: 8px;
-    border: 4px solid  #76adbd;
+    color: white;
+    margin-top: 40px;
+}
+
+span {
+
+    color: orange;
 }
 
 img{
