@@ -1,0 +1,21 @@
+h1,h2 {
+    color: #245E13;
+ 
+}
+.form1{
+
+    color: #9b6c48;
+}
+
+ .dAbout a {
+    color: orange;
+}
+ .dAbout sub {
+    color: orange;
+}
+
+table, th, td {
+    border: 1px solid black;
+    white-space: nowrap;
+}
+
