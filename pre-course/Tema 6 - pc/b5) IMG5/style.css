@@ -1,0 +1,102 @@
+body{
+    background-color: #222244;
+    margin: 50px;
+    
+}
+hr {
+    background-color: #fff;
+	border-top: 1.5px dotted #8c8b8b;
+}
+
+button {
+    border: none;
+    color: #815858;
+    padding: 10px 20px;
+    text-decoration:none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+    text-align: left;
+
+    margin-left: 15px;
+    background: white;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: #444466;
+
+}
+.menu{
+    background: white;
+    color: white;
+    text-align: left;
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin-right: 5px;
+    margin-top: 20px;
+    
+
+
+}
+
+.main{
+    background: white;
+    width: 650px;
+    height: 500px;
+    float:right;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #534446;
+}
+
+
+.container {
+    background: white;
+    width: 1000px;
+    height: 600px;
+    margin-right: 10px;
+    float: left;
+}
+.headBanner{
+    width: 1000px;
+    height: 150px;
+    background-color: #444466;
+    margin: center;
+    display: table;
+    color: white;
+    font-size: 50px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+
+img{
+    width:30%; 
+    height: auto;
+    float: left;
+    margin: 10px;
+}
+
+.menu p{
+    color: #815858;
+    margin-left: 35px;
+    text-align: justify;
+}
+
+.footbar{
+    width: 1000px;
+    height: 50px;
+    background-color: #664444;
+    margin: center;
+    display: table;
+    color: rgb(158, 157, 157);
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    text-align: center;
+}
