@@ -1,7 +1,45 @@
 body{
-    background-color: #222244;
+    background-color: white;
     margin: 50px;
     
+}
+
+.mainMenu{
+    background: #2F7FBE;
+    width: 1200px;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #534446;
+    text-align:center;
+  
+}
+orange{
+    color: #FA6800;
+}
+grey{
+    color: #A5B3BF;
+    font-size: 80%;
+}
+
+
+.setButtons{
+    display:inline-block;
+     padding-right: 150px;
+     padding-bottom: 20px;
+
+}
+
+.logo{
+    display:inline-block;
+    font: 100px;
+    padding-right: 80px;
+
+
+}
+
+center{
+      display:inline-block;
+
 }
 hr {
     background-color: #fff;
@@ -10,93 +48,153 @@ hr {
 
 button {
     border: none;
-    color: #815858;
-    padding: 10px 20px;
+    color: white;
     text-decoration:none;
     font-weight: bold;
-    display: inline-block;
-    font-size: 14px;
-    text-align: left;
-
+    font-size: 16px;
     margin-left: 15px;
-    background: white;
-    font-size: 20px;
+    background: #2F7FBE;
 }
 
 button:hover{
     background-color: #444466;
 
 }
-.menu{
-    background: white;
+.container{
+    width: 1150px;
+    height: 2225px;
+    text-align:center;
+}
+.head{
+    background: #2F7FBE;
+    width: 1150px;
+    height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
-    text-align: left;
-    width: 250px;
-    height: 250px;
-    float: left;
-    margin-right: 5px;
-    margin-top: 20px;
-    
-
+    text-align:center;
+    margin-left: 25px;
+    font-size: 90%;
 
 }
 
-.main{
-    background: white;
-    width: 650px;
-    height: 500px;
-    float:right;
-    padding: 30px;
+
+
+.imgInline p {
     font-family: Arial, Helvetica, sans-serif;
-    color: #534446;
-}
-
-
-.container {
-    background: white;
-    width: 1000px;
-    height: 600px;
-    margin-right: 10px;
-    float: left;
-}
-.headBanner{
-    width: 1000px;
-    height: 150px;
-    background-color: #444466;
-    margin: center;
-    display: table;
-    color: white;
-    font-size: 50px;
-    font-style: italic;
-    font-family: Arial, Helvetica, sans-serif;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-}
-
-
-img{
-    width:30%; 
-    height: auto;
-    float: left;
-    margin: 10px;
-}
-
-.menu p{
-    color: #815858;
-    margin-left: 35px;
-    text-align: justify;
-}
-
-.footbar{
-    width: 1000px;
-    height: 50px;
-    background-color: #664444;
-    margin: center;
-    display: table;
-    color: rgb(158, 157, 157);
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
+    color: grey;
+    padding-top: 1px;
+    padding-bottom: 20px;
+    margin: 0px;
     text-align: center;
+    width: 260px;
+    height: 30px;
+}
+
+
+
+.guias{
+    text-align:center;
+
+    width: 1200px;
+    height: 320px;
+    padding-top: 15px; 
+}
+
+.imgInline img {
+     width: 235px;
+    height: auto;
+}
+
+.imgInline {
+    display: inline-block;
+    width: 260px;
+    height: 20px;
+    padding-left: 10px;
+    align-content: center;
+}
+
+.headInline{ 
+    width: 1200px;
+    height: 30px;
+    padding-left: 10px;
+}
+.head1{
+    background: #2F7FBE;
+    width: 700px;
+    height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align:center;
+    margin-left: 25px;
+    font-size: 90%;
+    display: inline-block;
+
+}
+.head2{
+    background: #2F7FBE;
+    width: 350px;
+    height: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align:center;
+    font-size: 90%;
+    display: inline-block;
+    margin-left: 75px;
+
+}
+
+.headInline h3{
+    margin: 0px;
+}
+
+
+.contentInline{ 
+    width: 1200px;
+    height: 1000px;
+    padding-left: 10px;
+}
+
+.content1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666464;
+    margin-left: 25px;
+    font-size: 90%;
+    text-align: left;
+    width: 780px;
+    float: left;
+}
+.content1 p{
+text-align: top;
+margin-bottom: 30px;
+}
+.content1 h3{
+margin-top: 0px;
+color: #4479AE;
+}
+
+.content1 img{
+float: left;
+margin-bottom: 5px;
+margin-right: 10px;
+}
+.content2{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666464;
+    display: inline;
+    font-size: 90%;
+
+}
+.content2 p{
+text-align: top;
+margin-bottom: 30px;
+}
+.content2 h3{
+margin-top: 0px;
+color: #4479AE;
+}
+
+.content2 img{
+float: left;
+margin-bottom: 5px;
+margin-right: 10px;
 }
