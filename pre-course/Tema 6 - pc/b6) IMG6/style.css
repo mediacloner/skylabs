@@ -193,17 +193,7 @@ display: block; float: right; width: 227px; margin: 0; padding: 10px 0 11px 10px
   margin: 52px 0 17px 22px;
 }
 
-#wrapper-ie {
-/*	width: auto;
-*/}
 
-/*
-#content {
-  width: 90%;
-  margin: 0 auto;
-  padding: 0;
-}
-*/
 
 .more-link {
   float: none;
@@ -440,9 +430,7 @@ div.support-menu-item {
 #donate-classes li img {
 	padding-right: 10px;
 }
-#donate-classes li strong {
-	/*padding-right: 30px;*/
-}
+
 
 #donate-classes .amount {
 	font-size: 125%;
@@ -654,7 +642,7 @@ span.international {
 
 /* footer */
 #footer { background-color: #f2f4f2; clear: both; margin-top: 40px; padding: 10px 0; color: #555; font-size: 90%; }
-#sub-footer { } /* + .box */
+
 
 #footer p {
   margin-top: 30px;
@@ -972,9 +960,7 @@ h2.thanks { font-size: 200%; }
 #donate-levels li img {
 	padding-right: 2px;
 }
-#donate-levels li strong {
-	/*padding-right: 30px;*/
-}
+
 
 #donate-levels .amount {
 	font-size: 125%;
@@ -1130,12 +1116,3 @@ margin-left: 7px;
   color: #333;
 }
 
-
-/*
-     FILE ARCHIVED ON 18:54:18 Aug 07, 2008 AND RETRIEVED FROM THE
-     INTERNET ARCHIVE ON 21:05:59 Dec 14, 2017.
-     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
-
-     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
-     SECTION 108(a)(3)).
-*/
