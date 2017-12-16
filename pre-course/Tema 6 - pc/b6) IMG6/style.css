@@ -9,10 +9,6 @@ body { background-color: #fff; color: #333; font: 75%/145% verdana, sans-serif; 
 .clear { height: 0px !important; clear: both; }
 
 
-
-
-
-
 h3 {
 	font-weight: bold !important;
 	font-size: 125% !important;
@@ -167,7 +163,7 @@ display: block; float: right; width: 227px; margin: 0; padding: 10px 0 11px 10px
 }
 
 #header a.cc-actions:hover {
-  background: url('/web/20080807185418im_/http://support.creativecommons.org/sites/default/themes/ccidthemev2/images/header-main-hover-b.png') repeat-x bottom left;
+  background: url('images/header-main-hover-b.png') repeat-x bottom left;
   text-decoration: none;
 }
 .jurisdictions {
@@ -238,12 +234,7 @@ display: block; float: right; width: 227px; margin: 0; padding: 10px 0 11px 10px
 #main-content-primary {
   width: 67%;
 }
-/*#main-content p,
-#main-content h1,
-#main-content h2,
-#main-content h3 {
-  width: 87%;
-}*/
+
 #main-content .block { padding-right: 2% !important; }
 
 #main-content-features p,
@@ -278,17 +269,7 @@ display: block; float: right; width: 227px; margin: 0; padding: 10px 0 11px 10px
 #main-content #main-content-primary .block { margin-bottom: 33px; }
 #main-content #main-content-secondary .block { padding: 0 5px; }
 
-/*
-#main-content #title { border-bottom: 1px solid #eee; margin-right: 15px; margin-top: 15px; }
-#main-content #title h1 { margin-top: 15px; }
-#main-content #title h2, .title h1 { padding: 0px 15px 10px 0px;  margin: 0;}
-#main-content #title h2.tagline { color: #b82e00;}
-#main-content #title h3.category { font-size: 90%; display: block; padding-top: 22px; margin: 0px 0px; }
-#main-content #title h1.splash-title { padding-bottom: 0px; color: #777; font-size: 300%; }
-#main-content #title h4 { font-size: 90%; padding-top: 10px;}
-#main-content #title img {  border: 1px solid #666; padding: 0 !important; margin-right: 15px; }
-#main-content #title #blurb { font-size: 60%; margin-bottom: 15px; }
-*/
+
 #main-content .block .title, #main-content #title { font-size: 175%; }
 #main-content .block .title a:link, #main-content .block .title a:visited { color: #383838; }
 #main-content .block h4.meta { color: #aaa; margin-bottom: 7px; font-variant: normal; font-size: 105%; padding-left: 0 !important; }
@@ -335,7 +316,7 @@ display: block; float: right; width: 227px; margin: 0; padding: 10px 0 11px 10px
 
 
 #title .background {
-	background: url(/web/20080807185418im_/http://support.creativecommons.org/sites/default/themes/ccidthemev2/images/title-bg.png);
+	background: url(images/title-bg.png);
 	color: #fff;
 	padding: 0.4em 0 0.38em 0.6em;
 	margin-top: 0;
@@ -525,21 +506,7 @@ ol.letters ol {
   padding: 0;
   margin: 0;
 }
-/*
-#main-content .box {
-  border: 1px solid #eee;
-  margin-bottom: 0.5em;
-}  
-#main-content .box .content {
-  padding: 0.5em;
-}
-#main-content .box h2 {
-  padding: 0.5em;
-  margin: 0;
-  font-size: 1.2em;
-  text-align: left;
-}
-*/
+
 .comment {
   border-top: solid 1px #eee;
   border-left: solid 1px #eee;
@@ -592,7 +559,7 @@ ol.letters ol {
 
 /*sidebar right */
 #sidebar-right {
-font-size: 0.85em; width: 15%; margin-right: 0 !important; margin-left:1%; padding-left: 5px; padding-bottom: 30px; /*background-color: #f9faf9;*/
+font-size: 0.85em; width: 15%; margin-right: 0 !important; margin-left:1%; padding-left: 5px; padding-bottom: 30px; 
 }
 #sidebar-right .block {
   margin: 0;
@@ -640,188 +607,6 @@ span.international {
 }
 #international { width: 95%;}
 
-/* footer */
-#footer { background-color: #f2f4f2; clear: both; margin-top: 40px; padding: 10px 0; color: #555; font-size: 90%; }
-
-
-#footer p {
-  margin-top: 30px;
-}
-
-#sub-footer ul {
-  list-style: none;
-  margin-bottom: 2em;
-}
-#sub-footer ul li {
-  display: inline;
-  margin-right: 3em;
-  font-weight: bold;
-}
-#sub-footer ul li a:hover {
-  background-color: #fff;
-}
-
-#footer #license { clear: both; border-top: 1px solid #ddd; padding-top: 20px; padding-bottom: 1.5em; text-align: left; }
-#footer #license p { margin-top: 0; padding-top: 0 !important; } 
-#footer #license img { float: left; margin-right: 10px; }
-
-
-.xml-icon {
-  text-align: center;
-}
-fieldset { border: 1px solid #999; }
-.form-submit {
-  margin: 0;
-}
-.form-item {
-  margin: 3px 0;
-  padding: 0.3em 0;
-}
-.form-radio, .form-checkbox {
-  background: transparent;
-  border: 0;
-}
-.main-content .box .content .form-item textarea {
-  width: auto;
-}
-input.form-text, input.form-password {
-  border: solid 1px #ddd;
-  margin: 0;
-  padding: 0 5px;
-  font-size: 12px;
-}
-input, textarea {
-  background: transparent;
-  color: inherit;
-  border: 1px solid #777;
-}
-form input.buy-button { border: none !important; }
-form input.form-text-item { border: 1px solid #666 !important; }
-
-input:focus, textarea:focus {
-  background: transparent;
-  border: 1px solid #03f;
-}
-button.form-submit {
-  border: solid 1px #ddd;
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-}
-h3.form-title {
-  text-align: left;
-}
-form .form-item .title  {
-  border: 0;
-  border-bottom: #ddd solid 1px;
-  color: #777;
-  background: transparent;
-  margin-bottom: 0.5em;
-  padding: 0.3em 0;
-  text-align: left;
-}
-select {
-  margin: 1px 5px;
-}
-.container-inline {
-  margin: 0 0 1.6em 0;
-}
-.container-inline div {
-  display: inline;
-}
-#pager {
-  text-align: center;
-}
-#pager div {
-  padding: 0.5em;
-}
-.main-content li {
-  padding-bottom: 0.25em;
-}
-#message {
-  background: #fff;
-  border: 2px solid #6e2;
-  padding: 2em;
-  margin: 1em 2em;
-}
-li.leaf {
-  list-style-type: square;
-}
-div.picture { 
-  border: 0;
-  float: left;
-  margin: 0 1em 0.3em 0;
-}
-br.clear {
-  clear: both;
-}
-.breadcrumb, .main-content .content-title, .links a.read-more { color: #111; }
-.links a.read-more:hover { color: #03f; }
-/*.box { border: 1px solid #eee; }
-.box h2 { color: #999; }*/
-.marker, .error { color: #f00; }
-.ok { color: #080; }
-.path a, .path a:visited { color: #777; }
-.tabs li .active, .tabs li .active:hover  {
-  color: #ccc;
-  background: #fff;
-}
-
-.calendar td, .calendar th { border-color: #eee; }
-.calendar .day-normal { background: #fff; }
-.calendar .day-future { background: #fff; }
-.calendar .day-today { background: #333; color: #fff; }
-.calendar .day-today a { color: #fff; }
-.calendar .day-selected { background: #555; color: #fff; }
-.calendar .day-link { background: #ddd; color: #fff; }
-
-
-ul.galleries { 
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-ul.galleries li { 
-  background-color : #eee;
-  border: 1px #ccc solid;
-  margin: 1em 0;
-  padding: 1em;
-}
-
-ul.galleries li img { 
-  position: relative;
-  float: left;
-  padding: 0 0.5em 0 0;
-  margin: 0 0.5em 0.5em 0;
-}
-
-ul.galleries li p.count { 
-  clear: both;
-}
-
-ul.galleries h3 { 
-  font-size: 1.2em;
-  margin : 0 0 0.5em 0;
-  padding : 0;
-}
-
-ul.images { 
-  list-style-type : none;
-  margin : 0;
-  padding : 0;
-}
-
-ul.images li { 
-  float : left;
-  margin : 1em;
-  height: 130px;
-  width: 130px;
-}
-
-#crm-container tbody td {
-  padding-left: 2px;
-}
 
 
 /* Support Home stuff */
@@ -912,7 +697,7 @@ table#store td, table#store th {
 
 #gmapsmall {
 	margin: 20px 0;
-	background: url('/web/20080807185418im_/http://support.creativecommons.org/sites/default/themes/ccidthemev2/gmap2.png') no-repeat -540px -15px;
+	background: url('images/gmap2.png') no-repeat -540px -15px;
 	height: 170px;
 	width: 93%;
 	border: 1px solid #aaa;
@@ -1027,92 +812,5 @@ img.closeup {
 	position: absolute;
 	top: 13px;
 	left: 55px;
-}
-
-/* PROGRESS METER */
-    #campaign {
-background-color: #333d33; 
-height: 49px;
-padding-top: 5px;
-margin-bottom: 10px;
-text-align: center;
-}
-
-#campaign.wide { margin: 0; padding: 5px 35%; height: 25px; position: relative; }
-
-#campaign title {
-
-margin-top: 2px;
-}
-
-#campaign .title a {
-color: #fff;
-}
-
-#campaign .progress {
-position: relative;
-cursor:pointer; 
-margin-left: 2%; 
-margin-top: 2px; 
-margin-bottom: 3px;
-width: 94%; 
-height: 20px;
-padding: 0 1%; 
-background-color: #ddd; 
-float: left;  
-}
-
-#campaign .progress span {
-display: block;
-position: absolute;
-top: 1px;
-left: 1px;
-height: 18px;
-margin: 0; 
-background-color: #a3aaa3;
-background: url('https://web.archive.org/web/20080807185418im_/http://creativecommons.org/images/support/progress.png');
-}
-
-#campaign .results {
-font-size: 0.9em;
-/*position: absolute;
-top: 1px;
-left: 16px;*/
-margin: 0 auto;
-/*
-float: left; 
-margin-top: 2px; 
-margin-left: 7px;
-*/
-}
-
-#campaign .results a {
-	/*color: #131313;*/
-	color: #fff;
-}
-
-#sidebar-right #campaign {
-  background-color: transparent !important;
-  padding-top: 0;
-  text-align: left;
-  height: auto;
-  position: relative;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
-}
-
-#sidebar-right #campaign .progress {
-  margin-left: 0;
-}
-
-#sidebar-right #campaign .results {
-  position: absolute;
-  font-size: 1em;
-  top: 3px;
-  left: 10px;
-}
-
-#sidebar-right #campaign .results a {
-  color: #333;
 }
 
