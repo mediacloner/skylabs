@@ -1,0 +1,37 @@
+* {
+
+background-color: #537960;
+font-family: 'Pangolin', cursive;
+font-size: 40px;
+color: rgb(230, 228, 228);
+}
+
+
+input {
+    background-color: black;
+    font-family: 'Press Start 2P', cursive;
+    color: greenyellow;
+    font-size: 25px;
+    padding: 10px;
+    border: 10px;
+}
+
+button {
+    background-color: rgb(218, 0, 0);
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(148, 5, 5);
+    font-size: 25px;
+    padding: 10px;
+    border: 10px;
+
+}
+
+.result {
+
+    display: inline-block;
+}
+
+#pholders{
+    width: 120px;
+    height: 120px;
+}
