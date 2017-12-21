@@ -12,3 +12,8 @@ function changeGreen(elementId) {
 
 }
 
+function changeBlue(elementId) {
+    document.getElementById(elementId).className = 'round blue';
+
+}
+

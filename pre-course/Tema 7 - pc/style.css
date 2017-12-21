@@ -29,7 +29,9 @@
 		height: 100px;
 	}
 
-
+/*==================================================
+ * Letters
+ * ===============================================*/
 
 	.round {
 		display: block;
@@ -77,7 +79,11 @@
 		color: rgba(153,38,0,1);
 		border-color: rgba(153,38,0,.2);
 	}
-
+	a.focus {
+		background-color: rgb(187, 0, 194);
+		color: rgba(153,38,0,1);
+		border-color: rgba(153,38,0,.2);
+	}
 
 
 	a.green {
@@ -86,9 +92,53 @@
 		border-color: rgba(2, 61, 0, 0.2);
 	}
  
+
+/*==================================================
+ * Main Banner
+ * ===============================================*/
+
 	.banner {
 		 width: auto;
 		 height: 150px;
 		 text-align: left;
 	}
+/*==================================================
+ * Questions
+ * ===============================================*/
 
+.questions
+{
+    position: relative;
+}
+.questions:before, .questions:after
+{
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(-3deg);
+}
+.questions:after
+{
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
+
+/*==================================================
+ * Player
+ * ===============================================*/
+
+ .player {
+color: rgb(230, 230, 230);
+font-size: 2em;
+font-weight: bold;
+font-family: Helvetica;
+text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
