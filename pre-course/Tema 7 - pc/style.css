@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +16,7 @@
 		font-family: "helvetica neue", helvetica, arial, sans-serif;
 		font-size: 13px;
 		text-align: center;
-		background: #333 url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/low_contrast_linen.png');
+		background: #333;
 	}
 
 	ul {
@@ -106,39 +109,124 @@
  * Questions
  * ===============================================*/
 
-.questions
-{
-    position: relative;
+a{
+  color:#ccc;
 }
-.questions:before, .questions:after
-{
-    z-index: -1;
+.container{
+  width:500px;
+  padding-bottom:30px;
+  font: normal 1em/1.5 "Open Sans";
+position: absolute;
+top: 425px;
+left: 510px;
+}
+h1{
+  text-align:center;
+  text-shadow:0 1px white;
+  color:#02303F;
+}
+h2{
+  color:#736861; 
+  margin:15px 0 5px;
+  text-shadow:0 1px rgba(255,255,255,0.5);
+}
+h6{
+  color:#928566; 
+  margin:0;
+}
+
+
+label{
+  display:block;
+  width:32%;
+  border: 4px solid white;
+  position:absolute;
+  bottom:5px;
+  cursor: pointer;
+  transition: border-color 0.3s linear;
+}
+
+
+blockquote{
+  margin-bottom: 20px;
+  padding: 30px 55px;
+  width:500px;
+  background-color: #DB532B;
+  color:white;
+
+  position:relative;
+  transition: background-color 0.6s linear;
+}
+
+
+
+blockquote:after { 
+  content: '\201C';
+    font-family: serif;
+    font-style: normal;
+    font-weight: 700;
     position: absolute;
-    content: "";
-    bottom: 15px;
-    left: 10px;
-    width: 50%;
-    top: 80%;
-    max-width:300px;
-    background: #777;
-    box-shadow: 0 15px 10px #777;
-    transform: rotate(-3deg);
-}
-.questions:after
-{
-    transform: rotate(3deg);
-    right: 10px;
-    left: auto;
-}
+    font-size: 6em;
+    top: 15px;
+    left: 450px;
+    transform: rotate(180deg);
+    color: hsla(0, 0%, 97%, .5);
+    text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1);
+} 
+
+blockquote:before { 
+  content: '\201C';
+    font-family: serif;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    font-size: 6em;
+    top: -45px;
+    left: 5px;
+    color: hsla(0, 0%, 97%, .5);
+    text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1);
+} 
 
 /*==================================================
  * Player
  * ===============================================*/
 
  .player {
-color: rgb(230, 230, 230);
+color: rgb(248, 248, 248);
 font-size: 2em;
 font-weight: bold;
 font-family: Helvetica;
 text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
 }
+
+ .host {
+color: rgb(248, 248, 248);
+font-size: 2em;
+font-weight: bold;
+font-family: Helvetica;
+text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+/*==================================================
+ * align Container
+ * ===============================================*/
+
+
+
+.people {
+  /* IMPORTANTE */
+  text-align: center;
+}
+.player {
+  display: inline-block;
+  margin-left: 220px;
+
+}
+.host {
+  display: inline-block;
+	margin-right: 220px;
+
+}
+
+
+
