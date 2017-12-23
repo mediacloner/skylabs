@@ -3,21 +3,179 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>HTML page for work with Javascript</title>
-
+    <title>Pasapalabra The Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<p>Pasapalabra Game! (Final JS) 🎮⁉️
-Haz el juego del Pasapalabra, el programa deberá lanzar la definición de una palabra y el usuario deberá adivinar que palabra
-estamos tratando, por ejemplo: '>>>'With the letter "M", Capital of Spain, located in the center of the country. '>>>' "Madrid"
-'>>>'Correct, you have 1 Point! Tu juego debería hacer una pregunta por cada letra del alfabeto, al final del juego, y habiendo
-respondido todas las letras, deberá indicarle al usuario cuantas letras ha fallado y cuantas ha acertado. Si el usuario responde
-con "pasapalabra" el juego deberá estar preparado para entender que en ese momento, el usuario no responderá esa pregunta,
-y no estará acertada ni fallada, la dejará para la siguiente ronda. El juego deberá, cuando finalize, mostrar un ranking
-de usuarios con el nombre y ordenados por cantidad de letras acertadas.</p>
+    <body>
+        <img class='banner' src="img/banner.png" alt="Pasapalabra">
 
-<script type="text/javascript" src="pasapalabra.js"></script>
+        <div class="buttons">
+            <ul>
+                <li>
+                    <a href="#" class="round green" id='a'>A
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round red" id='b'>B
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='c'>C
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='d'>D
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='e'>E
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='f'>F
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='g'>G
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='h'>H
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='i'>I
+                    </a>
+                </li>
 
-</body>
+                <li>
+                    <a href="#" class="round yellow" id='j'>J
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='k'>K
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='l'>L
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='m'>M
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='n'>N
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='o'>O
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='p'>P
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='q'>Q
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='r'>R
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='s'>S
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='t'>T
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='u'>U
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='v'>V
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='w'>W
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='x'>X
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='y'>Y
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="round yellow" id='z'>Z
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+
+        </div>
+        <div class="container">
+            <blockquote>
+                Questions!!!
+            </blockquote>
+            <blockquote>
+                Answers
+            </blockquote>
+        </div>
+
+        <div class="people">
+            <div class="host">
+                <img src="img/host.png" width="170" height=auto />
+                <br>
+                <h3>Host</h3>
+            </div>
+
+
+            <div class="player">
+                <img class='banner' src="img/player1.png" alt="Player1">
+                <br>
+                <h3>Alex</h3>
+            </div>
+        </div>
+
+
+
+        <script type="text/javascript" src="js.js"></script>
+
+
+        <br>
+        <br>
+
+
+        <button onclick="changeYellow('a')">Color Yellow </button>
+        <button onclick="changeGreen('a')">Color Green </button>
+        <button onclick="changeRed('a')">Color Red </button>
+        <button onclick="changeBlue('a')">Select</button>
+        <br>
+        <button onclick="changeYellow('b')">Color Yellow </button>
+        <button onclick="changeGreen('b')">Color Green </button>
+        <button onclick="changeRed('b')">Color Red </button>
+        <button onclick="changeBlue('b')">Select </button>
+        <br>
+        <button onclick="changeYellow('c')">Color Yellow </button>
+        <button onclick="changeGreen('c')">Color Green </button>
+        <button onclick="changeRed('c')">Color Red </button>
+        <button onclick="changeBlue('c')">Select </button>
+
+    </body>
+
 </html>
