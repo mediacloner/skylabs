@@ -1,5 +1,8 @@
+
+
 function changeYellow(elementId) {
     document.getElementById(elementId).className = "round yellow";
+    document.getElementById("questions").innerHTML = "We are here";
     
 }
 function changeRed(elementId) {

@@ -129,12 +129,12 @@
 
         </div>
         <div class="container">
-            <blockquote>
-                Questions!!!
+            <blockquote id="questions">
+                Hello!!!
             </blockquote>
             <blockquote>
-                <form action="/action_page.php">
-                    <input type="text" value="Answer him!" onclick='this.value = "";'>
+                <form action="javascript:enterButton();">
+                    <input type="text" id="inputBox" value="Answer him!" onclick='this.value = "";'>
                     <input type="submit" value="Enter">
                 </form>
             </blockquote>
@@ -157,27 +157,13 @@
 
 
 
-        <script type="text/javascript" src="js.js"></script>
-
+        <script type="text/javascript" src="pasapalabra.js"></script>
+      
 
         <br>
         <br>
 
 
-        <button onclick="changeYellow('a')">Color Yellow </button>
-        <button onclick="changeGreen('a')">Color Green </button>
-        <button onclick="changeRed('a')">Color Red </button>
-        <button onclick="changeBlue('a')">Select</button>
-        <br>
-        <button onclick="changeYellow('b')">Color Yellow </button>
-        <button onclick="changeGreen('b')">Color Green </button>
-        <button onclick="changeRed('b')">Color Red </button>
-        <button onclick="changeBlue('b')">Select </button>
-        <br>
-        <button onclick="changeYellow('c')">Color Yellow </button>
-        <button onclick="changeGreen('c')">Color Green </button>
-        <button onclick="changeRed('c')">Color Red </button>
-        <button onclick="changeBlue('c')">Select </button>
 
     </body>
 

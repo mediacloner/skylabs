@@ -1,4 +1,4 @@
-function pasapalabra() {
+
     var player1 = '';
     var player2 = '';
     var scorePlayer1 = 0;
@@ -8,9 +8,8 @@ function pasapalabra() {
     var lastPosPlayer1 = 'A';
     var lastPosPlayer2 = 'A';
     var lettersPlayer1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
     var lettersPlayer2 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-
+    var stateAction = 0;  // 0-Ask Player 1, 1- Ask player 2, 
 
     var setOfQuestions = {
         letter:
@@ -47,48 +46,53 @@ function pasapalabra() {
     }
 
     var valueSw = 'p1';
-
     UIPlayer('wellcome1');
-    UIPlayer('wellcome2');
-    while (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) { // while no emty letters some player
-        switch (valueSw) {
-            case 'p1':
-                UIPlayer('turn1');
-                var pos = -1;
-                var count = 0;
-                var fback = true;
-                while (fback == true && count < 1001 && lettersPlayer1.length > 0) {  // end when don't have letters
-                    fback = askQuestionsp1(lastPosPlayer1);
-                    if (count == 1000) {                                // protection
-                        console.error('Error loop Player1')
+    function mainGame() {
+       
+        while (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) { // while no emty letters some player
+            switch (valueSw) {
+                case 'p1':
+                    UIPlayer('turn1');
+                    var pos = -1;
+                    var count = 0;
+                    var fback = true;
+                    while (fback == true && count < 1001 && lettersPlayer1.length > 0) {  // end when don't have letters
+                        fback = askQuestionsp1(lastPosPlayer1);
+                        if (count == 1000) {                                // protection
+                            console.error('Error loop Player1')
+                        }
+
                     }
 
-                }
+                    valueSw = 'p2'
+                    break;
+                case 'p2':
+                    UIPlayer('turn2');
+                    var pos = -1;
+                    var count = 0;
+                    var fback = true;
+                    while (fback == true && count < 1001 && lettersPlayer2.length > 0) {
+                        var fback = askQuestionsp2(lastPosPlayer2);
+                        if (count == 1000) {
+                            console.error('Error loop Player2')
+                        }
 
-                valueSw = 'p2'
-                break;
-            case 'p2':
-                UIPlayer('turn2');
-                var pos = -1;
-                var count = 0;
-                var fback = true;
-                while (fback == true && count < 1001 && lettersPlayer2.length > 0) {
-                    var fback = askQuestionsp2(lastPosPlayer2);
-                    if (count == 1000) {
-                        console.error('Error loop Player2')
                     }
-
-                }
-                valueSw = 'p1'
-                break;
+                    valueSw = 'p1'
+                    break;
+            }
         }
+
+        alert('                                    Final Score\n' + '================================================ \n' +
+            ' Right Answers: ' + scorePlayer1 + '  Wrong Answers: ' + faultPlayer1 + ' Player 1 : ' + player1 + '\n' +
+            ' Right Answers: ' + scorePlayer2 + '  Wrong Answers: ' + faultPlayer2 + ' Player 2 : ' + player2 + '\n');
     }
 
-    alert('                                    Final Score\n' + '================================================ \n' +
-        ' Right Answers: ' + scorePlayer1 + '  Wrong Answers: ' + faultPlayer1 + ' Player 1 : ' + player1 + '\n' +
-        ' Right Answers: ' + scorePlayer2 + '  Wrong Answers: ' + faultPlayer2 + ' Player 2 : ' + player2 + '\n');
 
 
+
+        
+    
     function askQuestionsp1(letter) {
         var result = '';
         var posQuestion = setOfQuestions.letter.indexOf(letter);
@@ -194,38 +198,89 @@ function pasapalabra() {
 
     }
 
+    function enterButton() {
+        if (stateAction == 1) {
+            player2 = document.getElementById("inputBox").value;
+            stateAction = 2;
+            var text = ('Wellcome ' + player2 + '!');
+            document.getElementById("questions").innerHTML = text;
+            setTimeout(Timeout, 4000) // 4s
+            function Timeout() {
+                mainGame();
+            }
+        }
+        if (stateAction == 0) {
+            player1 = document.getElementById("inputBox").value;
+            stateAction = 1;
+            var text = ('Wellcome ' + player1 + '!');
+            document.getElementById("questions").innerHTML = text;
+            setTimeout(UIPlayer('wellcome2'), 4000);              
+            }
+    }
 
+        
+    
     function UIPlayer(what) {
         if (what == 'wellcome1') {
-            player1 = prompt("Please Player 1, writte your user name:", "");
-            alert('Wellcome ' + player1 + '!');
+            var text = "Please Player 1, writte your user name";
+            document.getElementById("questions").innerHTML = text;
+
         }
         if (what == 'wellcome2') {
-            player2 = prompt("Please Player 2, writte your user name:", "");
-            alert('Wellcome ' + player2 + '!');
+            var text = "Please Player 2, writte your user name:" ;
+            document.getElementById("questions").innerHTML = text;
+
         }
         if (what == 'turn1') {
-            alert('Is your turn ' + player1 + '!');
+
+            setTimeout(Timeout, 4000) // 4s
+            function Timeout() {
+                var text = ('Is your turn ' + player1 + '!');
+                document.getElementById("questions").innerHTML = text;
+            }
+
         }
 
         if (what == 'turn2') {
-            alert('Is your turn ' + player2 + '!');
+
+            setTimeout(Timeout, 4000) // 4s
+            function Timeout() {
+                var text = ('Is your turn ' + player2 + '!');
+                document.getElementById("questions").innerHTML = text;
+            }
+
         }
         if (what == 'correct') {
-            alert('Answer Correct!');
+
+            setTimeout(Timeout, 4000) // 4s
+            function Timeout() {
+                var text = 'Answer Correct!';
+                document.getElementById("questions").innerHTML = text;
+            }
+
         }
 
         if (what == 'false') {
-            alert('Ups! You are wrong');
+
+            setTimeout(Timeout, 4000) // 4s
+            function Timeout() {
+                var text = 'Ups! You are wrong';
+                document.getElementById("questions").innerHTML = text;
+            }
+
         }
 
         if (what == 'pasapalabra') {
-            alert('OK! Change the player');
+
+            setTimeout(Timeout, 4000) // 4s
+            function Timeout() {
+                var text = 'OK! Change the player';
+                document.getElementById("questions").innerHTML = text;
+            }
+
         }
     }
 
-}
 
-pasapalabra();    
 
 
