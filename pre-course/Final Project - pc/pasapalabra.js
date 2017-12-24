@@ -199,7 +199,7 @@
     }
 
     function enterButton() {
-        if (stateAction == 1) {
+        if (stateAction == 10) {
             player2 = document.getElementById("inputBox").value;
             stateAction = 2;
             var text = ('Wellcome ' + player2 + '!');
