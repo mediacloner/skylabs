@@ -174,6 +174,7 @@ function enterButton() {
         stateAction = 2;
         var text = ('Wellcome ' + player2 + '!');
         document.getElementById("questions").innerHTML = text;
+        location.reload();
         wait(4);
         mainGame();
         
@@ -183,8 +184,9 @@ function enterButton() {
         stateAction = 1;
         var text = ('Wellcome ' + player1 + '!');
         document.getElementById("questions").innerHTML = text;
-        wait (3);
-        UIPlayer('wellcome2');              
+        wait(3);
+        UIPlayer('wellcome2');   
+
         }
 }
     
@@ -232,6 +234,7 @@ function wait(seconds) {
     while (end < start + ms) {
         end = new Date().getTime();
     }
+
 }
 
 
