@@ -20,3 +20,18 @@ function changeBlue(elementId) {
 
 }
 
+function delayFuntion(seconds) {
+var timeAcc = 0;
+while (timeAcc => seconds){
+    setInterval (function () {timeAcc++}, 1000)     
+}
+return true;
+}
+
+
+delayFuntion (10);
+console.log("OK")
+
+
+
+
