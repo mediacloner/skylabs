@@ -279,6 +279,14 @@
             }
 
         }
+        function wait(seconds) {
+            var ms = seconds * 1000;
+            var start = new Date().getTime();
+            var end = start;
+            while (end < start + ms) {
+                end = new Date().getTime();
+            }
+        }
     }
 
 
