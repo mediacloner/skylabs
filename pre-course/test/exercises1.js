@@ -1,17 +1,20 @@
 
+var key = 'p1'
+  switch (key) {
+          case 'p1':
+                  console.log('p1');
+                  break;
+          case 'p2':
+                  console.log('p2');
+                  break;
 
-        function wait(seconds) {
-                var ms = seconds * 1000;
-                var start = new Date().getTime();
-                var end = start;
-                while (end < start + ms) {
-                        end = new Date().getTime();
-                }
-        }
+          case 'p3':
+                  console.log('p3');
+                  break;
+          default:
+                  break;
+  }
 
-        console.log('before');
-        wait(4);  //7 seconds in milliseconds
-        console.log('after');
 
 
 

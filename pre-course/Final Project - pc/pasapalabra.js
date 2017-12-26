@@ -1,9 +1,10 @@
-var player1 = '';
-var player2 = '';
+var player1 = 'Player 1';
+var player2 = 'Player 2';
 var scorePlayer1 = 0;
 var scorePlayer2 = 0;
 var faultPlayer1 = 0;
 var faultPlayer2 = 0;
+var text = '';
 var lastPosPlayer1 = 'A';
 var lastPosPlayer2 = 'A';
 var lettersPlayer1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -44,38 +45,53 @@ var setOfQuestions = {
 }
 var valueSw = 'p1';
 UIPlayer('wellcome1');
-function mainGame() {
-   
-    while (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) { // while no emty letters some player
-        switch (valueSw) {
-            case 'p1':
+function mainGame(stateQuestion) {
+
+    valueSw = stateQuestion;
+
+    switch (valueSw) {
+        case 'p1': //turn1
+            if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {     // while no emty letters some player
                 UIPlayer('turn1');
                 var pos = -1;
                 var count = 0;
                 var fback = true;
-                while (fback == true && count < 1001 && lettersPlayer1.length > 0) {  // end when don't have letters
-                    fback = askQuestionsp1(lastPosPlayer1);
-                    if (count == 1000) {                                // protection
-                        console.error('Error loop Player1')
-                    }
-                }
-                valueSw = 'p2'
+                valueSw = 'p1Ask';
                 break;
-            case 'p2':
-                UIPlayer('turn2');
-                var pos = -1;
-                var count = 0;
-                var fback = true;
-                while (fback == true && count < 1001 && lettersPlayer2.length > 0) {
-                    var fback = askQuestionsp2(lastPosPlayer2);
-                    if (count == 1000) {
-                        console.error('Error loop Player2')
-                    }
-                }
+            }
+            else{
+                results();
+                break
+            }
+        case 'p1Ask': //Ask Player1
+            fback = askQuestionsp1(lastPosPlayer1);
+            break;
+        case 'p1Eval': //evaluation answer
+            if (fback == true && lettersPlayer1.length > 0) {   // loop about right questions.
                 valueSw = 'p1'
-                break;
-        }
+            }
+            else {
+                valueSw = 'p2'
+            }
+            break;
+        case 'p2':
+            UIPlayer('turn2');
+            var pos = -1;
+            var count = 0;
+            var fback = true;
+            while (fback == true && count < 1001 && lettersPlayer2.length > 0) {
+                var fback = askQuestionsp2(lastPosPlayer2);
+                if (count == 1000) {
+                    console.error('Error loop Player2')
+                }
+            }
+            valueSw = 'p1'
+            break;
     }
+}
+    
+   
+function results() {
     alert('                                    Final Score\n' + '================================================ \n' +
         ' Right Answers: ' + scorePlayer1 + '  Wrong Answers: ' + faultPlayer1 + ' Player 1 : ' + player1 + '\n' +
         ' Right Answers: ' + scorePlayer2 + '  Wrong Answers: ' + faultPlayer2 + ' Player 2 : ' + player2 + '\n');
@@ -86,45 +102,13 @@ function askQuestionsp1(letter) {
     var result = '';
     var posQuestion = setOfQuestions.letter.indexOf(letter);
     var pos = lettersPlayer1.indexOf(letter);
-    result = prompt(player1 + ' >>>> ' + setOfQuestions.question[posQuestion], "");
-    if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0) { // Answer it's true
-        UIPlayer('correct');
-        if (pos + 1 == lettersPlayer1.length) {                        // Jump X  -->  A   
-            lastPosPlayer1 = lettersPlayer1[0];
-        }
-        else {
-            lastPosPlayer1 = lettersPlayer1[(pos + 1)];            // A --> B
-        }
-        lettersPlayer1.splice(pos, 1);                             // A, , C
-        scorePlayer1++;
-        return true
+
+    text = setOfQuestions.question[posQuestion];
+    document.getElementById("questions").innerHTML = text;
+
+    stateAction = 2; // enterButton state
     }
-    else {
-        if (result.toLowerCase() == 'pasapalabra') {                 // Change the player.
-            UIPlayer('pasapalabra');
-            if (pos == lettersPlayer1.length) {
-                lastPosPlayer1 = lettersPlayer1[0];                 // Jump to the next one without slice
-                return false
-            }
-            else {
-                lastPosPlayer1 = lettersPlayer1[(pos + 1)];
-                return false
-            }
-        }
-        else {                                                      // Wrong answer.
-            UIPlayer('false');
-            if (pos == lettersPlayer1.length) {
-                lastPosPlayer1 = lettersPlayer1[0];
-            }
-            else {
-                lastPosPlayer1 = lettersPlayer1[pos + 1];
-            }
-            lettersPlayer1.splice(pos, 1);
-            faultPlayer1++;
-            return false;
-        }
-    }
-}
+
 function askQuestionsp2(letter) {
     var result = '';
     var posQuestion = setOfQuestions.letter.indexOf(letter);
@@ -169,25 +153,60 @@ function askQuestionsp2(letter) {
     }
 }
 function enterButton() {
-    if (stateAction == 1000) {
+    if (stateAction == 1) { //Wellcome Player 2
         player2 = document.getElementById("inputBox").value;
-        stateAction = 2;
-        var text = ('Wellcome ' + player2 + '!');
+        text = ('Wellcome ' + player2 + '!');
         document.getElementById("questions").innerHTML = text;
-        wait(4);
-        mainGame();
-        
+        mainGame('p1');
+        return true;
     }
-    else if (stateAction == 0) {
+    if (stateAction == 0) { // Wellcome Player 1
         player1 = document.getElementById("inputBox").value;
         stateAction = 1;
-        var text = ('Wellcome ' + player1 + '!');
-        document.getElementById("questions").innerHTML = text;
+        UIPlayer('wellcome2');  
+        return true; 
+    }
 
-        wait(3);
-        UIPlayer('wellcome2');   
-
+    if (stateAction == 2){ //answer player 1
+        result = document.getElementById("inputBox").value;
+        if (setOfQuestions.answer.indexOf(result.toLowerCase()) >= 0) { // Answer it's true
+            UIPlayer('correct');
+            if (pos + 1 == lettersPlayer1.length) {                        // Jump X  -->  A   
+                lastPosPlayer1 = lettersPlayer1[0];
+            }
+            else {
+                lastPosPlayer1 = lettersPlayer1[(pos + 1)];            // A --> B
+            }
+            lettersPlayer1.splice(pos, 1);                             // A, , C
+            scorePlayer1++;
+            return true
         }
+        else {
+            if (result.toLowerCase() == 'pasapalabra') {                 // Change the player.
+                UIPlayer('pasapalabra');
+                if (pos == lettersPlayer1.length) {
+                    lastPosPlayer1 = lettersPlayer1[0];                 // Jump to the next one without slice
+                    return false
+                }
+                else {
+                    lastPosPlayer1 = lettersPlayer1[(pos + 1)];
+                    return false
+                }
+            }
+            else {                                                      // Wrong answer.
+                UIPlayer('false');
+                if (pos == lettersPlayer1.length) {
+                    lastPosPlayer1 = lettersPlayer1[0];
+                }
+                else {
+                    lastPosPlayer1 = lettersPlayer1[pos + 1];
+                }
+                lettersPlayer1.splice(pos, 1);
+                faultPlayer1++;
+                return false;
+            }
+        }
+    }
 }
     
 
@@ -195,35 +214,43 @@ function UIPlayer(what) {
     if (what == 'wellcome1') {
         var text = "Please Player 1, writte your user name";
         document.getElementById("questions").innerHTML = text;
+        return
     }
     if (what == 'wellcome2') {
-        var text = "Please Player 2, writte your user name:" ;
+        MyTextBox = document.getElementById("inputBox");
+        MyTextBox.value = "Your nickname here!";
+        text = ('Wellcome ' + player1 + '! <br>' +"Please Player 2, writte your user name:") ;
         document.getElementById("questions").innerHTML = text;
+        changePlayerUI(2);
+        return
     }
     if (what == 'turn1') {
-        wait('4');// 4s
-        var text = ('Is your turn ' + player1 + '!');
+        text = ('Is your turn ' + player1 + '!');
         document.getElementById("questions").innerHTML = text;
+        changePlayerUI(1);
+        return
+
+
                 }
     if (what == 'turn2') {
-        wait('4');// 4s
-        var text = ('Is your turn ' + player2 + '!');
+        text = ('Is your turn ' + player2 + '!');
         document.getElementById("questions").innerHTML = text;
+        changePlayerUI(2);
+        return
     }
     if (what == 'correct') {
-        wait('4');// 4s
-        var text = 'Answer Correct!';
+        text = 'Answer Correct!';
         document.getElementById("questions").innerHTML = text;
     }
     if (what == 'false') {
-        wait('4');// 4s
-        var text = 'Ups! You are wrong';
+        text = 'Ups! You are wrong';
         document.getElementById("questions").innerHTML = text;
+        return
     }
     if (what == 'pasapalabra') {
-        wait('4');// 4s
-        var text = 'OK! Change the player';
+        text = 'OK! Change the player';
         document.getElementById("questions").innerHTML = text;
+        return
     }
 }
 
@@ -234,9 +261,17 @@ function wait(seconds) {
     while (end < start + ms) {
         end = new Date().getTime();
     }
-
 }
 
+    
+function changePlayerUI(num) {
 
-
-
+    if (num == 1) {
+        document.getElementById("playerName").innerHTML = player1;
+        document.getElementById('playerImg').src = "img/player1.png"
+    }
+    else {
+        document.getElementById("playerName").innerHTML = player2;
+        document.getElementById('playerImg').src = "img/player2.png"
+    }
+}
