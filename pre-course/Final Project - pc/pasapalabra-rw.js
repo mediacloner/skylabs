@@ -20,6 +20,12 @@ var posQuestion2 = 0;
 var pos2 = -1;
 var count2 = 0;
 var fback2 = true;
+var letterStateUI = { // round yellow = 0 blue = 1 green = 2 red = 3
+    player1:
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+    player2:
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+}
 var setOfQuestions = {
     letter:
         ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
@@ -53,6 +59,7 @@ var setOfQuestions = {
     ,
     answer: ['amazon', 'basket', 'china', 'dog', 'eminem', 'facebook', 'google', 'harry potter', 'ios', 'javascript', 'katy perry', 'london', 'moon', 'nintendo', 'opera', 'pi', 'qatar', 'racism', 'seinfeld', 'tokio', 'ufo', 'video game', 'wikipedia', 'xbox', 'youtube', 'zinc']
 }
+
 wellcome(1);
 function enterButton(){
     if (stateAction == 'inputPlayer1'){
@@ -252,6 +259,43 @@ function changePlayerUI(num) {
         document.getElementById('playerImg').src = "img/player2.png"
     }
 }
+function refreshLettersUI(numPlayer) {
+
+   
+}
+
+function updateLettersUI(numPlayer, pos, state) { // round yellow = 0 blue = 1 green = 2 red = 3
+    var varClass = 'round yellow';
+
+    if (state == 1){
+        varClass = 'round blue';
+    }
+
+    else if(state == 2){
+        varClass = 'round green';
+    }
+
+    else if(state == 3){
+        varClass = 'round red';
+    }
+
+    else{
+        varClass = 'round yellow';
+    }
+
+    if (numPlayer == 1) {
+        letterStateUI.player1[pos] = state
+        document.getElementById(pos).className = varClass;
+    }
+
+    else {
+        letterStateUI.player1[pos] = state
+        document.getElementById(pos).className = varClass;
+    }
+
+
+}
+
 
 function results() {
     alert('                                    Final Score\n' + '================================================ \n' +

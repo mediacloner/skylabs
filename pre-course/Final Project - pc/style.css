@@ -82,11 +82,7 @@
 		color: rgba(153,38,0,1);
 		border-color: rgba(153,38,0,.2);
 	}
-	a.focus {
-		background-color: rgb(187, 0, 194);
-		color: rgba(153,38,0,1);
-		border-color: rgba(153,38,0,.2);
-	}
+
 
 
 	a.green {
