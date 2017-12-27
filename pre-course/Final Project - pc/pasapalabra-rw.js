@@ -108,11 +108,13 @@ function enterButton(){
 
     else if (stateAction == 'changePlayer1') {s
         changePlayerUI(1);
+        refreshLettersUI(1);
         stateAction = 'questionPlayer1';
     }
 
     else if (stateAction == 'changePlayer2') {
         changePlayerUI(2);
+        refreshLettersUI(2);
         stateAction = 'questionPlayer2';
     }
 
@@ -122,6 +124,7 @@ function enterButton(){
             document.getElementById("inputBox").value = " Please click enter";
             document.getElementById('inputBox').disabled = true;
             text = 'Answer Correct!';
+            updateLettersUI(1, posQuestion1, 2) 
             document.getElementById("questions").innerHTML = text;  
             stateAction = 'questionPlayer1'; //UIPlayer('correct');
             if (pos1 + 1 == lettersPlayer1.length) {                        // Jump X  -->  A
@@ -139,6 +142,7 @@ function enterButton(){
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true; 
                 stateAction == 'changePlayer2'
+                updateLettersUI(1, posQuestion1, 0) 
                 if (pos1 == lettersPlayer1.length) {
                     lastPosPlayer1 = lettersPlayer1[0];                 // Jump to the next one without slice
                     return false
@@ -150,6 +154,7 @@ function enterButton(){
             }
             else {                                                      // Wrong answer.
                 document.getElementById("questions").innerHTML = 'Ups! You are wrong';
+                updateLettersUI(1, posQuestion1, 3) 
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true; //UIPlayer('false');
                 if (pos1 == lettersPlayer1.length) {
@@ -171,6 +176,7 @@ function enterButton(){
             document.getElementById("inputBox").value = " Please click enter";
             document.getElementById('inputBox').disabled = true;
             text = 'Answer Correct!';
+            updateLettersUI(2, posQuestion2, 2) 
             document.getElementById("questions").innerHTML = text;
             stateAction = 'questionPlayer2'; //UIPlayer('correct');
             if (pos2 + 1 == lettersPlayer2.length) {                        // Jump X  -->  A
@@ -187,6 +193,7 @@ function enterButton(){
                 document.getElementById("questions").innerHTML = 'OK! Change the player';
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true;
+                updateLettersUI(2, posQuestion2, 0) 
                 stateAction == 'changePlayer1'
                 if (pos2 == lettersPlayer2.length) {
                     lastPosPlayer2 = lettersPlayer2[0];                 // Jump to the next one without slice
@@ -201,6 +208,7 @@ function enterButton(){
                 document.getElementById("questions").innerHTML = 'Ups! You are wrong';
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true; //UIPlayer('false');
+                updateLettersUI(2, posQuestion2, 3) 
                 if (pos2 == lettersPlayer2.length) {
                     lastPosPlayer2 = lettersPlayer2[0];
                 }
@@ -219,7 +227,7 @@ function enterButton(){
 function askQuestionsp1(letter) {
     posQuestion1 = setOfQuestions.letter.indexOf(letter);
     pos1 = lettersPlayer1.indexOf(letter);
-
+    updateLettersUI(1, pos1, 1) ;
     text = setOfQuestions.question[posQuestion1];
     document.getElementById("questions").innerHTML = text;
 
@@ -229,7 +237,7 @@ function askQuestionsp1(letter) {
 function askQuestionsp2(letter) {
     posQuestion2 = setOfQuestions.letter.indexOf(letter);
     pos2 = lettersPlayer2.indexOf(letter);
-
+    updateLettersUI(2, pos2, 1) ;
     text = setOfQuestions.question[posQuestion2];
     document.getElementById("questions").innerHTML = text;
 
@@ -260,7 +268,57 @@ function changePlayerUI(num) {
     }
 }
 function refreshLettersUI(numPlayer) {
+    if (numPlayer == 1) {
+        for (i = 0; i < letterStateUI.player1.length; i++ )
+        letterStateUI.player1[i] = state
+      
+        var varClass = 'round yellow';
 
+        if (state == 1) {
+            varClass = 'round blue';
+        }
+
+        else if (state == 2) {
+            varClass = 'round green';
+        }
+
+        else if (state == 3) {
+            varClass = 'round red';
+        }
+
+        else {
+            varClass = 'round yellow';
+        }
+
+       
+        document.getElementById(i).className = varClass;
+    }
+
+    else {
+        for (i = 0; i < letterStateUI.player2.length; i++)
+            letterStateUI.player2[i] = state
+
+        var varClass = 'round yellow';
+
+        if (state == 1) {
+            varClass = 'round blue';
+        }
+
+        else if (state == 2) {
+            varClass = 'round green';
+        }
+
+        else if (state == 3) {
+            varClass = 'round red';
+        }
+
+        else {
+            varClass = 'round yellow';
+        }
+
+
+        document.getElementById(i).className = varClass;
+    }
    
 }
 
