@@ -114,11 +114,8 @@ a{
 }
 .container{
   width:500px;
-  padding-bottom:30px;
+  float: left;
   font: normal 1em/1.5 "Open Sans";
-position: absolute;
-top: 410px;
-left: 512px;
 }
 h1{
   text-align:center;
@@ -213,19 +210,17 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 
 
 
+
 .people {
-  /* IMPORTANTE */
-  text-align: center;
+	margin-left: 25%;
+ width: 840px;
 }
 .player {
-  display: inline-block;
-  margin-left: 220px;
+     float: left;
 
 }
 .host {
-  display: inline-block;
-	margin-right: 220px;
-
+float: left;
 }
 
 input{
