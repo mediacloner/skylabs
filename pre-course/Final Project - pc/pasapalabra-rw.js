@@ -92,22 +92,24 @@ function enterButton(){
         if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {     // while no emty letters some player
             document.getElementById("inputBox").value = 'Answer ' + player2 + '!';
             document.getElementById('inputBox').disabled = false;
-            fback1 = askQuestionsp1(lastPosPlayer2);
+            fback2 = askQuestionsp2(lastPosPlayer2);
         }
         else {
             results();
         }
     }
 
-    else if (stateAction == 'changePlayer1') {
+    else if (stateAction == 'changePlayer1') {s
         changePlayerUI(1);
+        stateAction = 'questionPlayer1';
     }
 
     else if (stateAction == 'changePlayer2') {
         changePlayerUI(2);
+        stateAction = 'questionPlayer2';
     }
 
-    else if (stateAction = 'answerPlayer1'){
+    else if (stateAction == 'answerPlayer1'){
         result1 = document.getElementById("inputBox").value;
         if (setOfQuestions.answer.indexOf(result1.toLowerCase()) >= 0) { // Answer it's true
             document.getElementById("inputBox").value = " Please click enter";
@@ -156,7 +158,7 @@ function enterButton(){
             }
         }
     }
-    else if (stateAction = 'answerPlayer2') {
+    else if (stateAction == 'answerPlayer2') {
         result2 = document.getElementById("inputBox").value;
         if (setOfQuestions.answer.indexOf(result2.toLowerCase()) >= 0) { // Answer it's true
             document.getElementById("inputBox").value = " Please click enter";
@@ -164,7 +166,7 @@ function enterButton(){
             text = 'Answer Correct!';
             document.getElementById("questions").innerHTML = text;
             stateAction = 'questionPlayer2'; //UIPlayer('correct');
-            if (pos2 + 1 == lettersPlayer1.length) {                        // Jump X  -->  A
+            if (pos2 + 1 == lettersPlayer2.length) {                        // Jump X  -->  A
                 lastPosPlayer2 = lettersPlayer2[0];
             }
             else {
@@ -174,12 +176,12 @@ function enterButton(){
             return true
         }
         else {
-            if (result1.toLowerCase() == 'pasapalabra') {                 // Change the player.
+            if (result2.toLowerCase() == 'pasapalabra') {                 // Change the player.
                 document.getElementById("questions").innerHTML = 'OK! Change the player';
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true;
                 stateAction == 'changePlayer1'
-                if (pos1 == lettersPlayer2.length) {
+                if (pos2 == lettersPlayer2.length) {
                     lastPosPlayer2 = lettersPlayer2[0];                 // Jump to the next one without slice
                     return false
                 }
