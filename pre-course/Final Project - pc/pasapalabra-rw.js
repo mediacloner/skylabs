@@ -106,7 +106,7 @@ function enterButton(){
         }
     }
 
-    else if (stateAction == 'changePlayer1') {s
+    else if (stateAction == 'changePlayer1') {
         changePlayerUI(1);
         refreshLettersUI(1);
         stateAction = 'questionPlayer1';
@@ -227,7 +227,7 @@ function enterButton(){
 function askQuestionsp1(letter) {
     posQuestion1 = setOfQuestions.letter.indexOf(letter);
     pos1 = lettersPlayer1.indexOf(letter);
-    updateLettersUI(1, pos1, 1) ;
+    updateLettersUI(1, posQuestion1, 1) ;
     text = setOfQuestions.question[posQuestion1];
     document.getElementById("questions").innerHTML = text;
 
@@ -237,7 +237,7 @@ function askQuestionsp1(letter) {
 function askQuestionsp2(letter) {
     posQuestion2 = setOfQuestions.letter.indexOf(letter);
     pos2 = lettersPlayer2.indexOf(letter);
-    updateLettersUI(2, pos2, 1) ;
+    updateLettersUI(2, posQuestion2, 1) ;
     text = setOfQuestions.question[posQuestion2];
     document.getElementById("questions").innerHTML = text;
 
@@ -268,56 +268,59 @@ function changePlayerUI(num) {
     }
 }
 function refreshLettersUI(numPlayer) {
+    var state;
     if (numPlayer == 1) {
-        for (i = 0; i < letterStateUI.player1.length; i++ )
-        letterStateUI.player1[i] = state
-      
-        var varClass = 'round yellow';
+        for (i = 0; i < letterStateUI.player1.length; i++ ){
+            state = letterStateUI.player1[i];
+            
+            var varClass = 'round yellow';
 
-        if (state == 1) {
-            varClass = 'round blue';
+            if (state == 1) {
+                varClass = 'round blue';
+            }
+
+            else if (state == 2) {
+                varClass = 'round green';
+            }
+
+            else if (state == 3) {
+                varClass = 'round red';
+            }
+
+            else {
+                varClass = 'round yellow';
+            }
+
+        
+            document.getElementById(i).className = varClass;
         }
-
-        else if (state == 2) {
-            varClass = 'round green';
-        }
-
-        else if (state == 3) {
-            varClass = 'round red';
-        }
-
-        else {
-            varClass = 'round yellow';
-        }
-
-       
-        document.getElementById(i).className = varClass;
     }
 
     else {
-        for (i = 0; i < letterStateUI.player2.length; i++)
-            letterStateUI.player2[i] = state
+        for (i = 0; i < letterStateUI.player2.length; i++){
+            state = letterStateUI.player2[i];
 
-        var varClass = 'round yellow';
+            var varClass = 'round yellow';
 
-        if (state == 1) {
-            varClass = 'round blue';
+            if (state == 1) {
+                varClass = 'round blue';
+            }
+
+            else if (state == 2) {
+                varClass = 'round green';
+            }
+
+            else if (state == 3) {
+                varClass = 'round red';
+            }
+
+            else {
+                varClass = 'round yellow';
+            }
+
+
+            document.getElementById(i).className = varClass;
         }
-
-        else if (state == 2) {
-            varClass = 'round green';
-        }
-
-        else if (state == 3) {
-            varClass = 'round red';
-        }
-
-        else {
-            varClass = 'round yellow';
-        }
-
-
-        document.getElementById(i).className = varClass;
     }
    
 }
