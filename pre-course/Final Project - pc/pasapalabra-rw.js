@@ -145,7 +145,7 @@ function enterButton(){
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true; 
                 document.getElementById("inputBox").type = 'text';
-                stateAction == 'changePlayer2'
+                stateAction = 'changePlayer2'
                 updateLettersUI(1, posQuestion1, 0) 
                 if (pos1 == lettersPlayer1.length) {
                     lastPosPlayer1 = lettersPlayer1[0];                 // Jump to the next one without slice
@@ -201,7 +201,7 @@ function enterButton(){
                 document.getElementById('inputBox').disabled = true;
                 document.getElementById("inputBox").type = 'text';
                 updateLettersUI(2, posQuestion2, 0) 
-                stateAction == 'changePlayer1'
+                stateAction = 'changePlayer1'
                 if (pos2 == lettersPlayer2.length) {
                     lastPosPlayer2 = lettersPlayer2[0];                 // Jump to the next one without slice
                     return false
