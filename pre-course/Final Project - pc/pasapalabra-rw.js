@@ -31,7 +31,7 @@ var setOfQuestions = {
         ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     ,
     question: ['With the letter "A", American electronic commerce and cloud computing company based in Seattle',
-        'With the letter "B", is one of the world\'s most popular and widely viewed sports',
+        'With the letter "B", is one of the world\'s most popular and widely viewed sports. Short name.',
         'With the letter "C", the world\'s most populous country',
         'With the letter "D", is the most widely abundant terrestrial carnivore',
         'With the letter "E", is an American rapper, songwriter, record producer, and actor.',
@@ -51,13 +51,13 @@ var setOfQuestions = {
         'With the letter "S",  is widely considered to be one of the greatest and most influential TV sitcoms ever made.the show features a handful of Jerry\'s friends and acquaintances, particularly best friend George Costanza.',
         'With the letter "T", is the city will host the 2020 Summer Olympics. ',
         'With the letter "U", is in its strictest definition any apparent object in the sky that is not identifiable as a known object or phenomenon.',
-        'With the letter "V", (singular) is an electronic game that involves interaction with a user interface to generate visual feedback on a video device such as a TV screen or computer monitor.',
+        'With the letter "V", (singular) is an electronic game that involves interaction with a user interface to generate visual feedback on a video device such as a TV screen or computer monitor. One word.',
         'With the letter "W", is the largest and most popular general reference work on the Internet',
-        'With the letter "X", is a video gaming brand created and owned by Microsoft',
+        'With the letter "X", is a video gaming brand created and owned by Microsoft.',
         'With the letter "Y", is an American video-sharing website headquartered in San Bruno, California.',
         'With the letter "Z", is a chemical element with symbol Zn and atomic number 30.']
     ,
-    answer: ['amazon', 'basket', 'china', 'dog', 'eminem', 'facebook', 'google', 'harry potter', 'ios', 'javascript', 'katy perry', 'london', 'moon', 'nintendo', 'opera', 'pi', 'qatar', 'racism', 'seinfeld', 'tokio', 'ufo', 'video game', 'wikipedia', 'xbox', 'youtube', 'zinc']
+    answer: ['amazon', 'basket', 'china', 'dog', 'eminem', 'facebook', 'google', 'harry potter', 'ios', 'javascript', 'katy perry', 'london', 'moon', 'nintendo', 'opera', 'pi', 'qatar', 'racism', 'seinfeld', 'tokio', 'ufo', 'videogame', 'wikipedia', 'xbox', 'youtube', 'zinc']
 }
 
 wellcome(1);
