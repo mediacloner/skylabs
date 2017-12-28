@@ -68,6 +68,7 @@ function enterButton(){
         wellcome(2);
         document.getElementById("inputBox").value = "Your nickname here!";
         document.getElementById('inputBox').disabled = false;
+        document.getElementById("inputBox").type = 'text';
         text = ('Wellcome ' + player1 + '! <br>' + "Please Player 2, writte your user name:");
         document.getElementById("questions").innerHTML = text;
         changePlayerUI(2); 
@@ -79,6 +80,7 @@ function enterButton(){
         changePlayerUI(1); 
         document.getElementById("inputBox").value = " Please click enter";
         document.getElementById('inputBox').disabled = true;
+        document.getElementById("inputBox").type = 'text';
         text = ('Wellcome ' + player2 + '! Are you prepare ' + player1 + '?');
         document.getElementById("questions").innerHTML = text; 
         stateAction = 'questionPlayer1';
@@ -86,8 +88,8 @@ function enterButton(){
 
     else if (stateAction == 'questionPlayer1'){
         if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {     // while no emty letters some player
-            document.getElementById("inputBox").value = 'Answer ' + player1 + '!';
             document.getElementById('inputBox').disabled = false;
+            document.getElementById("inputBox").type = 'password';
             fback1 = askQuestionsp1(lastPosPlayer1);
         }
         else {
@@ -97,8 +99,8 @@ function enterButton(){
 
     else if (stateAction == 'questionPlayer2') {
         if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {     // while no emty letters some player
-            document.getElementById("inputBox").value = 'Answer ' + player2 + '!';
             document.getElementById('inputBox').disabled = false;
+            document.getElementById("inputBox").type = 'password';
             fback2 = askQuestionsp2(lastPosPlayer2);
         }
         else {
@@ -123,6 +125,7 @@ function enterButton(){
         if (setOfQuestions.answer.indexOf(result1.toLowerCase()) >= 0) { // Answer it's true
             document.getElementById("inputBox").value = " Please click enter";
             document.getElementById('inputBox').disabled = true;
+            document.getElementById("inputBox").type = 'text';
             text = 'Answer Correct!';
             updateLettersUI(1, posQuestion1, 2) 
             document.getElementById("questions").innerHTML = text;  
@@ -141,6 +144,7 @@ function enterButton(){
                 document.getElementById("questions").innerHTML = 'OK! Change the player';
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true; 
+                document.getElementById("inputBox").type = 'text';
                 stateAction == 'changePlayer2'
                 updateLettersUI(1, posQuestion1, 0) 
                 if (pos1 == lettersPlayer1.length) {
@@ -156,7 +160,8 @@ function enterButton(){
                 document.getElementById("questions").innerHTML = 'Ups! You are wrong';
                 updateLettersUI(1, posQuestion1, 3) 
                 document.getElementById("inputBox").value = " Please click enter";
-                document.getElementById('inputBox').disabled = true; //UIPlayer('false');
+                document.getElementById('inputBox').disabled = true;
+                document.getElementById("inputBox").type = 'text'; //UIPlayer('false');
                 if (pos1 == lettersPlayer1.length) {
                     lastPosPlayer1 = lettersPlayer1[0];
                 }
@@ -175,6 +180,7 @@ function enterButton(){
         if (setOfQuestions.answer.indexOf(result2.toLowerCase()) >= 0) { // Answer it's true
             document.getElementById("inputBox").value = " Please click enter";
             document.getElementById('inputBox').disabled = true;
+            document.getElementById("inputBox").type = 'text';
             text = 'Answer Correct!';
             updateLettersUI(2, posQuestion2, 2) 
             document.getElementById("questions").innerHTML = text;
@@ -193,6 +199,7 @@ function enterButton(){
                 document.getElementById("questions").innerHTML = 'OK! Change the player';
                 document.getElementById("inputBox").value = " Please click enter";
                 document.getElementById('inputBox').disabled = true;
+                document.getElementById("inputBox").type = 'text';
                 updateLettersUI(2, posQuestion2, 0) 
                 stateAction == 'changePlayer1'
                 if (pos2 == lettersPlayer2.length) {
@@ -207,7 +214,8 @@ function enterButton(){
             else {                                                      // Wrong answer.
                 document.getElementById("questions").innerHTML = 'Ups! You are wrong';
                 document.getElementById("inputBox").value = " Please click enter";
-                document.getElementById('inputBox').disabled = true; //UIPlayer('false');
+                document.getElementById('inputBox').disabled = true;
+                document.getElementById("inputBox").type = 'text'; //UIPlayer('false');
                 updateLettersUI(2, posQuestion2, 3) 
                 if (pos2 == lettersPlayer2.length) {
                     lastPosPlayer2 = lettersPlayer2[0];
@@ -350,7 +358,7 @@ function updateLettersUI(numPlayer, pos, state) { // round yellow = 0 blue = 1 g
     }
 
     else {
-        letterStateUI.player1[pos] = state
+        letterStateUI.player2[pos] = state
         document.getElementById(pos).className = varClass;
     }
 
