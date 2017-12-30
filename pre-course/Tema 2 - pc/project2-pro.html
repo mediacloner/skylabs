@@ -42,6 +42,7 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
 
         var userName;
         var rolAdmin = 0;
+        var adminSelector = 999;
         askUsername();
         showMeAllFlights();
         console.log ('The average cost of these flights is: ' + avgCost() );
@@ -82,22 +83,21 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
         function adminExec() {
 
 
-            confirm("You want to acces to admin mode?");
             var i = prompt("Type any number [Between 0 and 3]. 0) All Flights 1)Add Flights 2)Delete 3)Exit");
-            i = parseInt(i); // this makes it an integer
-            switch (i) {
+            adminSelector = parseInt(i); // this makes it an integer
+            switch (adminSelector) {
 
-                case 99:
-                    i = prompt("Type any number [Between 1 and 3]. 1)Add Flights 2)Delete 3)Exit");
-                    break;
                 case 0:
                     showMeAllFlights();
+                     adminExec();
                     break;
                 case 1:
                     newFlights();
+                    adminExec();
                     break;
                 case 2:
                     deleteFlights(flights);
+                    adminExec();
                     break;
 
                 case 3:
@@ -138,6 +138,9 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
                         else {
                             if (confirm('Do you want insert another one?')) {
                                 loopIterations = 1;
+                            }
+                            else{
+                                loopIterations = 0;
                             }
                         }
 
