@@ -106,34 +106,36 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
             }
 
 
-            function newFlights(arrayObj) {         
+            function newFlights() {
 
                 if (confirm('Do you want create new flights?')) {
-                    var countIterations = 0;
                     var loopIterations = 1;
 
-                    while (countIterations < 15 && loopIterations === 1) {
-                        var newItem;
+                    while (loopIterations === 1 || count < 20) {
 
-                        newItem.Id = idEmpty(arrayObj);
-                        newItem.To = prompt("Please, write destination city:", "");
-                        newItem.From = prompt("Please, write the origin of the flight.:", "");
-                        newItem.Cost = prompt("Please, write cost of the flight:", "");
-                        if (confirm('Is there any scale on the flight?')) {
-                            newItem.Scale = true;
-                        } else {
-                            newItem.Scale = false;
+                        var count = 0;
+                        count ++; 
+                        var newID = idEmpty(flights);
+
+                        if (newID != 'full') {
+
+                            flights.Id = newID;
+                            flights.To = prompt("Please, write destination city:", "");
+                            flights.From = prompt("Please, write the origin of the flight.:", "");
+                            flights.Cost = prompt("Please, write cost of the flight:", "");
+                            if (confirm('Is there any scale on the flight?')) {
+                                flights.Scale = true;
+                            } else {
+                                flights.Scale = false;
+                            }
+
+                            alert('Done!');
+
+
                         }
-
-                        if (confirm('Are you sure?')) {
-                            arrayObj.push(newItem);
-                            countIterations ++;
-                            prompt('Done!');
-
-                        } 
-
-                        else {
-                            prompt('Undo!');
+                        if (newID == 'full') {
+                            alert('The maximum number of insertions in flights has been exceeded.')
+                            loopIterations = 0;
                         }
 
                         if (confirm('Do you want insert another one?')) {
@@ -143,57 +145,48 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
                         else {
                             loopIterations = 0;
                         }
-                    
+
                     }
 
-                    if (countIterations => 15){
-                        alert('The maximum number of insertions in flights has been exceeded.')
-                    }
-                    
+
                     function idEmpty(myArray) {
-                        var slotFree = 'empty';
-                        for (var i = myArray.length; i >= 0; i--) {
-                            if (myArray[i].id == i) {
-                               // Don't do nothing
-                            }
-                            else{
-                            slotFree = i;
+                        var slotFree = 'full';
+                        for (var i = 14; i >= 0; i--) {
+                            if (typeof myArray[i] == 'undefined') {
+                                slotFree = i;
                             }
                         }
-                        
-                        if (slotFree === 'empty'){
-                            slotFree = myArray.length;
-                        }
-
+                        console.log('slot free: ' + slotFree)
                         return slotFree;
-              
                     }
 
                 }
             }
-        
-        }
 
-        function deleteFlights(arrayObj) { 
+            function deleteFlights(arrayObj) {
 
-           var idInput = prompt("Write the ID Number to delete flight");
+                var idInput = prompt("Write the ID Number to delete flight");
 
-           if (idInput == arrayObj[idInput].id) {
+                if (idInput == arrayObj[idInput].id) {
 
-                array.splice(idInput, 1); 
-                alert('Delete item!'); 
-            
-           }
+                    array.splice(idInput, 1);
+                    alert('Delete item!');
 
-            else {
+                }
 
-                alert('Delete item!');
-           
+                else {
+
+                    alert('Delete item!');
+
+                }
+
+
+
             }
-        
-        
-        
+
         }
+
+
 
         function userExec() {
             
