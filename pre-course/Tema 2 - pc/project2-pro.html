@@ -111,24 +111,22 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
                 if (confirm('Do you want create new flights?')) {
                     var loopIterations = 1;
 
-                    while (loopIterations === 1 || count < 20) {
-
-                        var count = 0;
-                        count ++; 
+                    while (loopIterations == 1) {
+                        var newItem = {};
                         var newID = idEmpty(flights);
 
                         if (newID != 'full') {
 
-                            flights.Id = newID;
-                            flights.To = prompt("Please, write destination city:", "");
-                            flights.From = prompt("Please, write the origin of the flight.:", "");
-                            flights.Cost = prompt("Please, write cost of the flight:", "");
+                            newItem.Id = newID;
+                            newItem.To = prompt("Please, write destination city:", "");
+                            newItem.From = prompt("Please, write the origin of the flight.:", "");
+                            newItem.Cost = prompt("Please, write cost of the flight:", "");
                             if (confirm('Is there any scale on the flight?')) {
-                                flights.Scale = true;
+                                newItem.Scale = true;
                             } else {
-                                flights.Scale = false;
+                                newItem.Scale = false;
                             }
-
+                            flights.push(newItem);
                             alert('Done!');
 
 
@@ -137,13 +135,10 @@ los vuelos. También podrá ver cuantos vuelos efectúan escalas. Y, sabiendo qu
                             alert('The maximum number of insertions in flights has been exceeded.')
                             loopIterations = 0;
                         }
-
-                        if (confirm('Do you want insert another one?')) {
-                            loopIterations = 1;
-                        }
-
                         else {
-                            loopIterations = 0;
+                            if (confirm('Do you want insert another one?')) {
+                                loopIterations = 1;
+                            }
                         }
 
                     }
