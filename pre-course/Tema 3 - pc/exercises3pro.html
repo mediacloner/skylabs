@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML page for work with Javascript</title>
+
+</head>
+<body>
+
+<p>Exercises 3</p>
+
+<script>
+
+    //a) Primero, creamos una función que nos cree un saludo, pasa tu nombre como parámetro y devuélvelo por la consola.
+    function hi() {
+        
+    
+    
+    hello('Alex');
+
+    function hello(myName) {
+        console.log('hello ' + myName + '!')//output: 'hello myName'
+    }
+    } 
+
+    hi();
+
+    //b) Intenta retornar los valores en lugar de usar console.log
+    function hiConsole() {
+        console.log(hello('Alex'));
+
+        function hello(myName) {
+            return ('hello ' + myName + '!')
+        }
+
+    }
+        hiConsole();
+
+    //c) Ahora, añade tu edad y concaténala al return
+function age() {
+    
+
+    console.log(hello('Alex', 41));
+
+    function hello(myName, myAge) {
+        return ('hello ' + myName + '! ' + 'You are ' + myAge + '.')
+    }
+    }
+    age();
+    //d) Iguala tu función a una variable y ejecútala
+function varAgeName() {
+    
+
+    var myfuntion = hello('Alex', 41);
+
+    console.log(myfuntion);
+
+    function hello(myName, myAge) {
+        return ('hello ' + myName + '! ' + 'You are ' + myAge + '.')
+    }
+}
+    varAgeName();
+
+
+    //e) Ahora declara otra funcion que devuelva tu edad y asigna su resultado a otra variable,
+    //intenta imprimir sus dos resultados concatenados Now, try to declare other function 
+    //and assign it result to other variable called myAge, and try to print the result of 
+    //both functions in one line.
+
+    function bothAgeName() {
+        
+    
+
+    var myfuntion = myName() + ' ' + myAge();
+
+    console.log(myfuntion);
+
+    function myName() {
+        return 'Alex';
+    }
+
+    function myAge() {
+        return 41;
+    }
+
+}
+
+bothAgeName();
+
+    //e1) Intenta sumarle al resultado de tu segunda funcion, 
+        //un numero random del 0-10 y conviertelo todo a un solo string.
+
+        function randomAge() {
+            
+        
+
+        var myfuntion = myName() + ' ' + (myAge() + myRandomNumber()).toString()
+
+        console.log(myfuntion);
+
+        function myName() {
+            return 'Alex';
+        }
+
+        function myAge() {
+            return 41;
+        }
+
+        function myRandomNumber() {
+
+            return Math.floor((Math.random() * 10) + 1);
+        }
+    }
+
+    randomAge();
+    //f) Ahora, todas las variables deberían ser pasadas como parámetro a las funciones.
+
+    function varPar() {
+        var name = 'Alex';
+        var age = 41;
+
+        var myfuntion = myName(name) + ' ' + (myAge(age));
+        console.log(myfuntion);
+
+
+        function myName(pname) {
+            return pname;
+        }
+
+        function myAge(page) {
+            return page;
+        }
+
+        function myRandomNumber() {
+
+            return Math.floor((Math.random() * 10) + 1);
+        }
+    }
+
+    varPar();
+
+    
+
+        //g) Intenta englobar todas las funciones en una sola funcion padre, el return de dicha función 
+        // padre deberá ser la llamada a las funciones hijas
+
+        function fatherFun() {
+
+            console.log(ageYear());
+
+
+            function ageYear() {
+                var name = 'Alex';
+                var age = 41;
+                function myName(pname) {
+                    return pname;
+                }
+
+                function myAge(page) {
+                    return page;
+                }
+
+
+
+                return myName(name) + ' ' + (myAge(age));
+            }
+
+
+
+
+
+
+
+
+        }
+
+        fatherFun();
+
+        
+
+            //h) Haz otra función hija que solo devuelva un número random, ese número random será 
+            //el argumento que se pasará como parámetro a la función age()
+            function randomAge() {
+
+                console.log(ageYear());
+
+
+                function ageYear() {
+                    var name = 'Alex';
+
+                    function myName(pname) {
+                        return pname;
+                    }
+
+                    function myAge() {
+                        return Math.floor((Math.random() * 1000) + 1);
+                    }
+
+
+
+                    return myName(name) + ' ' + (myAge());
+                }
+
+
+
+
+
+
+
+
+            }
+
+            randomAge();
+
+
+            
+
+            //i) Ahora, limita el random de 0 a 50, Muestra un mensaje si el output age es < 20 y otro si es de 21 - 50
+            function messageAge() {
+                console.log(ageYear());
+                function ageYear() {
+                    var name = 'Alex';
+                    function myName(pname) {
+                        return pname;
+                    }
+                    function myAge() {
+                        var age = Math.floor((Math.random() * 50) + 1);
+                        if (age < 20) {
+                            return 'You are young'
+                        }
+                        else {
+                            return 'You are too old'
+                        }
+                    }
+                    return myName(name) + ' ' + (myAge());
+                }
+            }
+        
+           messageAge();
+
+            
+
+
+    //j) Al return de la función name(), concaténale otro mensaje
+    function messageName() {
+
+        console.log(ageYear());
+
+
+        function ageYear() {
+            var name = 'Alex';
+
+            function myName(pname) {
+                return pname + ' aka Alx, ';
+
+            }
+
+            function myAge() {
+                var age = Math.floor((Math.random() * 50) + 1);
+
+                if (age < 20) {
+                    return 'You are young'
+                }
+
+                else {
+
+                    return 'You are too old'
+                }
+
+            }
+
+
+
+            return myName(name) + ' ' + (myAge());
+        }
+
+
+
+
+
+
+
+
+    }
+
+    messageName();
+
+
+    //k) Ahora, modifica el return de la función padre para que devuelva sus datos en un mensaje amigable
+    function newMessageName() {
+
+        console.log(ageYear());
+
+
+        function ageYear() {
+            var name = 'Alex';
+
+            function myName(pname) {
+                return pname + ' aka Alx';
+
+            }
+
+            function myAge() {
+                var age = Math.floor((Math.random() * 50) + 1);
+
+                if (age < 20) {
+                    return 'You are young'
+                }
+
+                else {
+
+                    return 'You are too old'
+                }
+
+            }
+
+
+
+            return 'The first function returns: \'' + myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';
+        }
+
+
+
+
+
+
+
+
+    }
+
+    newMessageName();
+
+
+    //l) Modifica la primera función y la función padre para, si el parámetro introducido no es tu nombre, 
+    //no siga con la segunda llamada
+    function switchName() {
+
+        console.log(ageYear());
+
+
+        function ageYear() {
+            var name
+                //= 'Alex';
+                = 'Pepe';
+
+            function myName(pname) {
+                return pname + ' aka Alx';
+
+            }
+
+            function myAge() {
+                var age = Math.floor((Math.random() * 50) + 1);
+
+                if (age < 20) {
+                    return 'You are young'
+                }
+
+                else {
+
+                    return 'You are too old'
+                }
+
+            }
+
+            if (name == 'Alex') {
+                return 'The first function returns: \'' + myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';
+            }
+            else {
+                return 'The first function returns: \'' + myName(name)
+            }
+
+        }
+
+    }
+
+    switchName();
+
+    //m) Vamos a complicarlo un poco... 
+    //El número random debería generarse en otra función separada del padre. Retorna a la funcion padre y concaténalo en el return padre.
+    function mainRandom() {
+
+        console.log(ageYear());
+
+
+        function ageYear() {
+            var name = 'Alex';
+
+
+            function myName(pname) {
+                return pname + ' aka Alx';
+
+            }
+
+            function myAge() {
+                var age = random();
+                console.log(age)
+                if (age < 20) {
+                    return 'You are young'
+                }
+
+                else {
+
+                    return 'You are too old'
+                }
+
+            }
+
+
+            return 'The first function returns: \'' + myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';
+
+
+
+        }
+
+        function random() {
+            return Math.floor((Math.random() * 50) + 1);
+        }
+
+    }
+
+    mainRandom();
+
+    
+        //n) Refactorizemos nuestro código dejando todas las funciones 
+        //separadas del padre, éste último se encargará de llamarlas todas y mostrar sus resultados.
+        function refactor() {
+
+            console.log(ageYear());
+            function ageYear() {
+                var name = 'Alex';
+
+                return 'The first function returns: \'' + myName(name) + '\' The second function returns: \'' + (myAge()) + '\'';
+            }
+            function myName(pname) {
+                return pname + ' aka Alx';
+            }
+
+            function myAge() {
+                var age = random();
+                console.log(age)
+                if (age < 20) {
+                    return 'You are young'
+                }
+
+                else {
+
+                    return 'You are too old'
+                }
+
+            }
+            function random() {
+                return Math.floor((Math.random() * 50) + 1);
+            }
+
+
+
+        }
+
+        refactor();
+
+    //ñ) Intenta hacer push de todos los resultados de las funciones a 
+    //una array declarada en el padre, muestra los resultados de esta array como siempre.
+    function refactor() {
+        var result = [];
+        console.log(ageYear());
+
+        function ageYear() {
+            myName('Alex');
+            myAge();
+
+            return 'The first function returns: \'' + result[myName] + '\' The second function returns: \'' + result[myAge] + '\'';
+        }
+        function myName(pname) {
+            result[myName] = pname + ' aka Alx';
+        }
+
+        function myAge() {
+            var age = random();
+            console.log(age)
+            if (age < 20) {
+                result[myAge] = 'You are young'
+            }
+
+            else {
+
+                result[myAge] = 'You are too old'
+            }
+
+        }
+        function random() {
+            return Math.floor((Math.random() * 50) + 1);
+        }
+
+
+
+    }
+
+    refactor();
+
+
+    //o) Crea una funcion que llame a nuestra funcion father(), ésta, a parte de llamarla, deberá hacer otro push "hello from the dark side..." 
+        //a la array que crea father(). Muestra toda la array completa.
+        function newFun() {
+
+            var result = [];
+
+            ini();
+
+            function ini() {
+
+                console.log(ageYear());
+                result['starWars'] = 'hello from the dark side...';
+                console.log(result);
+            }
+
+
+            function ageYear() {
+                myName('Alex');
+                myAge();
+
+                return 'The first function returns: \'' + result['myName'] + '\' The second function returns: \'' + result['myAge'] + '\'';
+            }
+            function myName(pname) {
+                result['myName'] = pname + ' aka Alx';
+            }
+
+            function myAge() {
+                var age = random();
+                console.log(age)
+                if (age < 20) {
+                    result['myAge'] = 'You are young'
+                }
+
+                else {
+
+                    result['myAge'] = 'You are too old'
+                }
+
+            }
+            function random() {
+                return Math.floor((Math.random() * 50) + 1);
+            }
+
+
+
+        }
+
+        newFun();
+
+
+        //p) 🔞 👊🏼 Llama a ésta nueva función dos veces, muestra sus resultados por pantalla y compara sus randomNums, mostrando un mensaje 
+            //indicando cual es mayor. El nombre pasado por parámetro también deberá ser random entre una array de nombres, con lo cual, también deberás
+            // refactorizar las funciones hijas.
+        
+        //p1) En lugar de retornar los valores como una array, prepara tus funciones para que devuelvan los resultados como OBJECTS.
+        //Muestra por pantalla los objetos sin estilizar el output.
+
+        //p2) Muestra los resultados de los OBJECTS recorriendolos y mostrando los valores de una forma amigable.
+
+
+            function twoTimes() {
+
+                gandFather();
+                gandFather();
+
+                function gandFather() {
+                    var names = ['hulk', 'ironMan', 'Thor', 'Scarlet Witch']
+                    var selectedName = { name: names[random(4)], number: random(50) };
+                    var selectedName2 = { name: names[random(4)], number: random(50) };
+                    if (selectedName.number > selectedName2.number) {
+                        console.log(selectedName.name + ' es mayor que ' + selectedName2.name + ' porque tiene una valor de ' + selectedName.number + ' respecto a  ' + selectedName2.number + '.');
+                    }
+
+                    else {
+                        console.log(selectedName2.name + ' es mayor que ' + selectedName.name + ' porque tiene una valor de ' + selectedName2.number + ' respecto a ' + selectedName.number + '.');
+                    }
+
+
+                }
+
+                function random(maxNum) {
+                    return Math.floor(Math.random() * maxNum);
+                }
+            }
+
+            twoTimes();
+
+
+
+
+
+
+
+  
+</script>
+
+</body>
+</html>
