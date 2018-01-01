@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML page for work with Javascript</title>
+
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+        background-color: #e7cf61
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        padding: 8px;
+        font-size: 200%;
+    }
+    caption{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 200%;
+        color: #b90769
+    }
+</style>
+
+<body>
+
+
+        <div id="tableBingo">
+            <table>
+            <CAPTION>BINGO CARD</CAPTION>
+                
+                <tr>
+                    <td id = '01'>??</td>
+                    <td id = '02'>??</td>
+                    <td id = '03'>??</td>
+                    <td id = '04'>??</td>
+                    <td id = '05'>??</td>
+                </tr>
+                <tr>
+                    <td id = '11'>??</td>
+                    <td id = '12'>??</td>
+                    <td id = '13'>??</td>
+                    <td id = '14'>??</td>
+                    <td id = '15'>??</td>
+                </tr>
+                <tr>
+                    <td id = '11'>??</td>
+                    <td id = '22'>??</td>
+                    <td id = '23'>??</td>
+                    <td id = '24'>??</td>
+                    <td id = '25'>??</td>
+                </tr>
+            </table>
+        </div>
+
+    <script>
+        //    BINGO GAME! 🎲🎰 Realiza un programa que simule un Bingo.
+        //    Cuando se ejecute, pedirá el nombre del jugador y deberá guardarse.
+        //    Durante el primer turno se mostrará un cartón con 15 números (excluyendo el 0 siempre), 
+        //    para pasar al siguiente turno el usuario deberá confirmar mediante confirm() 
+        //    visualizándose otro número, si coincide con alguno de los existentes en el cartón,
+        //    cambiará por una "X" o un 0.
+        //    El cartón se mostrará, al final de cada turno, con los cambios efectuados, indicándole al usuario
+        //    qué número se ha encontrado.
+        //    El programa deberá preguntar al usuario al inicio de cada turno si desea continuar, en caso
+        //    de que se continúe, seguirá el mismo patrón que hasta el momento. Por supuesto, cuando todos 
+        //    los números de una misma linea estén en "X", mostrará un mensaje "LINEA!", pero la ejecución seguirá,
+        //    el juego solo acabará cuando todos los números estén a "X".
+        //    Cuando el juego concluya, deberá decirle al usuario en cuantos turnos se ha completado el cartón. 
+        //    Por último, deberá preguntar si desea volver a jugar.
+        //
+
+
+        function bingoGame() {
+
+            var limitBalls = 19;
+
+            var player1 = 'Default Player';
+            var ball = 99;
+            var bagBalls = [];  //arrays don't repeat number
+            var cartonBalls = [];
+            var carton = {
+                numeros: {
+                    linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+                },
+                casillaOK: {
+                    linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+                },
+                lineaOk: 0,
+            }
+
+
+            UIPlayer('wellcome');
+            ballsGenerator();
+            cartonGenerator();
+            cartonGeneratorUI();
+            //UIPlayer('start');
+            //playGame();
+
+            function playGame() {
+
+                var askAnotherOne = true;
+
+                while (askAnotherOne == true) {
+
+                    var maxBalls = bagBalls.length;
+                    var posArray = Math.floor(Math.random() * maxBalls);
+                    ball = bagBalls[posArray];
+                    UIPlayer('turn');
+                    bagBalls.splice(posArray, 1);
+                    var posArrayCarton = findNum(ball);
+                    if (posArrayCarton != 'NULL') {    // Numero OK
+                        x = posArrayCarton.substr(0, 1);
+                        y = posArrayCarton.substr(1, 1);
+                        carton.numeros.linea[x][y] = 'XX';
+                        carton.casillaOK.linea[x][y] = 1;
+                        tableDestructor();
+                        cartonGeneratorUI();
+                    }
+
+                    else {
+                        UIPlayer('noMatch');
+                    }
+
+                    if (carton.lineaOk == 0) {
+                        if (findLine() == true) {
+                            UIPlayer('line');
+                            carton.lineaOk = 1;
+                        }
+                    }
+
+                    if (carton.lineaOk == 1) {
+                        if (findBingo() == true) {
+                            UIPlayer('bingo');
+                            askAnotherOne = false;
+                        }
+                    }
+
+                    if (askAnotherOne == true) { //Jump Bingo Situation
+                        askAnotherOne = UIPlayer('anotherOne');
+                    }
+
+
+                }
+
+
+
+
+
+            }
+
+
+            function ballsGenerator() {
+                for (var i = 1; i <= limitBalls; i++) {
+                    bagBalls.push(i);
+                    cartonBalls.push(i);
+                }
+
+
+            };
+
+
+            function UIPlayer(what) {
+                if (what == 'wellcome') {
+                    player1 = prompt("Please, writte your user name:", "");
+                    alert('Wellcome ' + player1 + '!');
+                }
+
+                if (what == 'start') {
+                    alert('OK, Start the game ' + player1 + '!');
+
+                }
+                if (what == 'turn') {
+                    alert('The number of the ball is:  ' + ball + '!');
+
+                }
+                if (what == 'anotherOne') {
+
+                    var r = confirm("Do you want another one?");
+                    if (r == true) {
+                        return true
+                    } else {
+                        return false
+                    }
+                    return
+
+                }
+
+                if (what == 'noMatch') {
+                    alert('Don\'t have in you Bingo Card this ball!');
+
+                }
+
+                if (what == 'line') {
+                    alert('Line!!!');
+
+                }
+                if (what == 'bingo') {
+                    alert('Bingo!  You Win!!!');
+
+                }
+
+            }
+
+
+
+            function findNum(num) {
+
+
+                for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 5; j++) {
+
+                        if (carton.numeros.linea[i][j] == num) {
+                            str = i + '' + j
+                            console.log('position: ' + str);
+                            return str
+                        }
+
+
+                    }
+                }
+                arr = 'NULL' // false
+                console.log('position: ' + arr);
+                return arr
+
+
+            }
+
+            function findLine() {
+
+
+                for (var i = 0; i < 3; i++) {
+                    counter = 0;
+                    for (var j = 0; j < 5; j++) {
+
+                        if (carton.casillaOK.linea[i][j] == 1) {
+                            counter++;
+                        }
+
+                        if (counter == 5) {
+                            return true;
+                        }
+
+
+                    }
+                }
+                return false // false
+
+
+
+            }
+
+            function findBingo() {
+
+                counter = 0;
+                for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 5; j++) {
+
+                        if (carton.casillaOK.linea[i][j] == 1) {
+                            counter++;
+                        }
+
+                    }
+                }
+                if (counter == 15) {
+                    return true
+                }
+                return false // false
+
+
+
+            }
+
+
+
+            function cartonGenerator() {
+
+                for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 5; j++) {
+
+                        var maxBalls = cartonBalls.length;
+                        var posArray = Math.floor(Math.random() * maxBalls);
+                        ball = cartonBalls[posArray];
+                        carton.numeros.linea[i][j] = ball;
+                        cartonBalls.splice(posArray, 1);
+                    }
+                }
+            }
+
+
+            function cartonGeneratorUI() {
+
+                for (var i = 0; i < 3; i++) {
+                    for (var j = 0; j < 5; j++) {
+                        var numCart = carton.numeros.linea[i][j];
+                        padNumCart = pad(numCart, 2);
+                        var coordinates = String(i) + String(j)
+                        document.getElementById(coordinates).value = padNumCart;           //UI
+
+                    }
+                }
+            }
+            // Lead  00 (8 = 08)
+            function pad(n, width, z) {
+                z = z || '0';
+                n = n + '';
+                return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+            }
+
+
+        }
+
+
+        bingoGame();
+
+    </script>
+
+</body>
+
+</html>
