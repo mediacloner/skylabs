@@ -37,25 +37,25 @@
             <CAPTION>BINGO CARD</CAPTION>
                 
                 <tr>
+                    <td id = '00'>??</td>
                     <td id = '01'>??</td>
                     <td id = '02'>??</td>
                     <td id = '03'>??</td>
                     <td id = '04'>??</td>
-                    <td id = '05'>??</td>
                 </tr>
                 <tr>
+                    <td id = '10'>??</td>
                     <td id = '11'>??</td>
                     <td id = '12'>??</td>
                     <td id = '13'>??</td>
                     <td id = '14'>??</td>
-                    <td id = '15'>??</td>
                 </tr>
                 <tr>
-                    <td id = '11'>??</td>
+                    <td id = '20'>??</td>
+                    <td id = '21'>??</td>
                     <td id = '22'>??</td>
                     <td id = '23'>??</td>
                     <td id = '24'>??</td>
-                    <td id = '25'>??</td>
                 </tr>
             </table>
         </div>
@@ -302,7 +302,7 @@
                         var numCart = carton.numeros.linea[i][j];
                         padNumCart = pad(numCart, 2);
                         var coordinates = String(i) + String(j)
-                        document.getElementById(coordinates).value = padNumCart;           //UI
+                        document.getElementById(coordinates).innerHTML  = padNumCart;           //UI
 
                     }
                 }
