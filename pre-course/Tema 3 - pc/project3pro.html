@@ -81,6 +81,12 @@
         font-weight: bold;
         color: #b8670a
     }
+
+    #scoreList{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 200%;
+
+    }
 </style>
 
 <body>
@@ -149,6 +155,12 @@
         <input type="submit" id='buttonBall' value="New Ball">
     </form>
 
+    <div>
+        <h1>Score Ranking</h1>
+        <div id='scoreList'></div>
+
+    </div>
+
 
 
     <script>
@@ -168,6 +180,7 @@
             },
             lineaOk: 0,
         }
+        var scoreList = [];
         var stateButton = 'wellcome'
         var selectYN = 'y/n'
         document.getElementById("buttonBall").disabled = true;
@@ -181,6 +194,33 @@
                 player1 = document.getElementById("inputBox").value
                 stateButton = 'cardgenerator';
 
+            }
+            else if (stateButton == 'newPlayer') {
+                var value = document.getElementById("inputBox").value
+                if (value == 'y') {
+                    bagBalls = [];
+                    cartonBalls = [];
+                    carton = {
+                        numeros: {
+                            linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+                        },
+                        casillaOK: {
+                            linea: [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+                        },
+                        lineaOk: 0,
+                    }
+                    document.getElementById("buttonBall").disabled = true;
+                    document.getElementById("message").innerHTML = "Wellcome to Bingo!!! <br> Please, writte your user name:";
+                    document.getElementById("ball").innerHTML = '??';
+                    document.getElementById("inputBox").value = "Write a new Player";
+                    document.getElementById("score").innerHTML = 'Score: <br>' + score;
+                    stateButton = 'wellcome';
+                }
+
+                else {
+                    document.getElementById("message").innerHTML = "Goodbye!";
+                    document.getElementById("formUser").style.display = "none";
+                }
             }
 
             else if (stateButton == 'cardgenerator') {
@@ -253,6 +293,9 @@
 
             else {
                 document.getElementById("message").innerHTML = 'Don\'t have in you Bingo Card this ball!';
+                score = score - 10;
+                document.getElementById("score").innerHTML = 'Score: <br>' + score;
+
             }
 
             if (carton.lineaOk == 0) {
@@ -264,8 +307,21 @@
 
             if (carton.lineaOk == 1) {
                 if (findBingo() == true) {
-                    document.getElementById("message").innerHTML = 'Bingo!  You Win!!!';
+                    document.getElementById("message").innerHTML = 'Bingo!  You Win!!! <br> Other player,(y/n)??';
+                    document.getElementById("formUser").style.display = "block";
+                    document.getElementById("inputBox").value = "Write 'y' for yes or 'n' for no.";
                     document.getElementById("buttonBall").disabled = true;
+                    stateButton = 'newPlayer';
+                    var json = { "Player": player1, "Score": score };
+                    scoreList.push(json);
+                    scoreList.sort(function (a, b) {
+                        return parseFloat(b.Score) - parseFloat(a.Score);
+                    });
+                    document.getElementById("scoreList").innerHTML = ' ' // Reset
+                    for (var i = 0; i < scoreList.length; i++) {
+                        var obj = scoreList[i];
+                        document.getElementById("scoreList").innerHTML += obj.Player + ' - ' + obj.Score + '<br>';
+                    }
                 }
             }
 
