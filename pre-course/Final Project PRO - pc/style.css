@@ -1,0 +1,272 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+* {
+    margin: 0;
+    padding: 0;
+  	-moz-box-sizing: border-box;
+		-o-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	body {
+		width: 100%;
+		height: 100%;
+		font-family: "helvetica neue", helvetica, arial, sans-serif;
+		font-size: 13px;
+		text-align: center;
+		background: #333;
+	}
+
+	ul {
+		margin: 30px auto;
+		text-align: center;
+	}
+
+	li {
+		list-style: none;
+		position: relative;
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+	}
+
+/*==================================================
+ * Letters
+ * ===============================================*/
+
+	.round {
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		padding-top: 18px;		
+		text-decoration: none;		
+		text-align: center;
+		font-size: 50px;		
+		text-shadow: 0 1px 0 rgba(255,255,255,.7);
+		letter-spacing: -.065em;
+		font-family: "Hammersmith One", sans-serif;		
+		-webkit-transition: all .25s ease-in-out;
+		-o-transition: all .25s ease-in-out;
+		-moz-transition: all .25s ease-in-out;
+		transition: all .25s ease-in-out;
+		box-shadow: 2px 2px 7px rgba(0,0,0,.2);
+		border-radius: 300px;
+		z-index: 1;
+		border-width: 4px;
+		border-style: solid;
+	}
+
+
+
+	a.red {
+		background-color: rgba(239,57,50,1);
+		color: rgba(133,32,28,1);
+		border-color: rgba(133,32,28,.2);
+	}
+
+
+
+	a.blue {
+		background-color: rgba(1,151,171,1);
+		color: rgba(0,63,71,1);
+		border-color: rgba(0,63,71,.2);
+	}
+
+	a.yellow {
+		background-color: rgba(252,227,1,1);
+		color: rgba(153,38,0,1);
+		border-color: rgba(153,38,0,.2);
+	}
+
+
+
+	a.green {
+		background-color: rgb(1, 252, 106);
+		color: rgb(36, 153, 0);
+		border-color: rgba(2, 61, 0, 0.2);
+	}
+ 
+
+/*==================================================
+ * Main Banner
+ * ===============================================*/
+
+	.banner {
+		 width: auto;
+		 height: 150px;
+		 text-align: left;
+	}
+/*==================================================
+ * Questions
+ * ===============================================*/
+
+a{
+  color:#ccc;
+}
+.container{
+  width:500px;
+  float: left;
+  font: normal 1em/1.5 "Open Sans";
+}
+h1{
+  text-align:center;
+  text-shadow:0 1px white;
+  color:#02303F;
+}
+h2{
+  color:#736861; 
+  margin:15px 0 5px;
+  text-shadow:0 1px rgba(255,255,255,0.5);
+}
+h6{
+  color:#928566; 
+  margin:0;
+}
+
+
+label{
+  display:block;
+  width:32%;
+  border: 4px solid white;
+  position:absolute;
+  bottom:5px;
+  cursor: pointer;
+  transition: border-color 0.3s linear;
+}
+
+
+blockquote{
+  margin-bottom: 20px;
+  padding: 30px 55px;
+  width:500px;
+  background-color: #DB532B;
+  color:white;
+
+  position:relative;
+  transition: background-color 0.6s linear;
+}
+
+
+
+blockquote:after { 
+  content: '\201C';
+    font-family: serif;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    font-size: 6em;
+    top: -30px;
+    left: 450px;
+    transform: rotate(180deg);
+    color: hsla(0, 0%, 97%, .5);
+    text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1);
+} 
+
+blockquote:before { 
+  content: '\201C';
+    font-family: serif;
+    font-style: normal;
+    font-weight: 700;
+    position: absolute;
+    font-size: 6em;
+    top: -45px;
+    left: 5px;
+    color: hsla(0, 0%, 97%, .5);
+    text-shadow: 7px 14px 10px rgba(0, 0, 0, 0.1);
+} 
+
+/*==================================================
+ * Player
+ * ===============================================*/
+
+ .player {
+color: rgb(248, 248, 248);
+font-size: 2em;
+font-weight: bold;
+font-family: Helvetica;
+text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+ .host {
+color: rgb(248, 248, 248);
+font-size: 2em;
+font-weight: bold;
+font-family: Helvetica;
+text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2), 0 5px 10px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.2), 0 20px 20px rgba(0,0,0,.15);
+}
+
+/*==================================================
+ * align Container
+ * ===============================================*/
+
+
+
+
+.people {
+
+ width: 840px;
+ height: 300px;
+  display: inline-block;
+
+
+
+}
+.player {
+	 float: left;
+
+
+}
+.host {
+float: left;
+
+}
+
+input{
+	background: #DB532B;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #85201c;
+	border-style: solid;
+	padding: 5px;
+}
+
+blockquote{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #85201c;
+}
+
+/*==================================================
+ * Countdown
+ * ===============================================*/
+
+/*=================
+* TIMER
+*=================*/
+
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 'Arimo', sans-serif;
+   -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body {
+   background: #d7d7d7;
+   color: white;
+}
+
+/*=================
+* TIMER
+*=================*/
+
