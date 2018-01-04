@@ -20,6 +20,9 @@ var posQuestion2 = 0;
 var pos2 = -1;
 var count2 = 0;
 var fback2 = true;
+var timeMax = 100;
+var timePlayer1 = 0;
+var timePlayer2 = 0;
 var letterStateUI = { // round yellow = 0 blue = 1 green = 2 red = 3
     player1:
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -364,6 +367,24 @@ function updateLettersUI(numPlayer, pos, state) { // round yellow = 0 blue = 1 g
 
 
 }
+
+  
+
+
+
+
+var n = 100;
+setTimeout(countDown, 1000);
+
+function countDown() {
+  n--;
+  if (n > 0) {
+    setTimeout(countDown, 1000);
+  }
+  document.getElementById("countdown").innerHTML =
+    "<b>Countdown:</b> <br>" + n + " seconds";
+}
+
 
 
 function results() {
