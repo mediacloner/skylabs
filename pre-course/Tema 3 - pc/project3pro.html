@@ -24,8 +24,7 @@
         background-color: #fff3d4;
         color: #333333;
         font-size: 30px;
-        width: 760px;
-        height: 80px;
+
 
     }
 
@@ -64,21 +63,53 @@
         font-size: 200%;
         color: #b90769
     }
+
+    #formUser {
+        text-align: left;
+    }
+
+    #message {
+        float: left;
+        width: 660px;
+        height: 80px;
+    }
+
+    #score {
+        float: left;
+        width: 100px;
+        height: 80px;
+        font-weight: bold;
+        color: #b8670a
+    }
 </style>
 
 <body>
-    <div>
+    <div id="header">
         <p id="message">
 
         </p>
+        <p id="score">
 
+
+        </p>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
     <div id='formUser'>
         <form action="javascript:enterButton();">
             <input type="text" id="inputBox" value="Please, write here." onclick='this.value = "";'>
             <input type="submit" value="Enter">
         </form>
     </div>
+
     <div id="bingo">
         <div id="tableBingo">
             <table>
@@ -123,7 +154,7 @@
     <script>
 
         var limitBalls = 19;
-
+        var score = 1000;
         var player1 = 'Default Player';
         var ball = 99;
         var bagBalls = [];  //arrays don't repeat number
@@ -142,6 +173,7 @@
         document.getElementById("buttonBall").disabled = true;
         document.getElementById("message").innerHTML = "Wellcome to Bingo!!! <br> Please, writte your user name:";
         document.getElementById("ball").innerHTML = '??';
+        document.getElementById("score").innerHTML = 'Score: <br>' + score;
 
         function enterButton() {
 
