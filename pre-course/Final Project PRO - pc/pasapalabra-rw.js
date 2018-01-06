@@ -381,22 +381,8 @@ function countdown(startStop, time, player) {
 }
 
 function results() {
-  alert(
-    "                                    Final Score\n" +
-      "================================================ \n" +
-      " Right Answers: " +
-      scorePlayer1 +
-      "  Wrong Answers: " +
-      faultPlayer1 +
-      " Player 1 : " +
-      player1 +
-      "\n" +
-      " Right Answers: " +
-      scorePlayer2 +
-      "  Wrong Answers: " +
-      faultPlayer2 +
-      " Player 2 : " +
-      player2 +
-      "\n"
-  );
+  window.location.href = "finalScore.html";
+  document.getElementById("message-p1").innerHTML = " Player 1 : " + player1 + "\n" +" Right Answers: " + scorePlayer1 + "\n" + "  Wrong Answers: " + faultPlayer1
+  document.getElementById("message-p2").innerHTML = " Player 2 : " + player2 + "\n" + " Right Answers: " + scorePlayer2 + "\n" + "  Wrong Answers: " + faultPlayer2;
+
 }
