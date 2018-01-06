@@ -113,10 +113,11 @@ function enterButton() {
     text = "Wellcome " + player2 + "! Are you prepare " + player1 + "?";
     document.getElementById("questions").innerHTML = text;
     stateAction = "questionPlayer1";
+
   } else if (stateAction == "questionPlayer1") {
     if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {
       // while no emty letters some player
-      document.getElementById("audioMain").src = "mp3/questions.mp3";
+      document.getElementById("audioMain").src = "mp3/questions-long.mp3";
       document.getElementById("inputBox").disabled = false;
       document.getElementById("inputBox").type = "password";
       fback1 = askQuestionsp1(lastPosPlayer1);
@@ -127,7 +128,6 @@ function enterButton() {
   } else if (stateAction == "questionPlayer2") {
     if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {
       // while no emty letters some player
-      document.getElementById("audioMain").src = "mp3/questions.mp3";
       document.getElementById("inputBox").disabled = false;
       document.getElementById("inputBox").type = "password";
       fback2 = askQuestionsp2(lastPosPlayer2);
@@ -140,10 +140,12 @@ function enterButton() {
     changePlayerUI(1);
     refreshLettersUI(1);
     stateAction = "questionPlayer1";
+
   } else if (stateAction == "changePlayer2") {
     changePlayerUI(2);
     refreshLettersUI(2);
     stateAction = "questionPlayer2";
+
   } else if (stateAction == "answerPlayer1") {
     result1 = document.getElementById("inputBox").value;
     if (setOfQuestions.answer.indexOf(result1.toLowerCase()) >= 0) {      // Answer it's true
@@ -387,7 +389,6 @@ function countdown(startStop, time, player) {
 
 function results() {
   window.location.href = "finalScore.html";
-  document.getElementById("message-p1").innerHTML = '111111'//" Player 1 : " + player1 + "\n" +" Right Answers: " + scorePlayer1 + "\n" + "  Wrong Answers: " + faultPlayer1;
-  document.getElementById("message-p2").innerHTML = '2222222'//" Player 2 : " + player2 + "\n" + " Right Answers: " + scorePlayer2 + "\n" + "  Wrong Answers: " + faultPlayer2;
-  
+    
 }
+

@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <audio id='audioScore' loop="loop" autoplay="autoplay">
+    <audio id='audioScore'  autoplay="autoplay">
         <source src="mp3/rafaga.mp3" type="audio/mpeg" />
     </audio>
 
@@ -19,6 +19,7 @@
     </div>
     <div id="main">
         <div id="finalScore" class="cfinalScore">
+            
             <img id='banner-fs' src="img/finalScore.png" alt="Final Score">
 
             <div id="message-p1">
@@ -30,11 +31,14 @@
 
         </div>
     </div>
-
+  
 
     <script type="text/javascript" src="pasapalabra-rw.js"></script>
 
-
+<script>
+    document.getElementById("message-p1").innerHTML = "Player 1 : " + player1 + "<br>" + " Right Answers: " + scorePlayer1 + "<br>" + "  Wrong Answers: " + faultPlayer1;
+    document.getElementById("message-p2").innerHTML = "Player 2 : " + player2 + "<br>" + " Right Answers: " + scorePlayer2 + "<br>" + "  Wrong Answers: " + faultPlayer2;
+</script>
 
 
 </body>
