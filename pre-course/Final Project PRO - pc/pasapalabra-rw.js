@@ -88,7 +88,11 @@ var setOfQuestions = {
   ]
 };
 
-wellcome(1);
+//wellcome(1);
+
+
+//document.getElementById("questions").innerHTML = "Please Player 1, writte your user name";
+
 function enterButton() {
   if (stateAction == "inputPlayer1") {
     player1 = document.getElementById("inputBox").value;
