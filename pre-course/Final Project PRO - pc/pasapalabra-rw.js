@@ -116,6 +116,7 @@ function enterButton() {
   } else if (stateAction == "questionPlayer1") {
     if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {
       // while no emty letters some player
+      document.getElementById("audioMain").src = "mp3/questions.mp3";
       document.getElementById("inputBox").disabled = false;
       document.getElementById("inputBox").type = "password";
       fback1 = askQuestionsp1(lastPosPlayer1);
@@ -126,6 +127,7 @@ function enterButton() {
   } else if (stateAction == "questionPlayer2") {
     if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {
       // while no emty letters some player
+      document.getElementById("audioMain").src = "mp3/questions.mp3";
       document.getElementById("inputBox").disabled = false;
       document.getElementById("inputBox").type = "password";
       fback2 = askQuestionsp2(lastPosPlayer2);
@@ -369,7 +371,10 @@ function countdown(startStop, time, player) {
       } else {
         timePlayer2 = time;
       }
-      if (time > 0 && stopVal == 0) {
+      if (time <= 0) { //timeout
+        results(); 
+      }
+      else if  (time > 0 && stopVal == 0) {
         setTimeout(cDown, 1000);
       }
       document.getElementById("countdown").innerHTML =
@@ -382,7 +387,7 @@ function countdown(startStop, time, player) {
 
 function results() {
   window.location.href = "finalScore.html";
-  document.getElementById("message-p1").innerHTML = " Player 1 : " + player1 + "\n" +" Right Answers: " + scorePlayer1 + "\n" + "  Wrong Answers: " + faultPlayer1
-  document.getElementById("message-p2").innerHTML = " Player 2 : " + player2 + "\n" + " Right Answers: " + scorePlayer2 + "\n" + "  Wrong Answers: " + faultPlayer2;
-
+  document.getElementById("message-p1").innerHTML = '111111'//" Player 1 : " + player1 + "\n" +" Right Answers: " + scorePlayer1 + "\n" + "  Wrong Answers: " + faultPlayer1;
+  document.getElementById("message-p2").innerHTML = '2222222'//" Player 2 : " + player2 + "\n" + " Right Answers: " + scorePlayer2 + "\n" + "  Wrong Answers: " + faultPlayer2;
+  
 }
