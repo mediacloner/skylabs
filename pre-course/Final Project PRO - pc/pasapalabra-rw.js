@@ -117,11 +117,12 @@ function enterButton() {
     text = "Wellcome " + player2 + "! Are you prepare " + player1 + "?";
     document.getElementById("questions").innerHTML = text;
     stateAction = "questionPlayer1";
+    document.getElementById("audioMain").src = "mp3/questions-long.mp3";
 
   } else if (stateAction == "questionPlayer1") {
     if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {
       // while no emty letters some player
-      document.getElementById("audioMain").src = "mp3/questions-long.mp3";
+
       document.getElementById("inputBox").disabled = false;
       document.getElementById("inputBox").type = "password";
       fback1 = askQuestionsp1(lastPosPlayer1);
