@@ -4,7 +4,9 @@ var scorePlayer1 = 0;
 var scorePlayer2 = 0;
 var faultPlayer1 = 0;
 var faultPlayer2 = 0;
-var text = "";
+var text = "";            // text for UI
+var randomQuestion1 = []; //select group of questions for every question
+var randomQuestion2 = [];  
 var lastPosPlayer1 = "A";
 var lastPosPlayer2 = "A";
 var lettersPlayer1 = [  "A",  "B",  "C",  "D",  "E",  "F",  "G",  "H",  "I",  "J",  "K",  "L",  "M",  "N",  "O",  "P",  "Q",  "R",  "S",  "T",  "U",  "V",  "W",  "X",  "Y",  "Z"];
@@ -190,7 +192,11 @@ function enterButton() {
     document.getElementById("questions").innerHTML = text;
     changePlayerUI(2);
     stateAction = "inputPlayer2";
-  } else if (stateAction == "inputPlayer2") {
+  } 
+  
+  
+  
+  else if (stateAction == "inputPlayer2") {
     player2 = document.getElementById("inputBox").value;
     changePlayerUI(1);
     document.getElementById("inputBox").value = " Please click enter";
@@ -201,7 +207,10 @@ function enterButton() {
     stateAction = "questionPlayer1";
     document.getElementById("audioMain").src = "mp3/questions-long.mp3";
 
-  } else if (stateAction == "questionPlayer1") {
+  } 
+  
+  
+  else if (stateAction == "questionPlayer1") {
     if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {
       // while no emty letters some player
 
@@ -212,7 +221,10 @@ function enterButton() {
     } else {
       results();
     }
-  } else if (stateAction == "questionPlayer2") {
+  } 
+  
+  
+  else if (stateAction == "questionPlayer2") {
     if (lettersPlayer1.length > 0 && lettersPlayer2.length > 0) {
       // while no emty letters some player
       document.getElementById("inputBox").disabled = false;
@@ -223,81 +235,94 @@ function enterButton() {
     } else {
       results();
     }
-  } else if (stateAction == "changePlayer1") {
+  } 
+  
+  
+  else if (stateAction == "changePlayer1") {
     changePlayerUI(1);
     refreshLettersUI(1);
     stateAction = "questionPlayer1";
 
-  } else if (stateAction == "changePlayer2") {
+  } 
+  
+  
+  else if (stateAction == "changePlayer2") {
     changePlayerUI(2);
     refreshLettersUI(2);
     stateAction = "questionPlayer2";
 
-  } else if (stateAction == "answerPlayer1") {
+  } 
+  
+  
+  else if (stateAction == "answerPlayer1") {
     result1 = document.getElementById("inputBox").value;
     if (result1.toLowerCase() == 'end'){
       results();
-    }    
-    if (setOfQuestions.answer.indexOf(result1.toLowerCase()) >= 0) {
-        // Answer it's true
+    }  
+
+    if (randomQuestion1.answer.indexOf(result1.toLowerCase()) >= 0) {
+      // Answer it's true
+      document.getElementById("inputBox").value = " Please click enter";
+      document.getElementById("inputBox").disabled = true;
+      document.getElementById("inputBox").type = "text";
+      text = "Answer Correct!";
+      updateLettersUI(1, posQuestion1, 2);
+      document.getElementById("questions").innerHTML = text;
+      stateAction = "questionPlayer1"; //UIPlayer('correct');
+      if (pos1 + 1 == lettersPlayer1.length) {
+        // Jump X  -->  A
+        lastPosPlayer1 = lettersPlayer1[0];
+      } else {
+        lastPosPlayer1 = lettersPlayer1[pos1 + 1]; // A --> B
+      }
+      lettersPlayer1.splice(pos1, 1); // A, , C
+      scorePlayer1++;
+      return true;
+    } else {
+      if (result1.toLowerCase() == "pasapalabra") {
+        // Change the player.
+        document.getElementById("questions").innerHTML = "OK! Change the player";
         document.getElementById("inputBox").value = " Please click enter";
         document.getElementById("inputBox").disabled = true;
         document.getElementById("inputBox").type = "text";
-        text = "Answer Correct!";
-        updateLettersUI(1, posQuestion1, 2);
-        document.getElementById("questions").innerHTML = text;
-        stateAction = "questionPlayer1"; //UIPlayer('correct');
-        if (pos1 + 1 == lettersPlayer1.length) {
-          // Jump X  -->  A
-          lastPosPlayer1 = lettersPlayer1[0];
+        countdown("stop");
+        stateAction = "changePlayer2";
+        updateLettersUI(1, posQuestion1, 0);
+        if (pos1 == lettersPlayer1.length) {
+          lastPosPlayer1 = lettersPlayer1[0]; // Jump to the next one without slice
+          return false;
         } else {
-          lastPosPlayer1 = lettersPlayer1[pos1 + 1]; // A --> B
-        }
-        lettersPlayer1.splice(pos1, 1); // A, , C
-        scorePlayer1++;
-        return true;
-      } else {
-        if (result1.toLowerCase() == "pasapalabra") {
-          // Change the player.
-          document.getElementById("questions").innerHTML = "OK! Change the player";
-          document.getElementById("inputBox").value = " Please click enter";
-          document.getElementById("inputBox").disabled = true;
-          document.getElementById("inputBox").type = "text";
-          countdown("stop");
-          stateAction = "changePlayer2";
-          updateLettersUI(1, posQuestion1, 0);
-          if (pos1 == lettersPlayer1.length) {
-            lastPosPlayer1 = lettersPlayer1[0]; // Jump to the next one without slice
-            return false;
-          } else {
-            lastPosPlayer1 = lettersPlayer1[pos1 + 1];
-            return false;
-          }
-        } else {
-          // Wrong answer.
-          document.getElementById("questions").innerHTML = "Ups! You are wrong";
-          updateLettersUI(1, posQuestion1, 3);
-          document.getElementById("inputBox").value = " Please click enter";
-          document.getElementById("inputBox").disabled = true;
-          document.getElementById("inputBox").type = "text"; //UIPlayer('false');
-          countdown("stop");
-          if (pos1 == lettersPlayer1.length) {
-            lastPosPlayer1 = lettersPlayer1[0];
-          } else {
-            lastPosPlayer1 = lettersPlayer1[pos1 + 1];
-          }
-          lettersPlayer1.splice(pos1, 1);
-          faultPlayer1++;
-          stateAction = "changePlayer2";
+          lastPosPlayer1 = lettersPlayer1[pos1 + 1];
           return false;
         }
+      } else {
+        // Wrong answer.
+        document.getElementById("questions").innerHTML = "Ups! You are wrong";
+        updateLettersUI(1, posQuestion1, 3);
+        document.getElementById("inputBox").value = " Please click enter";
+        document.getElementById("inputBox").disabled = true;
+        document.getElementById("inputBox").type = "text"; //UIPlayer('false');
+        countdown("stop");
+        if (pos1 == lettersPlayer1.length) {
+          lastPosPlayer1 = lettersPlayer1[0];
+        } else {
+          lastPosPlayer1 = lettersPlayer1[pos1 + 1];
+        }
+        lettersPlayer1.splice(pos1, 1);
+        faultPlayer1++;
+        stateAction = "changePlayer2";
+        return false;
       }
-  } else if (stateAction == "answerPlayer2") {
+    }
+  } 
+  
+  
+  else if (stateAction == "answerPlayer2") {
     result2 = document.getElementById("inputBox").value;
     if (result2.toLowerCase() == "end") {
       results();
     }
-    if (setOfQuestions.answer.indexOf(result2.toLowerCase()) >= 0) {
+    if (randomQuestion2.answer.indexOf(result2.toLowerCase()) >= 0) {
       // Answer it's true
       document.getElementById("inputBox").value = " Please click enter";
       document.getElementById("inputBox").disabled = true;
@@ -355,20 +380,22 @@ function enterButton() {
 }
 
 function askQuestionsp1(letter) {
-  posQuestion1 = setOfQuestions.letter.indexOf(letter);
+  randomQuestion1 = ranQuestion();
+  posQuestion1 = randomQuestion1.letter.indexOf(letter);
   pos1 = lettersPlayer1.indexOf(letter);
   updateLettersUI(1, posQuestion1, 1);
-  text = setOfQuestions.question[posQuestion1];
+  text = randomQuestion1.question[posQuestion1];
   document.getElementById("questions").innerHTML = text;
 
   stateAction = "answerPlayer1";
 }
 
 function askQuestionsp2(letter) {
-  posQuestion2 = setOfQuestions.letter.indexOf(letter);
+  randomQuestion2 = ranQuestion();
+  posQuestion2 = randomQuestion2.letter.indexOf(letter);
   pos2 = lettersPlayer2.indexOf(letter);
   updateLettersUI(2, posQuestion2, 1);
-  text = setOfQuestions.question[posQuestion2];
+  text = randomQuestion2.question[posQuestion2];
   document.getElementById("questions").innerHTML = text;
 
   stateAction = "answerPlayer2";
@@ -489,5 +516,17 @@ function countdown(startStop, time, player) {
 function results() {
   window.location.href = "finalScore.html";
     
+}
+
+function ranQuestion(){
+var numRandom = Math.floor(Math.random() * 2) + 1; 
+
+if (numRandom == 1){
+  return setOfQuestions1;
+}
+else{
+  return setOfQuestions;
+}
+
 }
 
