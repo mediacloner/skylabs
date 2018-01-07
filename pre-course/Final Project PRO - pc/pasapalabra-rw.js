@@ -234,7 +234,7 @@ var setOfQuestions2 = {
     'With the letter "Z", is the sky and thunder god in ancient Greek religion, who ruled as king of the gods of Mount Olympus. '
   ],
   answer: [
-    "athens ",
+    "athens",
     "barack obama",
     "conan o'brien",
     "darth vader",
@@ -605,12 +605,15 @@ function results() {
 }
 
 function ranQuestion(){
-var numRandom = Math.floor(Math.random() * 2) + 1; 
+var numRandom = Math.floor(Math.random() * 3) + 1; 
 
 if (numRandom == 1){
   return setOfQuestions1;
 }
-else{
+else if (numRandom == 2) {
+  return setOfQuestions2;
+
+} else {
   return setOfQuestions;
 }
 
