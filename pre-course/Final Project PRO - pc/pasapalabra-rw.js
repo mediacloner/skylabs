@@ -212,7 +212,7 @@ function enterButton() {
       }
   } else if (stateAction == "answerPlayer2") {
     result2 = document.getElementById("inputBox").value;
-    if (result1.toLowerCase() == "end") {
+    if (result2.toLowerCase() == "end") {
       results();
     }
     if (setOfQuestions.answer.indexOf(result2.toLowerCase()) >= 0) {
