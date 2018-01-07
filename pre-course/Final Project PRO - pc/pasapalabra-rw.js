@@ -88,10 +88,92 @@ var setOfQuestions = {
   ]
 };
 
-//wellcome(1);
-
-
-//document.getElementById("questions").innerHTML = "Please Player 1, writte your user name";
+var setOfQuestions1 = {
+  letter: [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z"
+  ],
+  question: [
+    'With the letter "A", is a natural science that studies celestial objects and phenomena',
+    'With the letter "B", is a cryptocurrency and worldwide payment system. It is the first decentralized digital currency.',
+    'With the letter "C", complex combinations of spices or herbs, usually including fresh or dried hot chillies. Originating in the cuisine of the Indian',
+    'With the letter "D",  is a British science-fiction television programme produced by the BBC since 1963. The programme depicts the adventures of a Time Lord',
+    'With the letter "E", invented by the German engineer Arthur Scherbius at the end of World War I.Electro-mechanical rotor cipher machines developed to protect commercial, diplomatic and military communication.',
+    'With the letter "F", is a free and open-source web browser. Use the Gecko layout engine to render web pages ',
+    'With the letter "G", is an American fantasy drama television series created by David Benioff and D. B. Weiss. The series premiered on HBO in the United States on April 17, 2011.',
+    'With the letter "H", is an American actor and film producer.He gained worldwide fame for his starring roles in the Star Wars or Blade Runner',
+    'With the letter "I", is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. Two letters',
+    'With the letter "J", American slang term for coffee',
+    'With the letter "K", The ... Protocol is an international treaty of United Nations Framework Convention on Climate Change that commits State Parties to reduce greenhouse gas emissions',
+    'With the letter "L", the most populated city in the state of Nevada.The city bills itself as The Entertainment Capital of the World.',
+    'With the letter "M",  is the capital and the most populated city in the German state of Bavaria.',
+    'With the letter "N", is an American multinational that is engaged in the design, development, manufacturing, and worldwide marketing and sales of footwear, apparel, equipment, accessories, and services.',
+    'With the letter "O", is computer software which the copyright holder provides the rights to study, change, and distribute the software to anyone and for any purpose.',
+    'With the letter "P", o franchise was created by Satoshi Tajiri in 1995	and is centered on fictional creatures.The franchise began as a pair of video games for the original Game Boy.',
+    'With the letter "Q", are a British rock band that formed in London in 1970. Their classic line-up was Freddie Mercury , Brian May , Roger Taylor , and John Deacon.',
+    'With the letter "R", is a series of small single-board computers developed in the United Kingdom to promote the teaching of basic computer science in schools and in developing countries',
+    'With the letter "S", is an American science fiction-horror web television. Set in the fictional town of Hawkins, Indiana, in the 1980s.',
+    'With the letter "T", is an American automaker, energy storage company, and solar panel manufacturer based in Palo Alto, California. Founded in 2003.',
+    'With the letter "U", is an industry standard that defines cables, connectors and communications protocols for connection, communication, and power supply between computers and devices.',
+    'With the letter "V", is an Italian brand of scooter manufactured by Piaggio. The name means wasp in Italian.',
+    'With the letter "W", is an American science fiction western thriller television series created by Jonathan Nolan and Lisa Joy for HBO. It is based on the 1973 film of the same name.',
+    'With the letter "X", Professor ... (also known as Professor X) is a fictional character appearing in comic books published by Marvel Comics and is the founder and leader of the X-Men.',
+    'With the letter "Y", is a group of physical, mental, and spiritual practices or disciplines which originated in ancient India',
+    'With the letter "Z", is a file may contain one or more files or directories that may have been compressed.'
+  ],
+  answer: [
+    "astronomy",
+    "bitcoin",
+    "curry",
+    "doctor who",
+    "enigma",
+    "firefox",
+    "game of thrones",
+    "harrison ford",
+    "ip",
+    "java",
+    "kyoto",
+    "las vegas",
+    "munich",
+    "nike",
+    "open source",
+    "pokemon",
+    "queen",
+    "raspberry pi",
+    "stranger things",
+    "tesla",
+    "usb",
+    "vespa",
+    "westworld",
+    "xavier",
+    "yoga",
+    "zip"
+  ]
+};
 
 function enterButton() {
   if (stateAction == "inputPlayer1") {
