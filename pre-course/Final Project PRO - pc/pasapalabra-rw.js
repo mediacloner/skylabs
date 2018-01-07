@@ -153,60 +153,70 @@ function enterButton() {
 
   } else if (stateAction == "answerPlayer1") {
     result1 = document.getElementById("inputBox").value;
-    if (setOfQuestions.answer.indexOf(result1.toLowerCase()) >= 0) {      // Answer it's true
-      document.getElementById("inputBox").value = " Please click enter";
-      document.getElementById("inputBox").disabled = true;
-      document.getElementById("inputBox").type = "text";
-      text = "Answer Correct!";
-      updateLettersUI(1, posQuestion1, 2);
-      document.getElementById("questions").innerHTML = text;
-      stateAction = "questionPlayer1"; //UIPlayer('correct');
-      if (pos1 + 1 == lettersPlayer1.length) {// Jump X  -->  A
-        lastPosPlayer1 = lettersPlayer1[0];
-      } else {
-        lastPosPlayer1 = lettersPlayer1[pos1 + 1]; // A --> B
-      }
-      lettersPlayer1.splice(pos1, 1); // A, , C
-      scorePlayer1++;
-      return true;
-    } else {
-      if (result1.toLowerCase() == "pasapalabra") {     // Change the player.
-        document.getElementById("questions").innerHTML = "OK! Change the player";
+    if (result1.toLowerCase() == 'end'){
+      results();
+    }    
+    if (setOfQuestions.answer.indexOf(result1.toLowerCase()) >= 0) {
+        // Answer it's true
         document.getElementById("inputBox").value = " Please click enter";
         document.getElementById("inputBox").disabled = true;
         document.getElementById("inputBox").type = "text";
-        countdown("stop");
-        stateAction = "changePlayer2";
-        updateLettersUI(1, posQuestion1, 0);
-        if (pos1 == lettersPlayer1.length) {
-          lastPosPlayer1 = lettersPlayer1[0]; // Jump to the next one without slice
-          return false;
-        } else {
-          lastPosPlayer1 = lettersPlayer1[pos1 + 1];
-          return false;
-        }
-      } else {
-        // Wrong answer.
-        document.getElementById("questions").innerHTML = "Ups! You are wrong";
-        updateLettersUI(1, posQuestion1, 3);
-        document.getElementById("inputBox").value = " Please click enter";
-        document.getElementById("inputBox").disabled = true;
-        document.getElementById("inputBox").type = "text"; //UIPlayer('false');
-        countdown("stop");
-        if (pos1 == lettersPlayer1.length) {
+        text = "Answer Correct!";
+        updateLettersUI(1, posQuestion1, 2);
+        document.getElementById("questions").innerHTML = text;
+        stateAction = "questionPlayer1"; //UIPlayer('correct');
+        if (pos1 + 1 == lettersPlayer1.length) {
+          // Jump X  -->  A
           lastPosPlayer1 = lettersPlayer1[0];
         } else {
-          lastPosPlayer1 = lettersPlayer1[pos1 + 1];
+          lastPosPlayer1 = lettersPlayer1[pos1 + 1]; // A --> B
         }
-        lettersPlayer1.splice(pos1, 1);
-        faultPlayer1++;
-        stateAction = "changePlayer2";
-        return false;
+        lettersPlayer1.splice(pos1, 1); // A, , C
+        scorePlayer1++;
+        return true;
+      } else {
+        if (result1.toLowerCase() == "pasapalabra") {
+          // Change the player.
+          document.getElementById("questions").innerHTML = "OK! Change the player";
+          document.getElementById("inputBox").value = " Please click enter";
+          document.getElementById("inputBox").disabled = true;
+          document.getElementById("inputBox").type = "text";
+          countdown("stop");
+          stateAction = "changePlayer2";
+          updateLettersUI(1, posQuestion1, 0);
+          if (pos1 == lettersPlayer1.length) {
+            lastPosPlayer1 = lettersPlayer1[0]; // Jump to the next one without slice
+            return false;
+          } else {
+            lastPosPlayer1 = lettersPlayer1[pos1 + 1];
+            return false;
+          }
+        } else {
+          // Wrong answer.
+          document.getElementById("questions").innerHTML = "Ups! You are wrong";
+          updateLettersUI(1, posQuestion1, 3);
+          document.getElementById("inputBox").value = " Please click enter";
+          document.getElementById("inputBox").disabled = true;
+          document.getElementById("inputBox").type = "text"; //UIPlayer('false');
+          countdown("stop");
+          if (pos1 == lettersPlayer1.length) {
+            lastPosPlayer1 = lettersPlayer1[0];
+          } else {
+            lastPosPlayer1 = lettersPlayer1[pos1 + 1];
+          }
+          lettersPlayer1.splice(pos1, 1);
+          faultPlayer1++;
+          stateAction = "changePlayer2";
+          return false;
+        }
       }
-    }
   } else if (stateAction == "answerPlayer2") {
     result2 = document.getElementById("inputBox").value;
-    if (setOfQuestions.answer.indexOf(result2.toLowerCase()) >= 0) {      // Answer it's true
+    if (result1.toLowerCase() == "end") {
+      results();
+    }
+    if (setOfQuestions.answer.indexOf(result2.toLowerCase()) >= 0) {
+      // Answer it's true
       document.getElementById("inputBox").value = " Please click enter";
       document.getElementById("inputBox").disabled = true;
       document.getElementById("inputBox").type = "text";
@@ -214,7 +224,8 @@ function enterButton() {
       updateLettersUI(2, posQuestion2, 2);
       document.getElementById("questions").innerHTML = text;
       stateAction = "questionPlayer2"; //UIPlayer('correct');
-      if (pos2 + 1 == lettersPlayer2.length) {        // Jump X  -->  A
+      if (pos2 + 1 == lettersPlayer2.length) {
+        // Jump X  -->  A
         lastPosPlayer2 = lettersPlayer2[0];
       } else {
         lastPosPlayer2 = lettersPlayer2[pos2 + 1]; // A --> B
@@ -223,8 +234,9 @@ function enterButton() {
       scorePlayer2++;
       return true;
     } else {
-      if (result2.toLowerCase() == "pasapalabra") {        // Change the player.
-        document.getElementById("questions").innerHTML ="OK! Change the player";
+      if (result2.toLowerCase() == "pasapalabra") {
+        // Change the player.
+        document.getElementById("questions").innerHTML = "OK! Change the player";
         document.getElementById("inputBox").value = " Please click enter";
         document.getElementById("inputBox").disabled = true;
         document.getElementById("inputBox").type = "text";
