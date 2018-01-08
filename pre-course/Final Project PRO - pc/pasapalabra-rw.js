@@ -600,7 +600,9 @@ function countdown(startStop, time, player) {
 }
 
 function results() {
+
   window.location.href = "finalScore.html";
+
     
 }
 
