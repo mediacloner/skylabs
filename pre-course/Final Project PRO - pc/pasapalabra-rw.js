@@ -591,6 +591,7 @@ function countdown(startStop, time, player) {
       else if  (time > 0 && stopVal == 0) {
         setTimeout(cDown, 1000);
       }
+      colorCount(time);
       document.getElementById("countdown").innerHTML =
         "<b>Countdown:</b> <br>" + time + " seconds";
     }
@@ -598,26 +599,32 @@ function countdown(startStop, time, player) {
     stopVal = 1;
   }
 }
+function colorCount(count) {
 
+  if (count > 75) {
+    document.getElementById("countdown").style.color = "#ccc";
+  } else if (count > 50) {
+    document.getElementById("countdown").style.color = "#FDCD07";
+  } else if (count > 25) {
+    document.getElementById("countdown").style.color = "#F7971C";
+  } else if (count > 10) {
+    document.getElementById("countdown").style.color = "#F15022";
+  }
+}
 function results() {
 
-  window.location.href = "finalScore.html";
-
-    
+  window.location.href = "finalScore.html";  
 }
 
-function ranQuestion(){
-var numRandom = Math.floor(Math.random() * 3) + 1; 
+function ranQuestion() {
+  var numRandom = Math.floor(Math.random() * 3) + 1;
 
-if (numRandom == 1){
-  return setOfQuestions1;
-}
-else if (numRandom == 2) {
-  return setOfQuestions2;
-
-} else {
-  return setOfQuestions;
-}
-
+  if (numRandom == 1) {
+    return setOfQuestions1;
+  } else if (numRandom == 2) {
+    return setOfQuestions2;
+  } else {
+    return setOfQuestions;
+  }
 }
 
