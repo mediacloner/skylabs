@@ -613,9 +613,6 @@ function colorCount(count) {
   }
 }
 function results() {
- //                    <audio id='audioScore' autoplay="autoplay">
- //                      <source src="mp3/rafaga.mp3" type="audio/mpeg" />
- //                    </audio>
 
   countdown('stop');
   setTimeout(() => {document.getElementById("countdown").innerHTML = "<b>Countdown:</b> <br> Final Score"}, 1000);
@@ -624,11 +621,13 @@ function results() {
 	while (main.firstChild) main.removeChild(main.firstChild);
 
     var newdiv = document.createElement('div');
-    newdiv.innerHTML = '<div id="finalScore" class="cfinalScore">' +
-						'<img id="banner-fs" src="img/finalScore.png" alt="Final Score">' +
+    newdiv.innerHTML = '<img id="banner-fs" src="img/finalScore.png" alt="Final Score">' +
 						'<div id = "message-p1">Player 1 : ' + player1 + '<br>' + ' Right Answers: ' +  scorePlayer1 + '<br>' + '  Wrong Answers: ' +  faultPlayer1 + '</div>' + 
 						'<div id = "message-p2">Player 2 : ' + player2 + '<br>' + ' Right Answers: ' +  scorePlayer2 + '<br>' + '  Wrong Answers: ' +  faultPlayer2 + '</div>' +
-						'</div>';
+            '</div>' 
+            + "<audio id='audioScore' autoplay='autoplay'>"+
+            "<source src='mp3/rafaga.mp3' type='audio/mpeg' />" +
+            "</audio>'<div id='finalScore' class='cfinalScore'>"  ;
 
     main.appendChild(newdiv);
   
