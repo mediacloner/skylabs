@@ -1,15 +1,14 @@
-function isArray(arr) {
+function itsArray(arr) {
 
-    if (arr.length > 0 && typeof arr === 'object')
-        return true
+  
+    return Array.isArray(arr);
 
-    else
-        return false
+
 }
 
 //Test Data:
-//console.log(isArray('Skylab'));    // this should returns false
-//console.log(isArray([3, 5]));      // this should returns true
+console.log(itsArray('Skylab'));    // this should returns false
+console.log(itsArray([3, 5]));      // this should returns tru
 
 function joinEements(arr) {
     var output = '';
@@ -37,19 +36,19 @@ function arrayClone(arr) {
 //console.log(arrayClone([1, 2, 4, 0]));
 //console.log(arrayClone([1, 2, [4, 0]]));
 
-function findDifferences (arr){ // TODO: Array(3)[1, 2, Array(2)] 
-    function printArray(arr) {  // how to know
-        for (var i = 0; i < arr.length; i++) {
-            if (arr[i] instanceof Array) {
-                printArray(arr[i]);
-            } else {
-                console.log(arr[i]);
-            }
-        }
-    }
+function findDifferences (arr){ 
+var newArray
 
-    
+
+
+
 }
+//console.log(findDifferences([1, 2, 3], [100, 2, 1, 10]));
+
+
+//["3", "10", "100"];
+
+
 
 function sumPro (arr){
     var sum = 0;
@@ -89,7 +88,6 @@ function arrayRange(num, len) {
 
 
 //  console.log(arrayRange(1, 4));
-
 //  console.log(arrayRange(-6, 4));
 
  
@@ -133,7 +131,6 @@ function getRandom(arr) {
 }
 
 //var arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
-
 //console.log(getRandom(arr1));
 
 function findDuplicates(arr){
@@ -151,6 +148,25 @@ for (var i = 0; i < arr.length-1; i++) {
 return arrayResult
 }
 
-var arr1 = [9, 3, 7, 6, 2, 2, 3, 2, 1];
+//var arr1 = [9, 3, 7, 6, 2, 2, 3, 2, 1];
 
-console.log(findDuplicates(arr1));
+//console.log(findDuplicates(arr1));
+
+
+function mergeArrays(arr1, arr2){
+var newArray = []
+arr1.forEach(function (a) {
+    
+  if (newArray.indexOf(a) < 0) newArray.push(a)
+ 
+})
+arr2.forEach(function(a) {
+  if (newArray.indexOf(a) < 0) newArray.push(a);
+});
+ return newArray
+
+}
+//var array1 = [1, 2, 3];
+//var array2 = [2, 30, 1]; 
+//console.log(mergeArrays(array1, array2));
+
