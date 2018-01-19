@@ -1,6 +1,6 @@
 //Array.prototype.random() to randomly disorder an array into a new array.
 
-Array.prototype.random = function() {
+Array.prototype.shuffle = function() {
   var self = this;
   var lenName = self.length;
   var newArray = [];
