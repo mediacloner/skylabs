@@ -179,6 +179,22 @@ function mergeArrays(arr1, arr2) {
 //var array2 = [2, 30, 1];
 //console.log(mergeArrays(array1, array2));
 
+// separateEven
+
+// Write a JavaScript program which accept a number as input and insert dashes 
+// (-) between each two even numbers. For example if you accept 025468 the output 
+// should be 0-254-6-8
 function separateEven(input) {
-  input.split("");
+  var array = input.split('');
+  var resultString = "";
+  for (var i = 0; i <= array.length-1; i++) {
+    if ((i == 0))  resultString = array[0];
+    else {
+      array[i - 1] % 2 == 0 && array[i] % 2 == 0
+        ? (resultString = resultString + "-" + array[i])
+        : (resultString = resultString + array[i]);
+    }
+  }
+  return resultString;
 }
+separateEven("025468");
