@@ -41,10 +41,16 @@ function sortNumbers (num1, num2, num3){
 //Sample numbers : -5, -2, -6, 0, -1 
 //Output : 0
 
-function largestNumber (num1, num2, num3, num4, num5){
-    var numArray = [num1, num2, num3, num4, num5];
-    numArray.sort(function (a, b) {  return b - a;  });
-    return numArray[0];}
+
+    
+function largestNumber(arguments) {
+  var numArray = [arguments];
+  numArray.sort(function(a, b) {
+    return b - a;
+  });
+  return numArray[0];
+}
+
 
 
 
