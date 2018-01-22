@@ -48,8 +48,8 @@ necesarias para resolver los problemas que la programación web plantea.
 Es precisamente en el mundo de la programación donde más herramientas
 disponibles hay para que un programador pueda demostrar lo que es capaz
 de hacer.
-
-Seguir leyendo <http://www.skylabcoders.com/es/t%C3%ADtulos-o-hechos_11421>
+<http://www.skylabcoders.com/es/t%C3%ADtulos-o-hechos_11421
+Seguir leyendo >
 
 
       Inmersión en Javascript (callbacks, closures y más)
