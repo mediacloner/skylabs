@@ -1,10 +1,28 @@
 # notes
 ## CSS
 
-http://flukeout.github.io/
+### Test your knowledge about CSS
+
+http://flukeout.github.io
+
+
+### Specificity
+
+https://specificity.keegan.st/
+
+### Pseudo-selectors
+
+https://css-tricks.com/pseudo-class-selectors/
+
+### Responsive Tools
+http://quirktools.com/screenfly/
 
 
 ## HTML
+
+### Span vs Div
+
+div is a block element, span is inline.
 
 ### HTML List
 
@@ -73,3 +91,23 @@ http://mialtoweb.es/callbacks-en-javascript/
 https://medium.com/javascript-scene/higher-order-functions-composing-software-5365cf2cbe99
 
 
+
+### get and set
+
+
+### Clousure
+self executed funtion
+```javascript
+
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+
+add();
+add();
+add();
+
+// the counter is now 3
+
+```
