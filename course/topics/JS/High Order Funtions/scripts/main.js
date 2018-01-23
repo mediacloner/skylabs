@@ -79,6 +79,26 @@ return result;
 allMonthFiveLet (months, 12);
 allMonthFiveLet(months, 3);
 
+
+// Better :
+
+
+function month() {
+  var result = months.every(function(elem) {
+    return elem >= 5;
+  });
+  console.log("All months have five or more letters: " + result);
+}
+function someMonths() {
+  var some = months.some(function(elements) {
+    return elements >= 5;
+  });
+
+  console.log("Some months have five or more letters: " + some);
+}
+month();
+someMonths();
+
 //## Callback
 //Write a callback function that receives an age and a callback function, if age is equal 
 //or great than 18, call the callback function to allow enter in a bar, if hasn't 18 the entrance is not allowed.
