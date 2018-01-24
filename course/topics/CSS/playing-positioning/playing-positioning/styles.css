@@ -23,6 +23,7 @@
 	height: 400px;
 	width: 10%;
 	background-color: darkred;
+	float: left;
 }
 
 .section-right{
@@ -30,6 +31,7 @@
 	height: 400px;
 	width: 10%;
 	background-color: grey;
+	
 }
 
 .main{
@@ -37,6 +39,7 @@
 	height: 400px;
 	width: 79.2%;
 	background-color: darkgreen;
+	float: left;
 }
 
 .submain{
