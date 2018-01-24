@@ -198,3 +198,32 @@ function separateEven(input) {
   return resultString;
 }
 separateEven("025468");
+
+//mostFrequentItem
+
+//Write a JavaScript program to find the most frequent item of an array.
+
+//Sample array : var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+//Sample Output : a ( 5 times ) 
+
+function mostFrequentItem(arr){
+    arr.reduce(function (result, e) {
+      result = arr
+      
+    }, {})
+
+}
+
+mostFrequentItem([3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]);
+
+
+
+ var result = loremIpsum.split("").reduce(function(resultVowel, char) {
+   if (["a", "e", "i", "o", "u"].indexOf(char.toLowerCase()) >= 0) {
+     var vowelLower = char.toLowerCase();
+     resultVowel[vowelLower] = resultVowel[vowelLower] + 1;
+     return resultVowel;
+   } else return resultVowel;
+ }, { a: 0, e: 0, i: 0, o: 0, u: 0 });
+ console.log(result);
+

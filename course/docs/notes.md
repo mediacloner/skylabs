@@ -1,4 +1,9 @@
 # notes
+
+
+## Slices
+https://docs.google.com/presentation/d/1Ysjno_thUZMFuOiR47qjRmzsNxBSvsIzfZEwO2EZ-Uc/edit#slide=id.g325d9e1ae7_2_80
+
 ## CSS
 
 ### Test your knowledge about CSS
@@ -16,6 +21,23 @@ https://css-tricks.com/pseudo-class-selectors/
 
 ### Responsive Tools
 http://quirktools.com/screenfly/
+
+### Positioning
+
+https://i.stack.imgur.com/wA8sA.gif
+
+* Display
+
+https://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block
+
+* Float
+
+https://css-tricks.com/all-about-floats/
+
+* ClearFix
+
+https://css-tricks.com/almanac/properties/c/clear/
+
 
 
 ## HTML
