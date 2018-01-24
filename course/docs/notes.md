@@ -10,6 +10,8 @@ https://docs.google.com/presentation/d/1Ysjno_thUZMFuOiR47qjRmzsNxBSvsIzfZEwO2EZ
 
 http://flukeout.github.io
 
+https://caniuse.com/#search=grid
+
 
 ### Specificity
 
@@ -37,6 +39,9 @@ https://css-tricks.com/all-about-floats/
 * ClearFix
 
 https://css-tricks.com/almanac/properties/c/clear/
+
+### Flex || Grid
+http://flexboxfroggy.com/#es
 
 
 

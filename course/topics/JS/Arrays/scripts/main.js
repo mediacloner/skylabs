@@ -206,24 +206,35 @@ separateEven("025468");
 //Sample array : var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
 //Sample Output : a ( 5 times ) 
 
+function mostFrequentItem(arr) {
+  var res = arr.reduce(function(result, e) {
+    result[e] = (result[e] || 0) + 1;
+    return result;
+  }, {});
+  return res;
+}
+
+mostFrequentItem([3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]);
+
+// The next one works perfectly, reduce two lines in only one.
+// The 'return' resolve a statement and ',' give the result.
+
 function mostFrequentItem(arr){
-    arr.reduce(function (result, e) {
-      result = arr
+    var res=arr.reduce(function (result, e) {
+      return (result[e] = (result[e] || 0) + 1), result;
       
     }, {})
-
+    return res;
 }
 
 mostFrequentItem([3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]);
 
 
+//
 
- var result = loremIpsum.split("").reduce(function(resultVowel, char) {
-   if (["a", "e", "i", "o", "u"].indexOf(char.toLowerCase()) >= 0) {
-     var vowelLower = char.toLowerCase();
-     resultVowel[vowelLower] = resultVowel[vowelLower] + 1;
-     return resultVowel;
-   } else return resultVowel;
- }, { a: 0, e: 0, i: 0, o: 0, u: 0 });
- console.log(result);
+
+
+
+
+
 
