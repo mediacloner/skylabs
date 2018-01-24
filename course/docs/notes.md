@@ -97,6 +97,9 @@ https://medium.com/javascript-scene/higher-order-functions-composing-software-53
 
 ### Clousure
 self executed funtion
+http://www.variablenotfound.com/2012/10/closures-en-javascript-entiendelos-de.html
+
+
 ```javascript
 
 var add = (function () {

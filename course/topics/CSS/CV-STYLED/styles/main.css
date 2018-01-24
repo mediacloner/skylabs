@@ -1,74 +1,85 @@
-body{
+body {
+  background-color: #ededed;
 
-background-color: #EDEDED;
-
-margin: 40px;
+  padding: 100px;
 }
 
-img{
+img {
+  border-radius: 125px;
 
-    border-radius: 125px;
-    zoom: 25%;
-   float: left;
-   margin-right: 100px;
+  zoom: 25%;
+
+  float: left;
+
+  margin-right: 100px;
 }
 
-h1{
-    font-family: 'Crete Round', serif;
-    margin: 0px;
-    padding-top: 10px;
-    
+h1 {
+  font-family: "Crete Round", serif;
+  margin: 0px;
+  /* padding-top: 10px; */
+  width: 300px;
+  /* display:  inline; */
 }
 
-h2{
-    font-family: 'Crete Round', serif;
-    margin: 2px;
-    
+h2 {
+  font-family: "Crete Round", serif;
+  margin: 2px;
+  display: inline;
 }
 
-h3{ 
-    font-family: 'Crete Round', serif;
-    color:#D08B0A;
-    font-style: italic;
+h3 {
+  font-family: "Crete Round", serif;
+  color: #d08b0a;
+  font-style: italic;
+  display: inline;
 }
-h4{ 
-    font-family: 'Crete Round', serif;
-   
-}
-
-h5{
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
+h4 {
+  font-family: "Crete Round", serif;
+  margin-left: 300px;
 }
 
-
-p{
-    font-family: Arial, Helvetica, sans-serif;
-    
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  margin-left: 300px;
 }
-aside{
 
-
-padding-left: 600px;
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 300px;
+}
+aside {
+  position: absolute;
+  float: right;
+  position: relative;
 }
 ul {
   list-style-type: none;
-  margin:  0px;
+  margin: 0px;
 }
 
-li{
-font-family: Arial, Helvetica, sans-serif;
-text-decoration: none; 
+li {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
 }
 
-.title{height: 250px;width: 450px;height: 555;/* float: right; */}
-a{
+.title {
+  height: 144px;
+  width: 148px;
+  height: 555;
+  position: relative;
+  float: left;
+  display: inline;
+}
+a {
   text-decoration: none; /* no underline */
   color: grey;
 }
 
-header{
-  border-bottom-width:1,5px;
-   border-bottom-color:#D08B0A;
-   border-bottom-style: solid;
+header {
+  border-bottom-width: 1, 5px;
+  border-bottom-color: #d08b0a;
+  border-bottom-style: solid;
+  height: 150px;
 }
