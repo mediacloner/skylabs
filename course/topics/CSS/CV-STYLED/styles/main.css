@@ -56,12 +56,17 @@ aside {
 }
 ul {
   list-style-type: none;
-  margin: 0px;
+
+  float: left;
 }
 
 li {
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
+}
+
+.clear{
+  clear: both;
 }
 
 .title {
@@ -82,4 +87,8 @@ header {
   border-bottom-color: #d08b0a;
   border-bottom-style: solid;
   height: 150px;
+}
+
+.skills{
+  margin-left: 260px;
 }
