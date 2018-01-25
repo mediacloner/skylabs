@@ -87,3 +87,90 @@ add();
 // the counter is now 3
 
 ```
+# var
+
+var es el apuntador
+
+valor es el primitivo
+
+var i = 1 (local)
+
+i = 1 global window    (window.i)
+
+
+
+
+``` javascript
+while (--count) {console.log(count)}
+```
+
+
+``` javascript
+var a= ''  // is false
+
+!a  //is true
+
+!!a //is false
+```
+
+##Object.prototype
+
+a.__proto__
+apunta a prototype
+
+
+a.__proto__.__proto__ prototype de creación de objetos.
+
+
+Todo objeto tiene:
+
+miembros
+
+Car.prototype.run = funtion() { console.log('kjsdh')}
+
+
+siempre que se crea un metodo en la cración de un objeto en el prototype si es F
+
+
+}
+
+#call() & apply() vs bind()
+https://javascriptplayground.com/javascript-variable-scope-this/
+https://medium.com/entendiendo-javascript/entendiendo-scopes-de-variables-en-javascript-661ea382c8bc
+
+call() para argumentos 
+
+apply() para pasar una array
+
+bind()
+
+https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind
+
+# Hoisting 
+
+https://developer.mozilla.org/es/docs/Glossary/Hoisting
+
+# Visual Studio Tricks
+CTRL + D Selecciona diferentes valores iguales.
+
+O boton derecho Change All Ocurrences.
+
+#Clousure
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Closures
+
+# Ternarios
+
+
+Los ternarios pueden devolver mensajes y cambiar estados:
+'''
+
+(cadena.indexOf)....?
+
+(...): (ok = false, message= 'blablabla')
+'''
+
+
+# jasmine
+
+https://jasmine.github.io/

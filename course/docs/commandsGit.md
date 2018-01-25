@@ -185,5 +185,12 @@ git fetch upstream
 git merge upstream/develop  (posicionado en la rama)
 git push
 
+Update for master and develope branch
+git checkout master
+git fetch upstream
+git merge upstream/master
+git checkout develop
+git merge upstream/develop
+git push
 
 
