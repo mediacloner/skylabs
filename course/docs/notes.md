@@ -43,6 +43,8 @@ https://css-tricks.com/almanac/properties/c/clear/
 ### Flex || Grid
 http://flexboxfroggy.com/#es
 
+https://scrimba.com/g/gR8PTE
+
 
 
 ## HTML
@@ -80,10 +82,10 @@ post URL hide
 
 ### Documentation in Javascript
 
-JsDoc - for code
+* JsDoc - for code
 http://usejsdoc.org/index.html
 
-Confluence Wiki
+* Confluence Wiki
 
 https://es.atlassian.com/software/confluence
 
@@ -92,14 +94,20 @@ Jira
 
 https://es.atlassian.com/software/jira
 
+### Definition Variables
+
+var a = a || 'Default'
+
 ### some o every 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
 
 ### apply y call
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
 
 ### for ... in
@@ -124,6 +132,7 @@ https://medium.com/javascript-scene/higher-order-functions-composing-software-53
 
 ### Clousure
 self executed funtion
+
 http://www.variablenotfound.com/2012/10/closures-en-javascript-entiendelos-de.html
 
 
