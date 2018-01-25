@@ -112,8 +112,19 @@ var a= ''  // is false
 
 !!a //is false
 ```
+# ++i vs i++
 
+``` javascript
+var i = 42;
+alert(i++); // shows 42
+alert(i); // shows 43
+i = 42;
+alert(++i); // shows 43
+alert(i); // shows 43
 ##Object.prototype
+```
+
+## objetos
 
 a.__proto__
 apunta a prototype
@@ -174,3 +185,7 @@ Los ternarios pueden devolver mensajes y cambiar estados:
 # jasmine
 
 https://jasmine.github.io/
+
+#Jquery
+
+https://jquery.com/
