@@ -6,6 +6,11 @@ https://docs.google.com/presentation/d/1Ysjno_thUZMFuOiR47qjRmzsNxBSvsIzfZEwO2EZ
 
 ## CSS
 
+
+### SASS
+
+http://sass-lang.com/guide
+
 ### Test your knowledge about CSS
 
 http://flukeout.github.io
@@ -88,6 +93,10 @@ http://usejsdoc.org/index.html
 * Confluence Wiki
 
 https://es.atlassian.com/software/confluence
+
+### Use Strict
+
+https://www.w3schools.com/js/js_strict.asp
 
 ### Issues (feature, buy)
 Jira

@@ -128,7 +128,7 @@ $ git branch
 
   * approval_messages
     * master
-    * master_clean
+    * master_clea
 
 ## Add a new remote for your branch :
 ```
@@ -143,6 +143,8 @@ $ git push [name_of_your_new_remote] [name_of_your_branch]
 ## Update your branch when the original branch from official repository has been updated :
 ```
 $ git fetch [name_of_your_remote]
+
+$ git fetch upstream
 ```
 
 ## Then you need to apply to merge changes, if your branch is derivated from develop you need to do :
@@ -165,4 +167,23 @@ $ git branch -D [name_of_your_new_branch]
 ```
 $ git push origin :[name_of_your_new_branch]
 ```
+
+
+## Information about branch and remote :
+
+```
+$ git branch -v
+```
+```
+$ git remote -v
+```
+ https://help.github.com/articles/fetching-a-remote/
  
+git clone https://github.com/mediacloner/skylab-bootcamp-201801
+git remote add upstream https://github.com/manuelbarzi/skylab-bootcamp-201801
+git fetch upstream
+git merge upstream/develop  (posicionado en la rama)
+git push
+
+
+
