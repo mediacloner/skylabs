@@ -182,10 +182,19 @@ Los ternarios pueden devolver mensajes y cambiar estados:
 '''
 
 
-# jasmine
+#jasmine
 
 https://jasmine.github.io/
 
 #Jquery
 
 https://jquery.com/
+http://try.jquery.com/
+
+# Bubbling
+https://javascript.info/bubbling-and-capturing
+
+
+
+# Recursive
+https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php
