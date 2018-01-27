@@ -198,3 +198,9 @@ https://javascript.info/bubbling-and-capturing
 
 # Recursive
 https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php
+
+
+#AJAX
+
+https://www.w3schools.com/jquery/ajax_ajax.asp
+
