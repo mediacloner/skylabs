@@ -37,7 +37,7 @@ function calculator(val) {
   };
 }
 
-calculator(2);
+calculator(2).sum(2).mult(3).equal();
 
 
 
