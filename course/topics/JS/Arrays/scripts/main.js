@@ -232,9 +232,27 @@ mostFrequentItem([3, "a", "a", "a", 2, 3, "a", 3, "a", 2, 4, 9, 3]);
 
 //
 
+// moveElement
+// 
+// Write a JavaScript function to move an array element from one position to another.
 
 
+function move(arr, posIni, posEnd) {
+  var posIniArr, porEndArr;
+  if (posIni >= 0) posIniArr = posIni;
+  else posIniArr = arr.length + posIni;
 
+  if (posEnd >= 0) porEndArr = posEnd;
+  else porEndArr = arr.length + posEnd;
+
+  var itemArr = arr[posIniArr];
+
+  arr.splice(posIniArr,1);
+  arr.splice(porEndArr, 0, itemArr);
+ 
+  return arr
+
+}
 
 
 
