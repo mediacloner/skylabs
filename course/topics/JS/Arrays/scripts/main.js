@@ -255,4 +255,25 @@ function move(arr, posIni, posEnd) {
 }
 
 
+//swapCase
+//
+//Write a JavaScript program which accept a string as input and swap the case of each character. 
+//For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
+
+
+function swapCase (str){
+    arr = str.split("");
+    newArrResult = [];
+    arr.forEach(function(e) {
+      if (e == e.toLowerCase()) {
+        newArrResult.push(e.toUpperCase());
+      } else {
+        newArrResult.push(e.toLowerCase());
+      }
+    });
+
+    return newArrResult.join("");
+
+}
+
 
