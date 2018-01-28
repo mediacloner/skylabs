@@ -275,5 +275,30 @@ function swapCase (str){
     return newArrResult.join("");
 
 }
+// Print elements array
+// 
+// Write a JavaScript program which prints the elements of the following array.
+// Note : Use nested for loops.
+
+function printArray (arr){
+
+    for (var i = 0; i <= arr.length-1; i++){
+      console.log ('row '+ i);
+      for (var j = 0; j <= arr[j].length-1; j++ ){
+        console.log (' ' + arr[i][j]);
+      }
+    }
+
+}
+
+ var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+printArray (a);
 
 
+
+
+
+//array_filled (string)
+//
+//Write a JavaScript function to create a specified number of elements
+//with pre-filled string value array.
