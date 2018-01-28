@@ -204,3 +204,6 @@ https://www.w3resource.com/javascript-exercises/javascript-recursion-functions-e
 
 https://www.w3schools.com/jquery/ajax_ajax.asp
 
+#Anonymous functions.
+https://geekytheory.com/javascript-funciones-anonimas-y-objetos
+
