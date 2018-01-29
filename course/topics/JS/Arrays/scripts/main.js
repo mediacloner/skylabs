@@ -302,3 +302,60 @@ printArray (a);
 //
 //Write a JavaScript function to create a specified number of elements
 //with pre-filled string value array.
+
+function arrayFilled (iterations, strDefValue){
+    var arrResult = [];  
+    for (var i = 0; i < iterations; i++ ){
+        arrResult.push(strDefValue);
+    }
+    return arrResult;
+}
+
+console.log(arrayFilled(3, "default value")); 
+
+console.log(arrayFilled(4, "password"));
+
+//Sum squares
+//TODO:
+//Write a JavaScript program to find the sum of squares of a numeric vector.
+
+
+//removeDuplicate
+
+//Write a JavaScript program to remove duplicate items from an array 
+//(ignore case sensitivity). TODO:
+
+function removeDuplicates (arr){
+   return arr.reduce(function(result, current){
+      console.log (result);
+      console.log (current);
+
+      if (self.indexOf(current) === -1)
+         return result.push(current)
+      else
+         return result
+    }, []);
+}
+
+
+removeDuplicates ([2,3,5,6,2,'a', 'A', 'b', 'C']);
+
+
+//showChoices
+//
+//We have the following arrays : color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "]; o = ["th","st","nd","rd"] Write a JavaScript program to display the colors in the following way : "1st choice is Blue ." "2nd choice is Green." "3rd choice is Red."
+//
+//Note : Use ordinal numbers to tell their position.
+
+function showChoices(color) {
+  o = ["th", "st", "nd", "rd"];
+
+  for (var i =0; i < color.length ; i++){
+      if (i >= 3) console.log((i + 1) + o[0] + " choice is " + color[i]);
+  else console.log((i+1) + o[i+1] + " choice is " + color[i]);
+  }
+
+}
+
+col = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
+showChoices(col);
