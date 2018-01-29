@@ -359,3 +359,9 @@ function showChoices(color) {
 
 col = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
 showChoices(col);
+
+
+//showLeapYears
+//
+//Find the leap years in a given range of years.
+
