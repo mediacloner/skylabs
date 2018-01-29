@@ -381,3 +381,26 @@ function showLeapYears(yearIni, yearEnd){
     }
 
 }
+
+// shuffleArray
+// 
+// Write a JavaScript program to shuffle an array.
+
+
+function shuffleArray (arr) {
+  var newArr = [];
+  var lengthArrIni = arr.length;
+  for (var i = 0; i < lengthArrIni; i++) {
+    var posRan = Math.floor(Math.random() * (arr.length-1));
+    var z = arr.splice(posRan,1);
+    newArr.push(z.toString());
+  }
+
+  return newArr;
+
+}
+
+
+arrIns = [1,2,3,4,5,6,7,8,9]
+
+console.log(shuffleArray(arrIns));
