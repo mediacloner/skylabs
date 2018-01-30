@@ -4,6 +4,8 @@
 ### SASS
 
 http://sass-lang.com/guide
+https://sass-guidelin.es/es/
+
 
 
 sass --watch input.scss:output.css
@@ -55,23 +57,6 @@ http://grid.malven.co/
 
 
 
-
-### Exercise
-
-
-Don't work protperly hide() is better create a class hidden with display: none;
-$ addClass ---- removeClass
-
-
-use strict --- shoud be always for work propertly
-
-
-create un object with attems and result.
-
-
-font-family: 'Rock Salt', cursive;
-font-family: 'Ubuntu', sans-serif;
-font-family: 'Anton', sans-serif;
 
 
 
