@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton|Rock+Salt|Ubuntu" rel="stylesheet">
+    <title>HangMan</title>
+</head>
+
+<body>
+<header>
+    
+        <img src="images/hangman.png" id="logo" alt="bannerHangMan">
+        <h1>THE GAME</h1>
+
+</header>
+
+
+<main>
+      
+        <section id='start'>
+            <h2>Wellcome to Hangman Game</h2>
+ 
+                <button id="play">
+                    <a href="">Play</a>
+                </button>
+        </section>
+
+        <section id='defineWord'>
+            <h2>Enter a secret word!</h2>
+            <form action="" method="post">
+                <input type="password" id="secretWordInput" name="secretWord">
+                <h2>How many attemps do you want?</h2>
+                <input type='numbers'id="attempsInput" name="attemps">
+                <button id="startGame"><a href="">Play!!!</a></button>
+            </form>
+        </section>
+
+        <section id='playingGame'>
+            <h2>You have <h2 id="attemps"></h2> attemps.</h2>
+            <h1 id="panel"></h1>
+            <form action="javascript:t();" method="post">
+                <input type="text" id="vowelWord" name="vowel"> 
+                <button id="try">
+                <a href="">try</a>
+            </button>
+            </form>
+        </section>
+
+        <section id='resultWin'>
+
+            <h2>Well done! You have guessed the word.</h2>
+
+            <h1 id='secretWord'></h1>
+
+            <h2>in <h2 id="attemps"></h2> attemps.</h2>
+
+            <input type="playAgain" value="Play Again!">
+
+        </section>
+
+        <section id='resultLose'>
+            <h2 id="messageLose"></h2>
+            <h2>You loose. Don't worry. Try again!</h2>
+            <h1 id='secretWord'></h1>
+            <input type="playAgain" value="Play Again!">
+
+        </section>
+
+    </main>
+
+    <footer> </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/jqscript.js"></script>
+
+
+
+</body>
+
+</html>

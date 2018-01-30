@@ -391,8 +391,8 @@ function shuffleArray (arr) {
   var newArr = [];
   var lengthArrIni = arr.length;
   for (var i = 0; i < lengthArrIni; i++) {
-    var posRan = Math.floor(Math.random() * (arr.length-1));
-    var z = arr.splice(posRan,1);
+    var posRan = Math.floor(Math.random() * (arr.length - 1));
+    var z = arr.splice(posRan, 1);
     newArr.push(z.toString());
   }
 

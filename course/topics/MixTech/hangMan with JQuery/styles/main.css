@@ -1,0 +1,40 @@
+html {
+  background-color: #ac9365; }
+
+header {
+  height: 100px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #eeba59;
+  padding: 20px; }
+
+img {
+  height: 100px; }
+
+h1 {
+  font-family: "Rock Salt", cursive;
+  font-size: 30px;
+  color: #ce1010; }
+
+main {
+  height: 100px;
+  background-color: #ac9365;
+  padding: 20px; }
+
+section {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  height: 400px;
+  background-color: #ac9365; }
+
+h2 {
+  font-family: 'Anton', sans-serif; }
+
+/*# sourceMappingURL=main.css.map */

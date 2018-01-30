@@ -1,9 +1,16 @@
-function removeDuplicates(arr) {
-  return arr.reduce(function(result, current) {
-    if (result.indexOf(current) === -1)
-      return result.push(current);
-    else return result;
-  }, []);
+function showLeapYears(yearIni, yearEnd) {
+  years = yearEnd - yearIni;
+  for (var i = 0; i <= years; i++) {
+    var y = yearIni + i;
+    if (isLeap(y)) console.log("Leap year: " + y);
+  }
+
+  function isLeap(year) {
+    if (year % 400 === 0) return true;
+    else if (year % 4 === 0 && year % 100 != 0) return true;
+    else return false;
+  }
 }
 
-removeDuplicates[(2, 3, 5, 6, 2, "a", "A", "b", "C")];
+
+showLeapYears(1900, 1940);

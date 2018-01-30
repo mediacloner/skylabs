@@ -1,0 +1,52 @@
+
+@mixin flexVar($display,$wrap, $direction, $justify, $align ) {
+  display: $display;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+$backgroundColor: rgb(172, 147, 101);
+
+
+
+html{
+    background-color:  $backgroundColor;
+}
+
+header {
+  height: 100px;
+  @include flexVar(flex,nowrap, row, space-between, flex-start );
+  background-color: rgb(238, 186, 89);
+  padding: 20px;
+}
+
+img {
+  height: 100px;
+}
+
+h1 {
+  font-family: "Rock Salt", cursive;
+  font-size: 30px;
+  color: rgb(206, 16, 16);
+}
+
+main {
+  height: 100px;
+  background-color: $backgroundColor;
+  padding: 20px;
+}
+
+section {
+
+   @include flexVar(flex,nowrap, column, center, center );
+  font-family: 'Ubuntu', sans-serif;
+  height: 400px;
+  background-color: $backgroundColor;
+}
+
+h2{
+
+  font-family: 'Anton', sans-serif;
+}
