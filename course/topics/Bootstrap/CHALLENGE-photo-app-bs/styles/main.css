@@ -1,0 +1,15 @@
+#bg-header {
+  background: url(../material/site_showcase_bg.jpg);
+  background-position: 100% 100%;
+  background-repeat: no-repeat; }
+
+hr {
+  border: none;
+  color: white;
+  height: 1.25px; }
+
+.footer > ul > li {
+  display: inline;
+  padding: 10px; }
+
+/*# sourceMappingURL=main.css.map */
