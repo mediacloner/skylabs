@@ -13,8 +13,7 @@ class Hangman extends Game {
     super(attemps, word); // envia a la clase padre
   }
 
-  try(string) {
-    //clase no hace falta =
+  try(string) {     //clase no hace falta =
     if (string) {
       //filtar por si fuera diferente a un string, si no devuelve  "NO MORE ATTEMPS, GAME OVER"
       this.attemps--;
@@ -26,7 +25,7 @@ class Hangman extends Game {
     }
 
     return console.error("no letter inputed");
-    //Clousure
+
   }
   print() {
     var arrWor = this.word.split(""); // genera los espacios?
@@ -45,8 +44,7 @@ class Hangman extends Game {
       // si la palabra incluye algo del string
       const currentWordUser = this.word
         .split("")
-        .map(letter => {
-          //  paso a array, lo mapeas, pregunto si el elemento mapeado es el correcto o no y hace un join
+        .map(letter => { //  paso a array, lo mapeas, pregunto si el elemento mapeado es el correcto o no y hace un join
           return this.correctLetters.includes(letter) ? letter : "_"; // y hace un join.
         })
         .join("");
