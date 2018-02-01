@@ -207,3 +207,74 @@ https://www.w3schools.com/jquery/ajax_ajax.asp
 #Anonymous functions.
 https://geekytheory.com/javascript-funciones-anonimas-y-objetos
 
+#ES6
+
+##cons
+
+##let
+
+##arrow functions
+
+var fun = function () {console.log('Hello')}
+
+var fun = () => {console.log('Hello')}
+
+var fun = () => console.log('Hello')
+
+this its not necessary put a self or binding.
+
+##dafault vals
+function sum (a, b=1, c=1) inici
+
+##Templeate String
+```Javascript
+function sum (a=1, b=1, c=1) { `a=${a}, b=${b}, c=${c}` }
+// Result a=1, b=1, c=1
+
+```
+## Enhanced object literals
+
+var a=1, b=1, c=3
+
+o={a, b, c} // o={a:1, b:1, c:3}
+
+## Destructurin
+```Javascript
+var a, b;
+
+[a, b] = [1, 2];
+```
+
+http://2ality.com/2015/01/es6-destructuring.html
+
+## Spread Operator
+
+var arr = [1,2,3]
+
+var arr1 = [4,5 ...arr]  //[4,5,1,2,3]
+
+Same with object
+
+## Set
+
+var s = new Set()
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+
+
+## map
+
+var m = new Map();
+
+
+
+## class
+```javascript
+class Animal {
+    constructor (name){this.name},
+    eat (){return 'ñam, ñan, ...}
+}
+
+````
+
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes
