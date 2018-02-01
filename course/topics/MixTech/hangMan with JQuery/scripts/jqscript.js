@@ -2,6 +2,14 @@
 
 $(document).ready(function () {
 
+    start();
+
+    function start() {
+      $("section").hide();
+      $("#mainAnimation").show();
+      $("#start").show();
+    }
+
     $("#play").click(function(e) {
       e.preventDefault();
         $("#start").hide();
@@ -23,10 +31,12 @@ $(document).ready(function () {
         e.preventDefault();
         var vowelWord = $("#vowelWord").val();
         var result = newGame.try(vowelWord);
+        $("#panel").empty();
+        $("#attemps").empty();
         $("#panel").append(newGame.print());
         $("#attemps").append(attemps);
         
-    });
+    })
 
 
 });

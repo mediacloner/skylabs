@@ -68,13 +68,7 @@ function Game(word, attemps) {
 
 //var newGame = new Game("Hello", 10)
 
-start();
 
-function start() {
-  $("section").hide();
-  $("#mainAnimation").show();
-  $("#start").show();
-}
 
 
 
