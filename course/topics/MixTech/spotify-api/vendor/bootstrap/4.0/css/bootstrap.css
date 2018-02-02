@@ -1961,7 +1961,7 @@ pre code {
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
+  background-color: #ffffff87;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   /* border-radius: 0.25rem; */
@@ -4426,7 +4426,6 @@ tbody.collapse.show {
 }
 
 .card {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4440,6 +4439,7 @@ tbody.collapse.show {
   background-clip: border-box;
   /* border: 1px solid rgba(0, 0, 0, 0.125); */
   border-radius: 0.25rem;
+  align-content: space-around;
 }
 
 .card > hr {
