@@ -31,3 +31,8 @@ rm
  ```
 
 
+## Search
+
+grep . -r -e Hangman   | grep jquery
+
+find Hangman with that result find jquery

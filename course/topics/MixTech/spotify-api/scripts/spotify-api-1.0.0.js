@@ -17,10 +17,7 @@ var spotifyApi;
     });
   }
 
-  spotifyApi = { baseUrl: "https://api.spotify.com/v1/",
-    token: "BQCOMlFI4bdVrH3ptqDwTLprQQOIri73RncGhoUcC8WB3HNo1ZmNua03MELAPsW1jupUNa9ztTEM8e0pHk_Q2NQ_CL5S0FHXIgsaniPlE6DEbga2rdjMnVLTfrg2BjscZKNqBjBk8Wzl0zU",
-    timeout: 2000,
-    /**
+  spotifyApi = { baseUrl: "https://api.spotify.com/v1/", token: "BQDMVipMVPLHwN1SMTH-bcFj-ldlwbQVAHYA_Mxfl09bjD4IyRVhJiV_UctG5nRs-Vpc_DlE9z3vN2T-s5Ub8dVZEuXtHsBOvqlNNSGi1IrgzTi0k9zeEp6T2QD_X5X3b_IlaM6s9a_70Eg", timeout: 2000 /**
      * Searches artists by matching a text.
      *
      * @see https://developer.spotify.com/web-api/console/get-search-item/
@@ -28,13 +25,11 @@ var spotifyApi;
      * @param {String} query - The text to search.
      * @param {Function} handleResults - Handles the results.
      * @param {Function} handleError - Handles an error.
-     */
-    searchArtists: function(query, handleResults, handleError) {
+     */, searchArtists: function(query, handleResults, handleError) {
       call(this.baseUrl + "search?type=artist&q=" + query, this.token, function(results) {
           handleResults(results.artists.items);
         }, handleError, this.timeout);
-    },
-    /**
+    } /**
      * Retrieve albums from an artist (by artist id).
      *
      * @see https://developer.spotify.com/web-api/console/get-artist-albums/
@@ -42,13 +37,11 @@ var spotifyApi;
      * @param {String} artistId - The id of the artist to retrieve the albums from.
      * @param {Function} handleResults - Handles the results.
      * @param {Function} handleError - Handles an error.
-     */
-    retrieveAlbums: function(artistId, handleResults, handleError) {
+     */, retrieveAlbums: function(artistId, handleResults, handleError) {
       call(this.baseUrl + "artists/" + artistId + "/albums", this.token, function(results) {
           handleResults(results.items);
         }, handleError, this.timeout);
-    },
-    /**
+    } /**
      * Retrieve tracks from an album (by album id).
      *
      * @see https://developer.spotify.com/web-api/console/get-album-tracks/
@@ -56,11 +49,11 @@ var spotifyApi;
      * @param {String} albumId - The id of the album to retrieve the tracks from.
      * @param {Function} handleResults - Handles the results.
      * @param {Function} handleError - Handles an error.
-     */
-    retrieveTracks: function(albumId, handleResults, handleError) {
-      // TODO implement album's tracks retrieval by means of endpoint https://api.spotify.com/v1/albums/{id}/tracks
-    },
-    /**
+     */, retrieveTracks: function(albumId, handleResults, handleError) {
+      call(this.baseUrl + "albums/" + albumId + "/tracks", this.token, function(results) {
+          handleResults(results.items);
+        }, handleError, this.timeout);
+    } /**
      * Retrieve track by id.
      *
      * @see https://developer.spotify.com/web-api/console/get-track/
@@ -68,8 +61,7 @@ var spotifyApi;
      * @param {String} id - The id of the track to retrieve information from.
      * @param {Function} handleResults - Handles the results.
      * @param {Function} handleError - Handles an error.
-     */
-    retrieveTrack: function(id, handleResults, handleError) {
+     */, retrieveTrack: function(id, handleResults, handleError) {
       call(this.baseUrl + "tracks/" + id, this.token, handleResults, handleError, this.timeout);
     } };
 })();
