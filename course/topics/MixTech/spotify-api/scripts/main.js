@@ -3,10 +3,11 @@ $("button").click(function(e) {
 
   let query = $("input").val();
 
-  spotifyApi.searchArtists(query, resHTML, resError);
+  spotifyApi.searchArtists(query, resHTML)
 
   function resHTML(obj) {
     let resultHTML = "";
+    console.log(obj);
 
     obj.forEach(e => {
       if (typeof e.images[0] === "undefined") {
@@ -32,7 +33,7 @@ $("button").click(function(e) {
   }
 
   resError = result => {
-    // console.log(result);
+     console.log(result);
   };
 });
 

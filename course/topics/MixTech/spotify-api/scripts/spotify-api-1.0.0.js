@@ -17,7 +17,7 @@ var spotifyApi;
     });
   }
 
-  spotifyApi = { baseUrl: "https://api.spotify.com/v1/", token: "BQDMVipMVPLHwN1SMTH-bcFj-ldlwbQVAHYA_Mxfl09bjD4IyRVhJiV_UctG5nRs-Vpc_DlE9z3vN2T-s5Ub8dVZEuXtHsBOvqlNNSGi1IrgzTi0k9zeEp6T2QD_X5X3b_IlaM6s9a_70Eg", timeout: 2000 /**
+  spotifyApi = { baseUrl: "https://api.spotify.com/v1/", token: "BQDug8thHI7WRyUQHmJ2-c18SrQn_UDsMZF5Vu9SKPmFzRjjX3dFEm0RBxITfCBFBF9I08hv7cu8Ryxj2eVvlBg-bR_BueQE-3JVsQxTPCW2wJUid-NbjHfP0I7wTmO8Bhf0Ozr-ybvXGyk", timeout: 2000 /**
      * Searches artists by matching a text.
      *
      * @see https://developer.spotify.com/web-api/console/get-search-item/
