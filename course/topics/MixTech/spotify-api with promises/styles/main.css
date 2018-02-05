@@ -1,0 +1,45 @@
+html {
+  background-image: url("../images/spotify-bg.png");
+  background-color: #1CD760;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position-x: center; }
+
+.boxSearch {
+  background: #0b8638; }
+
+.p-1 {
+  width: 450px;
+  margin: auto;
+  margin-top: 200px;
+  color: white; }
+
+input.form-control {
+  background-color: #ffffff87; }
+
+.cResult {
+  margin-top: 50px; }
+
+.container {
+  max-width: 750px; }
+
+.cover {
+  text-align: right; }
+
+p {
+  text-align: center; }
+
+img {
+  position: absolute;
+  left: 17px;
+  top: 13px; }
+
+.img64 {
+  width: 64px;
+  height: auto; }
+
+.player {
+  display: table;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=main.css.map */
