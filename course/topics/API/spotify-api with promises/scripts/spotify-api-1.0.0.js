@@ -9,20 +9,17 @@ let spotifyApi;
 (function() {
   "use strict";
   const baseUrl = "https://api.spotify.com/v1/";
-  const token =
-    "BQC88o5DEqXbqpqpWhJoXStrwIx5xzkc5tcQ6AkaU26Zf6WVyqAcF3V95iXtScdjM1lYeep4d8Z__Bvg2J0w-BMQxm5AMOJek60ecHa-lsvV3Xgr9Irurc9pZucV5gJMT1dCrLc";
+  const token = "BQA6hSnbtC0gQg-cD65yVt6F2YvHG8kwYujbyrExAum7TpsRWNfifrFzBZ55WedQ4fEujFra6coU_RH4Bf6hDHKQfa_NVlO6ffEQbLiri3LoOOuyUWg8az-Pv9ZoL764NhILDkZRCCVhkP0";
   const headers = { Authorization: "Bearer " + token };
 
   spotifyApi = {
     baseUrl,
 
     call: function(url) {
-      return new Promise((resolve, reject) => {
-        fetch(url, { headers })
-          .then(res => res.json())
-          .then(data => resolve(data))
-          .catch(err => reject(err));
-      });
+        return fetch(url, { headers })
+        .then(res => res.json());
+
+
     },
     /**
      * Searches artists by matching a text.
@@ -32,9 +29,9 @@ let spotifyApi;
      * @param {Function} handleError - Handles an error.
      */
     searchArtists: function(query) {
-      let path = this.baseUrl + "search?type=artist&q=" + query;
+      let path = this.baseUrl + "search?type=artist&q=" + query
 
-      return this.call(path).then(res => res.items.artists);
+      return this.call(path).then(res => res.artists.items)
     },
 
     /**

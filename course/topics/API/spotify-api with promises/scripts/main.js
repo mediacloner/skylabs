@@ -3,29 +3,23 @@ $("button").click(function(e) {
 
   let query = $("input").val();
 
-  spotifyApi.searchArtists(query, resHTML)
+  spotifyApi.searchArtists(query)
+            .then(listOfArtists => {
+              listArtist(listOfArtists);
+            })
+            .catch(err => console.error("err -->", err)); 
 
-  function resHTML(obj) {
+ // spotifyApi.searchArtists(query, resHTML)
+
+  function listArtist(obj) {
     let resultHTML = "";
     console.log(obj);
 
     obj.forEach(e => {
       if (typeof e.images[0] === "undefined") {
-        resultHTML +=
-          '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' +
-          e.id +
-          '"><img class="img64" src="images/noimageicon_64x64.png"" alt="" srcset=""><p class="textList">' +
-          e.name +
-          "</p></a>";
+        resultHTML += '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' + e.id + '"><img class="img64" src="images/noimageicon_64x64.png"" alt="" srcset=""><p class="textList">' + e.name + "</p></a>";
       } else {
-        resultHTML +=
-          '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' +
-          e.id +
-          '"><img class="img64" src="' +
-          e.images[0].url +
-          '" alt="" srcset=""><p class="textList">' +
-          e.name +
-          "</p></a>";
+        resultHTML += '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' + e.id + '"><img class="img64" src="' + e.images[0].url + '" alt="" srcset=""><p class="textList">' + e.name + "</p></a>";
       }
     });
     $(".result").empty();
@@ -38,30 +32,26 @@ $("button").click(function(e) {
 });
 
 $(document).on("click", "a", function() {
-  var id = $(this).attr("id");
+  var idAlbum = $(this).attr("id");
 
-  spotifyApi.retrieveAlbums(id, resHTML, resError);
+   spotifyApi
+     .retrieveAlbums(idAlbum)
+     .then(listOfAlbum => {
+       listAlbum(listOfAlbum);
+     })
+     .catch(err => console.error("err -->", err)); 
+ 
+ 
+  // spotifyApi.retrieveAlbums(id, resHTML, resError);
 
-  function resHTML(obj) {
+  function listAlbum(obj) {
     let resultHTML = "";
 
     obj.forEach(e => {
       if (typeof e.images[0] === "undefined") {
-        resultHTML +=
-          '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' +
-          e.id +
-          '"><img class="img64" src="images/noimageicon_64x64.png"" alt="" srcset=""><p class="textList">' +
-          e.name +
-          "</p></a>";
+        resultHTML += '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' + e.id + '"><img class="img64" src="images/noimageicon_64x64.png"" alt="" srcset=""><p class="textList">' + e.name + "</p></a>";
       } else {
-        resultHTML +=
-          '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' +
-          e.id +
-          '"><img class="img64" src="' +
-          e.images[2].url +
-          '" alt="" srcset=""><p class="textList">' +
-          e.name +
-          "</p></a>";
+        resultHTML += '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' + e.id + '"><img class="img64" src="' + e.images[2].url + '" alt="" srcset=""><p class="textList">' + e.name + "</p></a>";
       }
     });
     $(".result").empty();
@@ -74,24 +64,24 @@ $(document).on("click", "a", function() {
 });
 
 $(document).on("click", "a", function() {
-  var id = $(this).attr("id");
+  var idTracks = $(this).attr("id");
 
-  spotifyApi.retrieveTracks(id, resHTML, resError);
 
-  function resHTML(obj) {
+     spotifyApi
+       .retrieveTracks(idTracks)
+       .then(listOfTracks => {
+         listTracks(listOfTracks);
+       })
+       .catch(err => console.error("err -->", err)); 
+ // spotifyApi.retrieveTracks(id, resHTML, resError);
+
+  function listTracks(obj) {
     let resultHTML = "";
     console.log(obj);
 
     obj.forEach(e => {
       // console.log(e.preview_url);
-      resultHTML +=
-        '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' +
-        e.id +
-        '"><p class="textList">' +
-        e.name +
-        '</p><div class="player"><audio controls><source src="' +
-        e.preview_url +
-        '" type="audio/mp3"></audio></div></a>';
+      resultHTML += '<a href="#" class="list-group-item list-group-item-action list-group-item-success" id="' + e.id + '"><p class="textList">' + e.name + '</p><div class="player"><audio controls><source src="' + e.preview_url + '" type="audio/mp3"></audio></div></a>';
     });
     $(".result").empty();
     $(".result").append(resultHTML);
@@ -103,11 +93,16 @@ $(document).on("click", "a", function() {
 });
 
 $(document).on("click", "a", function() {
-  var id = $(this).attr("id");
+  var idTrack = $(this).attr("id");
+  spotifyApi
+    .retrieveTracks(idTrack)
+    .then(trackDescrip => {
+      resTrack(trackDescrip);
+    })
+    .catch(err => console.error("err -->", err)); 
+  //spotifyApi.retrieveTrack(id, resHTML, resError);
 
-  spotifyApi.retrieveTrack(id, resHTML, resError);
-
-  function resHTML(obj) {
+  function resTrack(obj) {
     console.log(obj.external_urls.spotify);
     window.open(obj.external_urls.spotify);
   }
