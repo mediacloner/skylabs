@@ -275,6 +275,20 @@ class Animal {
     eat (){return 'ñam, ñan, ...}
 }
 
-````
+```
 
 https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes
+
+
+## Promises
+
+``` javascript
+
+ spotifyApi
+     .retrieveAlbums(idAlbum)
+     .then(listOfAlbum => {
+       listAlbum(listOfAlbum);
+     })
+     .catch(err => console.error("err -->", err)); 
+     
+```
