@@ -23,3 +23,8 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+
+ul.TextRed{
+
+    color:red;
+}
