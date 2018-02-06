@@ -16,11 +16,12 @@ output: "4 Quarters, 1 Nickel"
 "use strict"
 
 function getCash$(value) {
-coins [100, 25, 10, 5, 1];
-coinName ['dollar', 'quarter', 'dime', 'nickels', 'penny'];
 
-giveMeCoins = (value, typeCoins) => {
-    
+coinResult = {dollar: 0, quarter:0, dime:0, nickels:0, penny:0}
+giveMeCoins = (value, callback) => {
+    coins = [100, 25, 10, 5, 1];
+
+
 }
 
 getCoins  = (value, coin)=>{
@@ -28,7 +29,7 @@ getCoins  = (value, coin)=>{
     let coins = Math.trunc(value/coin)
     value = value%coin;
 
-    return coins;
+    return {coins: coins, rest: value};
 
 }
 

@@ -292,3 +292,7 @@ https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes
      .catch(err => console.error("err -->", err)); 
      
 ```
+
+## Herencia
+
+super() hereda constructor del padre.
