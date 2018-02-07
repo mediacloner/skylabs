@@ -21,11 +21,6 @@ prop and state are words only for React
 
 
 ```javascript
-
-
-
-
-
 ```
 
 

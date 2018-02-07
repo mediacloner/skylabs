@@ -296,3 +296,6 @@ https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes
 ## Herencia
 
 super() hereda constructor del padre.
+
+## async import
+http://requirejs.org/docs/commonjs.html
