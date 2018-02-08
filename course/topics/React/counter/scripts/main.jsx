@@ -8,9 +8,11 @@ class Counter extends React.Component {
   }
   addWoman = person => {
     this.setState(prevState => {
+
+
       return {
-        women: [prevState.women + 1],
-        people: [prevState.people + 1]
+        women: prevState.women + 1,
+        people: prevState.people + 1
       };
     });
   };
@@ -18,20 +20,20 @@ class Counter extends React.Component {
   addMan = person => {
     this.setState(prevState => {
       return {
-        women: [prevState.mem + 1],
-        people: [prevState.people + 1]
+        men: prevState.men + 1,
+        people: prevState.people + 1
       };
     });
   };
 
   render() {
-    return;
+    return(
     <div>
       <Buttons onAddWoman={this.addWoman} onAddMan={this.addMan} />
-      <CounterTotal counter={this.people} />
-      <CounterWomen women={this.women} />
-      <CounterMen man={this.men} />
-    </div>;
+      <CounterTotal counter={this.state.people} /> 
+      <CounterWomen women={this.state.women} /> 
+      <CounterMen men={this.state.men} />
+    </div>)
   }
 }
 
@@ -40,62 +42,49 @@ class Buttons extends React.Component {
     super();
   }
 
-  countWoman = () => {
-    this.props.onAddWoman();
+  // countWoman = () => {
+  //   this.onAddWoman();
 
-  };
+  // };
 
-  countMan = () => {
-    this.props.onAddMan();
+  // countMan = () => {
+  //   this.onAddMan();
  
-  };
+  // };
 
   render() {
-    return (
-      <form
-        onSubmit={e => {
-          e.preventDefault();
-          if ($_POST["action"] == "Woman") {
-            this.countWoman();
-          } else {
-            this.countMan();
-          }
-        }}
-      >
-        <button
-          type="submit"
-          name="action"
-          value="Woman"
-          class="round-blue-button"
-        >
+    return <div>
+        <button type="submit" onClick={e => {
+            e.preventDefault();
+            this.props.onAddWoman();
+          }} name="action" value="woman" className="round-blue-button">
           Woman
         </button>
-        <button
-          type="submit"
-          name="action"
-          value="Man"
-          class="round-red-button"
-        >
+        <button type="submit" onClick={e => {
+            e.preventDefault();
+            this.props.onAddMan();
+          }} name="action" value="man" className="round-red-button">
           Man
         </button>
-      </form>
-    );
+      </div>
   }
 }
 
+
 function CounterTotal(props) {
-   
-  return <h3> PEOPLE: {people} </h3>  
+
+  console.log(props);
+  return <h3> PEOPLE: {props.counter} </h3>;  
 }
 
 function CounterWomen(props) {
 
-    return <h3> WOMEN: {women} </h3>;
+    return <h3> WOMEN: {props.women} </h3>;
 }
 
 function CounterMen(props) {
 
-   return <h3> MEN: {men} </h3>;
+   return <h3> MEN: {props.men} </h3>;
 
 }
 
