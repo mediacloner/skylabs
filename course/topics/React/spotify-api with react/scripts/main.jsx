@@ -24,18 +24,81 @@ class SpotifyApp extends React.Component {
   }
 
   render() {
-    return <div>
-        <div className="container boxSearh">
-          <div className="text-center boxCenter">
 
-              <Find onKeepInput={this.keepInput.bind(this)} />
-
+    return (<div>
+  <nav className="navbar py-3">
+    <a href="#" onclick="location.reload()">
+      {" "}
+      <img
+        src="img\Spotify_Logo_RGB_White.png"
+        width={150}
+        height={50}
+        className="d-inline-block align-top ml-2"
+        alt
+      />{" "}
+    </a>
+    <span className="navbar-brand mx-auto">Find your favorite music</span>
+  </nav>
+  <main className="container-fluid">
+    {/* <h2 class="flex-column text-center p-5">Encuentra tu artista favorito</h2> */}
+    <div id="search" className=" row">
+      <form className="row justify-content-center col-12">
+        <input
+          className="form-control form-control-lg mt-5 col-10 text-center text-uppercase font-weight-bold"
+          type="text"
+          placeholder="search for an artist"
+          required
+          autofocus
+        />
+        <input
+          className="btn-success btn-block rounded my-4 py-3 col-6 col align-self-center button"
+          type="submit"
+          defaultValue="Search"
+        />
+      </form>
+      <button
+        type="button"
+        id="backToArtists"
+        className="btn btn-success mx-auto rounded mb-3 button"
+      >
+        Back to artists
+      </button>
+    </div>
+    <section className="container-fluid col-12">
+      <div id="listArtists" className=" card-columns" />
+      <div id="listAlbums" className=" card-columns" />
+      <div id="listSongs" className=" card-columns" />
+      <div id="error" />
+      <div
+        className="modal fade"
+        id="myPlayer"
+        tabIndex={-1}
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5
+                className="modal-title text-center"
+                data-dismiss="modal"
+                id="exampleModalLongTitle"
+              />
+            </div>
+            <div id="player" className="d-flex justify-content-center" />
+            <div className="modal-body" />
           </div>
         </div>
-        <div className="container cResult">
-          <div className="list-group text-left result" />
-        </div>
-      </div>;
+      </div>
+    </section>
+  </main>
+</div>)
+
+
+
+   
+   
   }
 }
 
@@ -45,20 +108,7 @@ class Find extends React.Component {
   }
 
   render() {
-    return (
-    <form onSubmit={e => {
-        e.preventDefault();
-        this.addTask();
-      }} className="card p-1">
-      <div className="input-group">
-        <input type="text" className="form-control" onChange={this.keepInput} value={this.state.input} placeholder="Search your music..." />
-        <div className="input-group-append">
-          <button type="submit" className="btn btn-secondary" onClick={e => props.onKeepInput(e.target.value)}>
-            Find
-          </button>
-        </div>
-      </div>
-    </form>)
+    
   }
 }
 
