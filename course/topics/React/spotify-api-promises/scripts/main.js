@@ -110,8 +110,9 @@ $(document).ready(function () {
     $(document).on('click', '#albumListed', function (e) {
         e.preventDefault()
 
-        // get album cover and name to decorate modal background and tittle
-
+        // get album cover and name to decorate modal background and tittle  ???????
+        
+        
         const albumId = $(this).attr("data-id")
         const albumImage = $(this).attr("data-img")
         const albumName = $(this).attr("data-name")

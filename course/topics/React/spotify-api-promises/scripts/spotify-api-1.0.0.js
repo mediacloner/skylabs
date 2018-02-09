@@ -9,7 +9,7 @@ let spotifyApi;
 (function () {
     "use strict";
     const baseUrl = "https://api.spotify.com/v1/"
-    const token = 'BQCZy-yTNVPIBBFejkvDhO5O94V9Grdlaysg9uBo6E3DqZ1H5OrccMoIKLEaMfEiOdGkZDO9rJGlqcNppt2QvFVMMcyF9JQC9tmydMuVnu4iwD8Udsfceu1uTrPAtPjn4zhiVxI'
+    const token = "BQDl41rUF4F64dVvSQhd9kI3g0MhB4pCeflUQgPXg7Sa_H5Pdj7LjgiLw1Nf7Xc8yolA6hP_C8B5v7jkh5UeK0WDL6lx8JbqjBLur1aLk5oN5DaI1DY612AW7a-14ouTg7wK7klYEeeATZU";
     const headers = { Authorization: 'Bearer ' + token }
 
     
@@ -21,6 +21,7 @@ let spotifyApi;
             return fetch(url , { headers })
         
                     .then(res => res.json())
+
                    // .then(data => resolve(data))
            
         },
