@@ -141,46 +141,46 @@ return (
 
 
 
-class Artist extends React.Component {
+// class Artist extends React.Component {
 
-   constructor() {
-    super();
+//    constructor() {
+//     super();
     
-    this.state = {
+//     this.state = {
       
-      html: ''
+//       html: ''
 
-    }
-  }
+//     }
+//   }
 
-   props.resultArtist.forEach(artist => {
-      if (props.artist.images.length < 1) {
-        $("#listArtists").append(
-          '<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' +
-            artist.id +
-            '"  > <img class="card-img-top img-fluid" src="img/noImage.jpg" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' +
-            artist.name +
-            '</h5><span class="info">Show Albums</span></div></div></a></div></div>'
-        );
-      } else {
-        $("#listArtists").append(
-          '<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' +
-            artist.id +
-            '"  > <img class="card-img-top img-fluid" src="' +
-            artist.images[0].url +
-            '" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' +
-            artist.name +
-            '</h5><span class="info">Show Albums</span></div></div></a></div></div>'
-        );
+//    props.resultArtist.forEach(artist => {
+//       if (props.artist.images.length < 1) {
+//         $("#listArtists").append(
+//           '<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' +
+//             artist.id +
+//             '"  > <img class="card-img-top img-fluid" src="img/noImage.jpg" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' +
+//             artist.name +
+//             '</h5><span class="info">Show Albums</span></div></div></a></div></div>'
+//         );
+//       } else {
+//         $("#listArtists").append(
+//           '<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' +
+//             artist.id +
+//             '"  > <img class="card-img-top img-fluid" src="' +
+//             artist.images[0].url +
+//             '" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' +
+//             artist.name +
+//             '</h5><span class="info">Show Albums</span></div></div></a></div></div>'
+//         );
 
-  ListArtists(props) {
-    return <div id="listArtists" className=" card-columns" />
+//   ListArtists(props) {
+//     return <div id="listArtists" className=" card-columns" />
 
-    console.log(props.resultArtist);
+//     console.log(props.resultArtist);
    
-  }
+//   }
     
-}
+// }
 
 
 

@@ -9,7 +9,7 @@ let spotifyApi;
 (function() {
   "use strict";
   const baseUrl = "https://api.spotify.com/v1/";
-  const token = "BQA6hSnbtC0gQg-cD65yVt6F2YvHG8kwYujbyrExAum7TpsRWNfifrFzBZ55WedQ4fEujFra6coU_RH4Bf6hDHKQfa_NVlO6ffEQbLiri3LoOOuyUWg8az-Pv9ZoL764NhILDkZRCCVhkP0";
+  const token = "BQB3NLNXfufObbU9t-u9OgKMy53ch28x4nddLzPbRmBFplh5OCn8PiDNvyKHzgfXXk7itss2ekCI13ZUArwQqB35BDGtUJXCwBY7ALEy0k4vs4yuMQcG1Ekcc0nZNj5CYIYhC7JStllUBkg";
   const headers = { Authorization: "Bearer " + token };
 
   spotifyApi = {
@@ -30,7 +30,6 @@ let spotifyApi;
      */
     searchArtists: function(query) {
       let path = this.baseUrl + "search?type=artist&q=" + query
-
       return this.call(path).then(res => res.artists.items)
     },
 
