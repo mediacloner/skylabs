@@ -42,15 +42,7 @@ NavLink To simulate the real link   change 'onClick' to 'to'
 
 
 
-# Create React App [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)](https://travis-ci.org/facebookincubator/create-react-app)
-
-Create React apps with no build configuration.
-
-* [Creating an App](#creating-an-app) – How to create a new app.
-* [User Guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md) – How to develop apps bootstrapped with Create React App.
-
-Create React App works on macOS, Windows, and Linux.<br>
-If something doesn’t work, please [file an issue](https://github.com/facebookincubator/create-react-app/issues/new).
+# Create React App [![Build Status](https://travis-ci.org/facebookincubator/create-react-app.svg?branch=master)]
 
 ## Quick Overview
 

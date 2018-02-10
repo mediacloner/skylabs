@@ -15,6 +15,7 @@ class SpotifyApp extends React.Component {
   insertArtist = artist => {
     this.setState({ input: artist });
     this.getArtist(artist);
+    // result artist send to 
   };
 
   getArtist = query => {
@@ -93,8 +94,7 @@ class SpotifyApp extends React.Component {
 class Find extends React.Component {
   constructor() {
     super();
-
-
+    
     this.state = {
       
       input: ''
@@ -139,85 +139,85 @@ return (
 
 
 
-function ListArtists(props) {
- return <div id="listArtists" className=" card-columns" />;
 
-  // return <div id="listArtists" className=" card-columns" /> 
 
-  //      // if (props.artists.length < 1) {
-  //      //   showError();
-  //      //   $("#error").show();
-  //      // }
-  //       console.log(props.resultArtist);
-         props.resultArtist.forEach(artist => {
-           if (props.artist.images.length < 1) {
-             $("#listArtists").append('<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' + artist.id + '"  > <img class="card-img-top img-fluid" src="img/noImage.jpg" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' + artist.name + '</h5><span class="info">Show Albums</span></div></div></a></div></div>');
-           } else {
-             $("#listArtists").append('<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' + artist.id + '"  > <img class="card-img-top img-fluid" src="' + artist.images[0].url + '" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' + artist.name + '</h5><span class="info">Show Albums</span></div></div></a></div></div>');
-           }
-         });
+class Artist extends React.Component {
+
+   constructor() {
+    super();
+    
+    this.state = {
+      
+      html: ''
+
+    }
+  }
+
+   props.resultArtist.forEach(artist => {
+      if (props.artist.images.length < 1) {
+        $("#listArtists").append(
+          '<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' +
+            artist.id +
+            '"  > <img class="card-img-top img-fluid" src="img/noImage.jpg" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' +
+            artist.name +
+            '</h5><span class="info">Show Albums</span></div></div></a></div></div>'
+        );
+      } else {
+        $("#listArtists").append(
+          '<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="artistListed"  data-id="' +
+            artist.id +
+            '"  > <img class="card-img-top img-fluid" src="' +
+            artist.images[0].url +
+            '" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' +
+            artist.name +
+            '</h5><span class="info">Show Albums</span></div></div></a></div></div>'
+        );
+
+  ListArtists(props) {
+    return <div id="listArtists" className=" card-columns" />
+
+    console.log(props.resultArtist);
+   
+  }
+    
+}
+
+
 
   //       //$("#listArtists").show()
 
-      
+  function ListAlbums(props) {
+    //onSearchSongs()
+    //   return <div id="listAlbums" className=" card-columns" />
+    //         props.resultAlbum.forEach(album => {
+    //           if (props.album.images.length < 1) {
+    //             $("#listAlbums").append('<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="albumListed" data-name="' + album.name + '" data-id="' + album.id + '"  > <img class="card-img-top img-fluid" src="img/noImage.jpg" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' + artist.name + '</h5><span class="info">Show Tracks</span></div></div></a></div></div>');
+    //           } else {
+    //             $("#listAlbums").append('<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="albumListed" data-img="' + album.images[0].url + '" data-name="' + album.name + '" data-id="' + album.id + '"  > <img class="card-img-top img-fluid" src="' + album.images[0].url + '" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' + album.name + '</h5><span class="info">Show Tracks</span></div></div></a></div></div>');
+    //           }
+    //         });
+    //         //$("#listAlbums").show()
+    //         //$('#backToArtists').show()
+  }
 
-
-
-  
-}; 
-
-
-
-
-
-
-
-function ListAlbums(props) {
-
-  //onSearchSongs() 
-
-//   return <div id="listAlbums" className=" card-columns" />
-
-
-//         props.resultAlbum.forEach(album => {
-//           if (props.album.images.length < 1) {
-//             $("#listAlbums").append('<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="albumListed" data-name="' + album.name + '" data-id="' + album.id + '"  > <img class="card-img-top img-fluid" src="img/noImage.jpg" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' + artist.name + '</h5><span class="info">Show Tracks</span></div></div></a></div></div>');
-//           } else {
-//             $("#listAlbums").append('<div class="card col"><div class="hovereffect"><a href="#" class="text-center font-weight-bold text-light" id="albumListed" data-img="' + album.images[0].url + '" data-name="' + album.name + '" data-id="' + album.id + '"  > <img class="card-img-top img-fluid" src="' + album.images[0].url + '" alt="artist picture"><div class="card-body overlay"><h5 class="card-title">' + album.name + '</h5><span class="info">Show Tracks</span></div></div></a></div></div>');
-//           }
-//         });
-
-//         //$("#listAlbums").show()
-//         //$('#backToArtists').show()
-    
-
-
-};
+  function ListSongs(props) {
+    // onSearchAlbums(); //???
+    // return <div id="listSongs" className=" card-columns" />;
+    // $(document).on("click", "#albumListed", function(e) {
+    //   e.preventDefault();
+    //   // get album cover and name to decorate modal background and tittle
+    //   const albumId = $(this).attr("data-id");
+    //   const albumImage = $(this).attr("data-img");
+    //   const albumName = $(this).attr("data-name");
+    //   $(".modal-body").css("background-image", 'url("' + albumImage + '")');
+    //   $(".modal-title").empty();
+    //   $(".modal-title").append(albumName);
+    //   // spotifyApi.retrieveTracks(albumId, listSongs, showError)
+    // });
+  }
 
 
 
 
-
-
-function ListSongs(props) {
-  // onSearchAlbums(); //???
-  // return <div id="listSongs" className=" card-columns" />;
-
-  // $(document).on("click", "#albumListed", function(e) {
-  //   e.preventDefault();
-
-  //   // get album cover and name to decorate modal background and tittle
-
-  //   const albumId = $(this).attr("data-id");
-  //   const albumImage = $(this).attr("data-img");
-  //   const albumName = $(this).attr("data-name");
-
-  //   $(".modal-body").css("background-image", 'url("' + albumImage + '")');
-  //   $(".modal-title").empty();
-  //   $(".modal-title").append(albumName);
-
-  //   // spotifyApi.retrieveTracks(albumId, listSongs, showError)
-  // });
-};
 
 ReactDOM.render(<SpotifyApp />, document.getElementById("root"));

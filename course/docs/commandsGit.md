@@ -206,3 +206,6 @@ $ git fetch --all
 $ git reset --hard upstream/develop
 
 
+##Git Ignore  
+https://www.gitignore.io/
+
