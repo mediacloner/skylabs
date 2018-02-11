@@ -16,7 +16,7 @@ class SpotifyApp extends React.Component {
   getArtist = query => {
     spotifyApi
       .searchArtists(query)
-      .then(artists => this.insertArtistFormated(artists)) 
+      .then(artists => this.insertArtistFormated(artists))
       .catch(console.error);
   };
 
@@ -37,16 +37,30 @@ class SpotifyApp extends React.Component {
 
   // Find Albums
   getAlbums = query => {
-    console.log(query)
+    console.log(query);
     spotifyApi
       .retrieveAlbums(query)
-      .then(albumsResult => {this.setState({ artist: [] });this.setState({ albums: albumsResult })})
+      .then(albumsResult => {
+        this.setState({ artists: [] });
+        this.setState({ albums: albumsResult });
+      })
+      .catch(console.error);
+  };
+
+  // Find Songs
+  getSongs = query => {
+    console.log(query);
+    spotifyApi
+      .retrieveTracks(query)
+      .then(songsResults => {
+        this.setState({ albums: [] });
+        this.setState({ songs: songsResults });
+      })
       .catch(console.error);
   };
 
   render() {
-    return (
-      <div>
+    return <div>
         <div className="container boxSearh">
           <div className="text-center boxCenter">
             <Find onSearch={this.getArtist} />
@@ -54,14 +68,11 @@ class SpotifyApp extends React.Component {
         </div>
         <div className="container cResult">
           <div className="list-group text-left result" />
-          <ListArtist
-            findAlbums={this.getAlbums}
-            artists={this.state.artists}
-          />
-          <ListAlbums albums={this.state.albums} />
+          <ListArtist findAlbums={this.getAlbums} artists={this.state.artists} />
+          <ListAlbums findSongs={this.getSongs} albums={this.state.albums} />
+          <ListSongs songs={this.state.songs} />
         </div>
-      </div>
-    );
+      </div>;
   }
 }
 
@@ -109,44 +120,56 @@ class Find extends React.Component {
 
   function ListArtist(props) {
     return <div className="list-group text-left result">
-        
-        {props.artists.map((e, index) => (
-          <a
-            onClick={(e) => {
-            e.preventDefault();
-            props.findAlbums(this);
-          console.log(e);}}   // TODO: Working with this.
-            href="#"
-            key={e.id}
-            className="list-group-item list-group-item-action list-group-item-success"
-            id={e.id}
-          >
-            <img className="img64" src={e.images[0].url} />
-            <p className="textList"> {e.name} </p>
-          </a>
-        ))}
+        {props.artists.map((artist, index) => <a onClick={e => {
+              e.preventDefault();
+              props.findAlbums(artist.id);
+              console.log(artist.id);
+            }} href="#" key={artist.id}
+             className="list-group-item list-group-item-action list-group-item-success" id={artist.id}>
+            <img className="img64" src={artist.images[0].url} />
+            <p className="textList"> {artist.name} </p>
+          </a>)}
       </div>;
  }
 
-   function ListAlbums(props) {
-     return <div className="list-group text-left result">
+  function ListAlbums(props) {
+    return <div className="list-group text-left result">
+     {props.albums.map((album, index) => (
+             <a
+               onClick={(e) => {
+               e.preventDefault();
+               props.findSongs(album.id);}}  
+               href="#"
+               key={album.id}
+               className="list-group-item list-group-item-action list-group-item-success"
+               id={album.id}
+              >
+                <img className="img64" src={album.images[2].url} />
+                <p className="textList"> {album.name} </p>
+              </a>
+            ))}
+           </div>;
+       }
 
- {props.albums.map((e, index) => (
-          <a
-            onClick={(e) => {
-            e.preventDefault();
-            props.findAlbums(e.id);}}   // TODO: Working with this.
-            href="#"
-            key={e.id}
-            className="list-group-item list-group-item-action list-group-item-success"
-            id={e.id}
-          >
-            <img className="img64" src={e.images[2].url} />
-            <p className="textList"> {e.name} </p>
-          </a>
-        ))}
-       </div>;
-   }
+
+  function ListSongs(props) {
+    return <div className="list-group text-left result">
+      {props.songs.map((songs, index) => (
+        <a href="#"
+          key={songs.id}
+          className="list-group-item list-group-item-action list-group-item-success"
+          id={songs.id}>
+        
+          <p className="textList">{songs.name}</p>
+          <div className="player">
+            <audio controls>
+              <source src={songs.preview_url} type="audio/mp3" />
+            </audio>
+          </div>
+        </a>
+      ))}
+      </div>;
+  }
 
 
 ReactDOM.render(<SpotifyApp/>, document.getElementById("root"));
