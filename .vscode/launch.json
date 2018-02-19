@@ -5,12 +5,16 @@
 
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${file}",
-      "cwd": "${workspaceFolder}"
+      "program": "${workspaceFolder}/course/topics/backend/node/learnyounode/program3.js",
+      "cwd": "${workspaceFolder}/course/topics/backend/node/learnyounode",
+      "args": [
+        "helloworld.txt"
+      ]
     },
     {
       "type": "node",
