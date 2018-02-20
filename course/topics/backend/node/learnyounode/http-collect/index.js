@@ -18,8 +18,6 @@ http.get (url, res => {
         console.log(rawData.length)
         console.log(rawData)
 
-
-
     })
 
 })
