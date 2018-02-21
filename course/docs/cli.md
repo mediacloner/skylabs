@@ -36,3 +36,7 @@ rm
 grep . -r -e Hangman   | grep jquery
 
 find Hangman with that result find jquery
+
+Pipe (spanish: tuberia)
+
+https://www.computerhope.com/unix/ugrep.htm

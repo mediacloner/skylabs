@@ -15,3 +15,12 @@ Process
 
 sudo npm i -g devtool
 
+# HTTP status codes
+
+https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+
+
+# CURL
+
+https://curl.haxx.se/docs/manual.html
+
