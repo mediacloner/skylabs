@@ -24,3 +24,10 @@ https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 
 https://curl.haxx.se/docs/manual.html
 
+
+#URL
+
+IP Path ? Query String
+
+
+
