@@ -30,4 +30,52 @@ https://curl.haxx.se/docs/manual.html
 IP Path ? Query String
 
 
+#NPM Ini
+npm init --yes
 
+#Moment JS 
+http://momentjs.com/
+
+
+#Nodemon
+
+npm nodemon
+
+is continous active server
+
+
+
+
+#Express
+npm i -s express
+
+#Enviroment Variables
+PATH, PORT, etc
+
+
+#dotenv
+npm i dotenv -s
+
+
+i == install
+s == save for write in json.
+
+#lodash
+
+find in obbjects
+https://www.npmjs.com/package/lodash.throttle
+https://lodash.com/
+
+#underscore
+http://underscorejs.org/
+
+#debugger
+
+when you want to stop in specific point of code with devtools.
+
+
+#npm install
+npm i xxx --save
+
+#npm init
+npm init -y

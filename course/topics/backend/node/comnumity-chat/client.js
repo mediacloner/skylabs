@@ -11,10 +11,10 @@ server.listen (port, () => console.log (`chat server running on port ${port}`)) 
 
 
 
-var net = require('net');
+var {socket} = require('net');
 
-var client = new net.Socket();
-client.connect(3000, '192.168.0.16', function() {
+var client = new Socket();
+client.connect(3000, '192.168.0.16', () => {
 	console.log('Connected');
     client.write(`Es una broma! ACK ACK ACK !!!!`);
 });
