@@ -73,6 +73,8 @@ http://underscorejs.org/
 
 when you want to stop in specific point of code with devtools.
 
+#npm install node_modules
+npm install
 
 #npm install
 npm i xxx --save
