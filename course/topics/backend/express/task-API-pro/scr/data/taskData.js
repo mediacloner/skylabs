@@ -37,8 +37,6 @@ const taskData = {
           
               return result
         }
-
-
     },
     update(id, text, done){
 
@@ -54,7 +52,12 @@ const taskData = {
       }
 
       else { //Update done state
-
+        const pos = _.findIndex(tasks, (o) => { return o.id == idInt; });
+        const result = tasks[pos]
+        if (result !== undefined){
+          tasks[pos].done = true
+          return result
+        }
 
       }
 
@@ -64,17 +67,12 @@ const taskData = {
       if (id = 'all'){
         let result=[]
         tasks.forEach(
-          ({ username, id, text, done }) => {
-            
+          ({ username, id, text, done }) => {   
            result.push( { username, id, text, done } )
           })
-      
-      
           tasks = []
-
-          return result
-
-      }
+        return result
+    }
 
       else{
         const pos = _.findIndex(tasks, (o) => { return o.id == idInt; });
