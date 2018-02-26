@@ -3,64 +3,55 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const formBodyParser = bodyParser.urlencoded({ extended: false })
+
 
 const app = express()
 
 app.use(express.static('public'))
 
+const tasks = []
+
+
 app.set('view engine', 'pug')
 
-
-
 app.get('/', (req, res) => {
-  
     
-    res.render('index')
+    
+    res.render('index', {tasks})
 })
 
+const formBodyParser = bodyParser.urlencoded({ extended: false })
 
+app.post ('/tasks', formBodyParser, (req, res) => {
+    const { body: { text }} = req
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-app.post('/login', formBodyParser, (req, res) => {    
-    const { username, password } = req.body
-
-    if (username === 'shaktimaan' && password === '123') {
-        state.loggedIn = true
-
-        res.redirect('/welcome')
-    } else {
-        res.redirect('/login-error')
+    const task = {
+        id: new Date().getTime(), 
+        text,
+        done: false
     }
+
+    tasks.push(task)
+
+    res.redirect('/')
 })
 
-app.get('/welcome', (req, res) => {
-    if (state.loggedIn)
-        res.render('welcome', { name: state.name })
-    else
-        res.redirect('/')
+
+app.get ('/tasks/:id/done', (req, res) => {
+    const {params:{id}} = req
+    const task = tasks.find (task => task.id == id)
+
+    if (task) task.done = true
+    res.redirect ('/')
+    
 })
 
-app.get('/login-error', (req, res) => {
-    res.render('login-error')
-})
+app.get('/tasks/:id/remove', (req, res) => {
+    const {  params: { id } } = req
 
-app.get('/logout', (req, res) => {
-    state.loggedIn = false
+    const index = tasks.findIndex(task => task.id == id)
+
+    if (index > -1) tasks.splice(index, 1)
 
     res.redirect('/')
 })
