@@ -2,11 +2,11 @@ require('dotenv').config()
 
 const express = require('express')
 
-const userRouter = require('./api/userRouter')
+const taskRouter = require('./scr/api/taskRouter')
 
 const app = express()
 
-app.use('/api', userRouter)
+app.use('./scr/api', taskRouter)
 
 const port = process.env.PORT
 

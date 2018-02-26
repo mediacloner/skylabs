@@ -40,3 +40,8 @@ find Hangman with that result find jquery
 Pipe (spanish: tuberia)
 
 https://www.computerhope.com/unix/ugrep.htm
+
+
+# write file
+
+echo 'Somenthing' > .txt

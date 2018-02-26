@@ -49,6 +49,10 @@ is continous active server
 #Express
 npm i -s express
 
+
+#Express public folder
+http://expressjs.com/en/starter/static-files.html
+
 #Enviroment Variables
 PATH, PORT, etc
 
@@ -81,3 +85,22 @@ npm i xxx --save
 
 #npm init
 npm init -y
+
+
+# Pug (rendering site)
+
+
+https://pugjs.org/api/getting-started.html
+
+https://codeburst.io/getting-started-with-pug-template-engine-e49cfa291e33
+
+http://html2jade.org/
+
+
+# Pug (includes)
+
+https://pugjs.org/language/includes.html
+
+# Pug (extends)
+
+https://pugjs.org/language/inheritance.html
