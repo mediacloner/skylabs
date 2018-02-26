@@ -156,7 +156,34 @@ app.delete("/api/tasks/:id", (req, res) => {
 
 // update task
 
-app.patch("/api/tasks/:id", jsonBodyParser, (req, res) => {});
+app.patch("/api/tasks/:id", jsonBodyParser, (req, res) => {
+  const idInt = parseInt( req.params.id)
+
+  const { text } = req.body;
+
+  const pos = _.findIndex(tasks, (o) => { return o.id == idInt; });
+  const result = tasks[pos]
+
+  if (result === undefined) {
+  res.json(
+      NOKConcatResult(
+        "Error",
+        "The Id not exist"
+      ))
+ }
+ else {
+  tasks[pos].text = text
+
+  res.json(
+      OKConcatResult(
+        "The task is done!.",
+        result
+      ))
+ }
+
+
+
+});
 
 function OKConcatResult(message, data) {
   const res = { status: "OK", message };
