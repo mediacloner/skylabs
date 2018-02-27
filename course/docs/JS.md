@@ -304,4 +304,9 @@ http://requirejs.org/docs/commonjs.html
 
 http://www.deadcoderising.com/2017-03-28-es6-destructuring-an-elegant-way-of-extracting-data-from-arrays-and-objects-in-javascript/
 
+## Async Await
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/funcion_asincrona
+https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/await
 
+Should be in a promise.
+To avoid .then hell.

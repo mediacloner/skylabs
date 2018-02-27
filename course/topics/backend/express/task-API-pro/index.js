@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const express = require('express')
 
-const taskRouter = require('./scr/api/taskRouter')
+const taskRouter = require('./src/api/taskRouter')
 
 const app = express()
 
