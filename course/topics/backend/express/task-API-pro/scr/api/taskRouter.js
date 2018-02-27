@@ -1,16 +1,12 @@
-const _ = require("lodash")
 const bodyParser = require("body-parser")
 
 const { OKConcatResult, NOKConcatResult } = require ('./api-utils.js')
 
 const taskLogic = require('../logic/taskLogic')
 
-const express = require('express')
-
+//const express = require('express')
 const {Router} = require ('express')
-
-const {router} = Router ()
-
+const router = Router ()
 
 // create task
 
@@ -19,8 +15,9 @@ const jsonBodyParser = bodyParser.json();
 
 router.post("/tasks", jsonBodyParser, (req, res) => {
   const { text, username } = req.body;
-  task = taskLogic.create(text,username)
-    ? res.json(OKConcatResult("Task Add!", task))
+  let task = taskLogic.create(text,username)
+
+  task  ? res.json( OKConcatResult("Task Add!", task))
     : NOKConcatResult(
         "Somenthing wrong happens!",
         "We can not include this task"
@@ -32,7 +29,7 @@ router.get("/tasks/done", (req, res) => {
 
   res.json(
     OKConcatResult(
-      "List of done tasks.", list('done')
+      "List of done tasks.", taskLogic.list('done')
       )
     )
   
@@ -46,7 +43,7 @@ router.get("/tasks/todo", (req, res) => {
   res.json(
     OKConcatResult(
       "List of to do tasks.",
-      list('todo')
+      taskLogic.list('todo')   
     )
   );
 });
@@ -59,7 +56,7 @@ router.put("/tasks/:id", (req, res) => {
   const idInt = parseInt( req.params.id)
 
   
-  const result = taskLogic (id, "", true)
+  const result = taskLogic.update (idInt, "", true)
 
   if (result === undefined) {
   res.json(
@@ -82,7 +79,7 @@ router.put("/tasks/:id", (req, res) => {
 router.delete("/tasks", (req, res) => {
   res.json(
     OKConcatResult(
-      "Delete all tasks.", delete ('all')
+      "Delete all tasks.", taskLogic.delete ('all')
       )
     )
 });
@@ -135,8 +132,6 @@ router.patch("/tasks/:id", jsonBodyParser, (req, res) => {
 });
 
 
-const port = process.env.PORT;
-router.listen(port, () => console.log(`We are listen in the port ${port}`));
 
 
 module.exports = router

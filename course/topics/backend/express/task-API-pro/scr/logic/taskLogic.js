@@ -23,7 +23,7 @@ const taskLogic = {
 
     },
     delete(id) {
-      if (id = 'all'){
+      if (id === 'all'){
       return taskData.delete('all')
     }
 

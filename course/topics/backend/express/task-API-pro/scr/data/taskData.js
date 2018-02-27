@@ -1,4 +1,6 @@
 
+const _ = require("lodash")
+
 let tasks = [];
 
 let id = 0;
@@ -45,7 +47,7 @@ const taskData = {
 
     update (id, text, done){
             if ( done === undefined){ //Update text
-                const pos = _.findIndex(tasks, (o) => { return o.id == idInt; });
+                const pos = _.findIndex(tasks, (o) => { return o.id == id });
                 const result = tasks[pos]
                 if (result !== undefined){
                   tasks[pos].text = text
@@ -56,7 +58,7 @@ const taskData = {
               }
         
               else { //Update done state
-                const pos = _.findIndex(tasks, (o) => { return o.id == idInt; });
+                const pos = _.findIndex(tasks, (o) => { return o.id == id });
                 const result = tasks[pos]
                 if (result !== undefined){
                   tasks[pos].done = true
@@ -68,7 +70,7 @@ const taskData = {
 
     delete (id){
 
-        if (id = 'all'){
+        if (id === 'all'){
             let result=[]
             tasks.forEach(
               ({ username, id, text, done }) => {   
@@ -79,7 +81,7 @@ const taskData = {
         }
     
           else{
-            const pos = _.findIndex(tasks, (o) => { return o.id == idInt; });
+            const pos = _.findIndex(tasks, (o) => { return o.id == id });
             const result = tasks[pos]
             if (result !== undefined) {
               

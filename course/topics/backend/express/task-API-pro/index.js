@@ -6,7 +6,7 @@ const taskRouter = require('./scr/api/taskRouter')
 
 const app = express()
 
-app.use('./scr/api', taskRouter)
+app.use('/api', taskRouter)
 
 const port = process.env.PORT
 
