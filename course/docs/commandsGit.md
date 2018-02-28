@@ -226,3 +226,53 @@ Turn on the credential helper so that Git will save your password in memory for 
 ###I'm trying to do:
 git config --global credential.helper 'cache --timeout=0'
     # Set the cache to timeout after 1 hour (setting is in seconds)
+
+
+_________________________________________________
+# Resetting local develop with upstream/develop
+
+Toda la magia ocurre así:
+
+El comando reset de Git te permiten descartar el contenido de una rama e igualarla al contenido de una rama en concreto. En este ejemplo, descartamos el contenido de la rama feature/foo y nos bajamos el contenido de la rama develop del remoto que tengamos configurado como upstream.
+
+```sh
+$ git checkout feature/foo
+$ git fetch --all
+$ git reset --hard upstream/develop
+$ git push
+```
+
+
+
+
+_______________________________________________
+
+
+
+
+
+
+
+## Proceso para realizar un pull request a un upstream (asumiendo que ya has realizado el fork, te bajaste el repo a tu equipo y configuraste como remoto al repositorio upstream):
+git fetch --all
+git pull
+git checkout -b feature/newbranch develop
+
+## do your changes on code
+
+## Antes de pushear, nos aseguramos que seguimos teniendo el código más reciente de upstream/develop 
+git checkout feature/newbranch  (ya deberíamos estar en la rama)
+git fetch --all
+git pull
+
+## si hay conflictos resolverlos
+
+git add .
+git cm -m "bla bla"
+git push origin feature/newbranch
+
+## Crea el PR desde GitHub (de tu rama, hacia la develop de upstream).
+## Es buena idea no eliminar la rama de tu equipo hasta que el PR se resuelva (esto te permitirá seguir haciendo cambios en el PR si es necesario). Obviamente, tampoco la borres de GitHub.
+
+
+## Para realizar otro PR, crea una rama nueva y vuelve a seguir todos los pasos.
