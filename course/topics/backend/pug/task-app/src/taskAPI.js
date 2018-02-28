@@ -1,24 +1,23 @@
-const conn = require ('axios')
+const axios = require ('axios')
 
 
 const taskAPI = {
     listTodo(){
-        return conn.get('http://localhost:8000/api/tasks/todo')
+        return axios.get('http://localhost:8000/api/tasks/todo')
             .then(obj => obj.data.data)
             
-        //taskData.list().filter(task => !task.done)
     },
 
 
     listDone(){
-        return conn.get('http://localhost:8000/api/tasks/done')
+        return axios.get('http://localhost:8000/api/tasks/done')
             .then(obj => obj.data.data)
             
     },
 
     create(text){
 
-        return conn.post('http://localhost:8000/api/tasks', {
+        return axios.post('http://localhost:8000/api/tasks', {
             "username":"username",
             text
             })
@@ -26,15 +25,13 @@ const taskAPI = {
     },
     markDone(id){
 
-        return conn.put('http://localhost:8000/api/tasks/'+id)
+        return axios.put('http://localhost:8000/api/tasks/'+id)
 
     },
 
     removeDone(id){
 
-        return conn.delete('http://localhost:8000/api/tasks/'+id)
-
-
+        return axios.delete('http://localhost:8000/api/tasks/'+id)
 
     }    
 }

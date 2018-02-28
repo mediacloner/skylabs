@@ -10,12 +10,19 @@ const app = express()
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    taskAPI.listTodo().then(todos => {
-       taskAPI.listDone().then(dones => {
-           res.render('index', { todos, dones })      
-       })
-   })
-})
+//     taskAPI.listTodo().then(todos => {
+//        taskAPI.listDone().then(dones => {
+//            res.render('index', { todos, dones })      
+//        })
+//    })
+
+Promise.all([taskAPI.listTodo(), taskAPI.listDone()])
+    .then( tasks =>(res.render('index',{ todos:tasks[0], dones:tasks[1] })) )
+}) 
+
+
+ // [res.promise1,res.promise2]
+
 
 const formBodyParser = bodyParser.urlencoded({ extended: false })
 
