@@ -24,4 +24,40 @@ html(lang="en")
                 input(type="text" name="password")
             div 
                 input(type="submit", name='Add') 
+        if data.length
+            h2 USERS
+            ul
+             each user in data
+              li #{user.name + user.surname}
+               form(action=`/delete/${user._id}`, method="get")
+                input(type="submit", value="✗") 
+               form(action=`/form/${user._id}`, method="get")
+                input(type="submit", value="✓") 
+              if (idSelect == user._id)
+               h2 MODIFY:  
+                form(action="/update", method="post")
+                 div
+                  label(for="name") Name:
+                  input(type="text" name="name" value = user.name)
+                 div
+                  label(for="surname") Surname:
+                  input(type="text" name="surname" value = user.surname)
+                 div
+                  label(for="email") email:
+                  input(type="text" name="email" value = user.email)
+                 div
+                  label(for="password") Password:
+                  input(type="text" name="password" value = user.password)
+                 div 
+                  input(type="submit", name='Add') 
+               
             
+            h2 DELETE ALL
+             form(action=`/delete`, method="get")
+              input(type="submit", value="✗✗✗") 
+
+
+
+
+
+              

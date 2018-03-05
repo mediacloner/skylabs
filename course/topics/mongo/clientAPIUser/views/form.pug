@@ -1,0 +1,23 @@
+html
+    body
+        h1 FORMULARIO
+            form(action="/api/create" method = "post")
+                input(type="text" name="name" placeholder="username")
+                input(type="text" name="password" placeholder="password")
+                input(type="submit")
+        if users
+            h1 Listados
+            each user in users                
+                li #{user.name}
+                    a(href=`/api/show/${user.id}`) Show
+                    if(user.id === _id)
+                        form(action=`/api/update/${user.id}` method="post")
+                            input(type="text" name="name" placeholder="yo")
+                            input(type="text" name="password" placeholder="la constraseña")
+                            input(type="text" name="newPassword", placeholder="la nueva contraseña")
+                            input(type="submit" value="Update")
+                        form(action=`/api/delete/${user.id}` method = "post")
+                            input(type="text" name="name" placeholder = "username")
+                            input(type="text" name="password" placeholder="password")
+                            input(type="submit" value="Delete")
+
