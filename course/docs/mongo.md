@@ -25,6 +25,10 @@ db.users.find()
 use signingapp
 
 
+#CRUD
+Create, Read, Update, Delete
+
+
 
 
 

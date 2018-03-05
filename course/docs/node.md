@@ -106,6 +106,11 @@ https://pugjs.org/language/includes.html
 https://pugjs.org/language/inheritance.html
 
 
+#Pug change views folder
+
+    app.set('views', path.join(__dirname, '/yourViewDirectory'));
+
+
 #kill process
 
     killall node
@@ -115,3 +120,8 @@ https://pugjs.org/language/inheritance.html
     kill -9 1073
 
     1073/node is a example
+
+
+
+
+
