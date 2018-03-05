@@ -15,10 +15,10 @@ html(lang="en")
                 each task in todos
                     if !task.done
                         li
-                            form(action=`/tasks/${task.id}/done`, method="get")
+                    form(action=`/tasks/${task.id}/done`, method="get")
                                 | #{task.text}
                                 |
-                                input(type="submit", value="✓")
+                                input(type="submit", value="✓")        
         if dones.length
             h2 DONEs
             ul

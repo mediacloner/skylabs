@@ -104,3 +104,14 @@ https://pugjs.org/language/includes.html
 # Pug (extends)
 
 https://pugjs.org/language/inheritance.html
+
+
+#kill process
+
+    killall node
+    netstat -nlp | grep :8080
+    kill 1073
+    or
+    kill -9 1073
+
+    1073/node is a example
