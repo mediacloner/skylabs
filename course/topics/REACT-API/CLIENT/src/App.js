@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import api_client from './api-client.js';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   
@@ -20,17 +20,41 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">BASIC USER LIST</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          I'm trying to list the users in Mongo DB
         </p>
-
-
+         <ListUser dataUsers={this.state.user} />
       </div>
     );
   }
+}
+
+function ListUser(props) {
+console.log (props.dataUsers[0])
+return (
+<p className="App-intro">
+comoponent ListUser 
+</p>);
+/*   return (
+    <ul>
+      {props.user.map((user, index) => (
+        <li>
+          {task} &nbsp;{" "}
+          <a
+            onClick={e => {
+              e.preventDefault();
+
+              props.onRemoveTask(index);
+            }}
+          >
+            ⚡
+          </a>
+        </li>
+      ))}
+    </ul> */
+//  );
 }
 
 export default App;

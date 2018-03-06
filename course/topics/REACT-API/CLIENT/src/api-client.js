@@ -3,7 +3,6 @@ let api_client;
 (function () {
 
     const axios = require('axios')
-    //const cors = require('cors')
     const baseUrl = 'http://localhost:5000'
 
     api_client = {
