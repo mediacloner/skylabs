@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
-import api_client from './api-client.js';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Header from './components/Header'
+import Body from './components/Body'
+import Footer from './components/Footer'
+import api_client from './api-client.js'
+import {HashRouter} from 'react-router-dom'
+
 
 class App extends Component {
   
@@ -18,43 +23,25 @@ class App extends Component {
 
   render() {
     return (
+
+      <HashRouter>
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">BASIC USER LIST</h1>
-        </header>
-        <p className="App-intro">
-          I'm trying to list the users in Mongo DB
-        </p>
-         <ListUser dataUsers={this.state.user} />
+        <Header/>
+        <Body/>
+        <Footer/>
       </div>
-    );
+      </HashRouter>
+    )
   }
 }
 
 function ListUser(props) {
 console.log (props.dataUsers[0])
 return (
-<p className="App-intro">
-comoponent ListUser 
-</p>);
-/*   return (
-    <ul>
-      {props.user.map((user, index) => (
-        <li>
-          {task} &nbsp;{" "}
-          <a
-            onClick={e => {
-              e.preventDefault();
+  <div>
+      <ul> {props.dataUsers.map(item => <li>{item.name}</li>)} </ul>
+  </div>
 
-              props.onRemoveTask(index);
-            }}
-          >
-            ⚡
-          </a>
-        </li>
-      ))}
-    </ul> */
-//  );
-}
+)}
 
 export default App;

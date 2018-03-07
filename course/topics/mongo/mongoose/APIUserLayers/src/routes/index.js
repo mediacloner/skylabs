@@ -14,17 +14,8 @@ const collection = process.env.MONGO_COL
 
 mongoose.connect(`mongodb://${host}/${database}`)
 
-const User = mongoose.model(collection, 
-    {id: String, name: String, surname: String, email: String, username: String, password: String })
-
 
     const app = express()
-
-const db= mongoose.connection
-
-db.once('open', function (){
-
-
 
     app.get('/api/users', (req, res) => {
 
@@ -116,7 +107,7 @@ db.once('open', function (){
 
                 if (user.username !== username || user.password !== password) throw Error('username and/or password wrong')
 
-                return User.deleteOne({ id })
+                return User.collection.deleteOne({ id })
             })
             .then(() => {
                 res.json(success())
@@ -148,5 +139,3 @@ db.once('open', function (){
     const port_ = process.env.PORT
 
     app.listen(port_, () => console.log(`users api running on port ${port_}`))
-
-})
