@@ -122,6 +122,14 @@ https://pugjs.org/language/inheritance.html
     1073/node is a example
 
 
+#Crypto
+
+https://www.npmjs.com/package/jsonwebtoken
+https://jwt.io/#debugger
+
+
+
+
 
 
 
