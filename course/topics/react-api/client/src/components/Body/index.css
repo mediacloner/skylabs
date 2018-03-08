@@ -1,0 +1,9 @@
+input {
+    margin: 1%;
+    max-width: 50%;
+    display: inline !important;
+   }
+   
+   h3 {
+    color: red;
+   }
