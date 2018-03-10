@@ -75,7 +75,8 @@ describe('api', () => {
 
     !true && it('should update', done => {
         api.register('n', 's', 'e', 'u', 'p', token)
-            .then(res => api.update(res.data.id, 'n', 's', 'e', 'u2', 'p', 'u', 'p'))
+        api.register('n', 's', 'e', 'u', 'p', token)
+        .then(res => api.update(res.data.id, 'n', 's', 'e', 'u2', 'p', 'u', 'p',token))
             .then(res => {
                 assert.equal(res.status, 'OK', `results should be OK, but got error ${res.error}`)
 

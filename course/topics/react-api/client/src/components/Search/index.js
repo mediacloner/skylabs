@@ -10,13 +10,21 @@ class Search extends Component {
     constructor() {
         super()
         this.state = {
+            showingByID: '' ,
             users : []
         }
     }
+    handlerDelete (id) {
 
-    componentDidMount(){
-        api.list().then(users => users)
+        this.state.showingByID != '' 
+        ? this.setState({showingByID:''}):
+
+        this.setState({ showingByID: id})
     }
+    componentDidMount(){
+        api.list().then((users) =>        
+            this.setState({ users : users.data})
+            )}
 
     render() {
         return (
@@ -29,15 +37,49 @@ class Search extends Component {
                     <br />
                     <input type="submit" className="btn btn-dark" defaultValue="Search" />
                 </form>
+
                 <ul className="list-group">
-                    <li className="list-group-item-primary">
-                        <form action="/edit/062c8937-a287-46de-996a-c785cadc9e25" method="get" className="text-center">Name Surname (e-mail) [username]
-               <input type="submit" className="btn btn-warning" defaultValue="Edit" />
-                            <input type="submit" className="btn btn-danger" defaultValue="Remove" />
+
+                {this.state.users.map(user => 
+                    <li key={user.id}>
+                        <form action='/edit' method="get" className="text-center"> {user.name} 
+                        <input type="submit" className="btn primary" defaultValue="Edit" />
+                        <input type="submit" className="btn btn-warning" defaultValue="Remove" onClick={(e) => { e.preventDefault(); this.handlerDelete(user.id) }} />
+
                         </form>
-                    </li>
+
+                        { this.state.showingByID === user.id 
+                            ?   <div>
+
+                                <form id="edit" action="/save/062c8937-a287-46de-996a-c785cadc9e25" method="post" className="text-center">
+                                <input type="text" className="form-control" id="Name" placeholder="Name" />
+                                <input type="text" className="form-control" id="Surname" placeholder="Surname" /> <br/>
+                                <input type="submit" className="btn btn-danger" defaultValue="OK" onClick={(e) => { e.preventDefault(); this.handlerDelete(user.id) }} />
+                                </form>
+
+                                </div>
+                            : null
+                        }
+
+                       
+                    </li>)} 
+                     
+{/*                      {this.state.users.map( user => {
+                        <li className="list-group-item-primary">
+
+                     
+        
+                            <p>{this.user.name}</p>
+                            
+                                <form action="/edit/{user.id}" method="get" className="text-center">Name
+                                <input type="submit" className="btn btn-warning" defaultValue="Edit" />
+                                <input type="submit" className="btn btn-danger" defaultValue="Remove" />
+                            </form> }
+                         </li>
+                        }
+                    )} */}
                 </ul>
-                <form id="edit" action="/save/062c8937-a287-46de-996a-c785cadc9e25" method="post" className="text-center">
+              {/*   <form id="edit" action="/save/062c8937-a287-46de-996a-c785cadc9e25" method="post" className="text-center">
                     <input type="text" className="form-control" id="Name" placeholder="Name" />
                     <input type="text" className="form-control" id="Surname" placeholder="Surname" />
                     <input type="text" className="form-control" id="E-mail" placeholder="E-mail" />
@@ -50,7 +92,7 @@ class Search extends Component {
                 </form>
                 <div className="text-center">
                     <h3 className="display-4">Error on edit</h3>
-                </div>
+                </div> */}
             </div>
         )
     }

@@ -15,7 +15,6 @@ function Register(){
                     <input type="text" className="form-control" id="E-mail" placeholder="E-mail" />
                     <input type="text" className="form-control" id="Username" placeholder="Username" />
                     <input type="text" className="form-control" id="Password" placeholder="Password" />
-                    <input type="text" className="form-control" id="Name" placeholder="Name" />
                     <br />
                     <input type="submit" className="btn btn-dark" defaultValue="Register" />
                 </form>
